@@ -2,9 +2,9 @@
 ini_set('display_errors', 1);
 
 $menu = array(
-  'index'  => array('text'=>'Home',  'url'=>'index.php'),
-  'reports'  => array('text'=>'Reports',  'url'=>'reports.php'),
-  'about' => array('text'=>'About', 'url'=>'about.php'),
+    'index'  => array('text'=>'Home',  'url'=>'index.php'),
+    'reports'  => array('text'=>'Reports',  'url'=>'reports.php'),
+    'about' => array('text'=>'About', 'url'=>'about.php'),
 );
 
 
