@@ -63,12 +63,10 @@
 <script data-role="slide" data-markdown type="text/html">
 #Utmaningen
 
-* Skapa och jobba med moduler som återanvändbara enheter
-* Göra designval när man skapar klasserna
-* Studera var koden växer fram
-* Fundera över vem gör vad och hur saker bör hänga ihop
-* Pagecontrollern
-* Vyer
+* Moduler som återanvändbara enheter
+* Designval när man skapar klasserna
+* Hur koden växer fram
+* Vem gör vad och hur hänger det ihop
 </script>
 
 
@@ -81,6 +79,7 @@
 * CTextFilter::makeClickable()
 * CTextFilter::nl2br()
 * CTextFilter::markdown()
+* CTextFilter::shortCode()
 * CTextFilter::doFilter()
 * HTMLPurifier
 
@@ -90,7 +89,7 @@
 
 <!-- slide -->
 <script data-role="slide" data-markdown type="text/html">
-#Hur designa klasserna?
+#Designa klasserna?
 
 <img src="img/ccontent-design.png" width="1024" />
 
@@ -103,7 +102,7 @@
 #Om CContent
 
 * Försök att minimera koden i sidkontrollerna.
-* Sidkontrollerna [page,blog,view,edit].php *använder* CContent.
+* Sidkontrollerna [view,edit].php *använder* CContent.
 * Var skall formulären placeras?
 * CContent använder/utökar CDatabase?
 
@@ -118,7 +117,7 @@
 <pre data-code="c1"></pre>
 </script>
 
-<script id="c1" data-role="code" data-language="php" type="text/html">
+<script id="c1" data-role="code" data-language="sql" type="text/html">
 CREATE TABLE Content
 (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -152,7 +151,7 @@ CREATE TABLE Content
 
 <!-- slide -->
 <script data-role="slide" data-markdown type="text/html">
-#Sanitera datat
+#Sanitera inehållet
 
 <pre data-code="c4"></pre>
 </script>
@@ -233,6 +232,7 @@ function slugify($str) {
 
 * Specialisering av CContent
 * Arv eller använder?
+* Visa innehållet som en sida
 
 </script>
 
@@ -255,6 +255,7 @@ function slugify($str) {
 <script data-role="slide" data-markdown type="text/html">
 #Teaser
 
+* Read more »
 * De första paragraferna
 * Visst antal tecken
 
@@ -264,23 +265,19 @@ function slugify($str) {
 
 <!-- slide -->
 <script data-role="slide" data-markdown type="text/html">
-#GetFirstParagraph()
+#getFirstParagraph()
 
 <pre data-code="c7"></pre>
 </script>
 
 <script id="c7" data-role="code" data-language="php" type="text/html">
 /**
- * Returns the first paragraph ot the text.
+ * Returns the first paragraph of the text.
  * 
  * @return string as the first paragraph.
  */
-public function GetFirstParagraph() {
-    if(!isset($this->data['data_filtered'])) {
-        return null;
-    }
-    
-    $excerpt = $this->data['data_filtered'];
+public function getFirstParagraph() {
+    $excerpt   = $this->data['data_filtered'];
     $firstPara = strpos($excerpt, '</p>');
     $excerpt   = substr($excerpt, 0, $firstPara + 4);
     return $excerpt;
@@ -291,7 +288,7 @@ public function GetFirstParagraph() {
 
 <!-- slide -->
 <script data-role="slide" data-markdown type="text/html">
-#GetExcerpt()
+#getExcerpt()
 
 <pre data-code="c8"></pre>
 </script>
@@ -300,14 +297,12 @@ public function GetFirstParagraph() {
 /**
  * Returns the excerpt of the text with at most the specified amount of characters.
  * 
- * @param int $chars the number of characters to return.
- * @param boolean $hard do a hard break at exactly $chars characters or find closest space.
+ * @param int     $chars the number of characters to return.
+ * @param boolean $hard  do a hard break at exactly $chars
+ *                       characters or find closest space.
  * @return string as the excerpt.
  */
-public function GetExcerpt($chars=139, $hard=false) {
-    if(!isset($this->data['data_filtered'])) {
-        return null;
-    }
+public function getExcerpt($chars=139, $hard=false) {
     $excerpt = strip_tags($this->data['data_filtered']);
 
     if(strlen($excerpt) > $chars) {
@@ -357,7 +352,14 @@ public function GetExcerpt($chars=139, $hard=false) {
 * JavaScript: addslashes() json_encode()
 * CSS: n/a
 * URL/URI: rawurlencode() urlencode()
-* [Zend\Escaper](http://framework.zend.com/manual/current/en/modules/zend.escaper.escaping-html.html)
+
+</script>
+
+
+
+<!-- slide -->
+<script data-role="slide" data-markdown type="text/html">
+#[Zend\Escaper](http://framework.zend.com/manual/current/en/modules/zend.escaper.escaping-html.html)
 
 </script>
 
@@ -367,7 +369,72 @@ public function GetExcerpt($chars=139, $hard=false) {
 <script data-role="slide" data-markdown type="text/html">
 #PHP Filter
 
-* ...
+* Validate filter
+* Sanitize filter
+
+</script>
+
+
+<!-- slide -->
+<script data-role="slide" data-markdown type="text/html">
+#Validate filter
+
+<pre data-code="c11"></pre>
+</script>
+
+<script id="c11" data-role="code" data-language="php" type="text/html">
+$email_a = 'joe@example.com';
+
+if (filter_var($email_a, FILTER_VALIDATE_EMAIL)) {
+    echo "This ($email_a) email address is considered valid.";
+}
+
+$ip_a = '127.0.0.1';
+
+if (filter_var($ip_a, FILTER_VALIDATE_IP)) {
+    echo "This (ip_a) IP address is considered valid.";
+}
+
+$int_a = '1';
+$options = array(
+    'options' => array(
+                      'min_range' => 0,
+                      'max_range' => 3,
+                      )
+);
+if (filter_var($int_a, FILTER_VALIDATE_INT, $options) !== FALSE) {
+    echo "This (int_a) integer is considered valid (between 0 and 3).\n";
+}
+</script>
+
+
+
+<!-- slide -->
+<script data-role="slide" data-markdown type="text/html">
+#Sanitize filter
+
+<pre data-code="c12"></pre>
+</script>
+
+<script id="c12" data-role="code" data-language="php" type="text/html">
+$b = 'bogus - at - example dot org';
+$c = '(bogus@example.org)';
+
+$sanitized_a = filter_var($a, FILTER_SANITIZE_EMAIL);
+if (filter_var($sanitized_a, FILTER_VALIDATE_EMAIL)) {
+    echo "This (a) sanitized email address is considered valid.\n";
+}
+
+</script>
+
+
+
+<!-- slide -->
+<script data-role="slide" data-markdown type="text/html">
+#Git
+
+* [Kom igång med Git och GitHub](http://dbwebb.se/kunskap/kom-igang-med-git-och-github)
+* Se [CImage](https://github.com/mosbth/cimage) som exempel
 
 </script>
 
