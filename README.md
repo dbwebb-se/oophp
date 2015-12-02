@@ -2,6 +2,7 @@ Databases and object-oriented programming in PHP (oophp)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/oophp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oophp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/mosbth/oophp.svg?branch=master)](https://travis-ci.org/mosbth/oophp)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
