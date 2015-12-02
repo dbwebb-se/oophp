@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?=CNavigation::GenerateMenu($menu, "navbar");?>
+    <?=CNavigation::generateMenu($menu, "navbar");?>
 </body>
 </html>

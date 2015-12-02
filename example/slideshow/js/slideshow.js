@@ -1,3 +1,5 @@
+/* globals jQuery */
+
 jQuery(function() {
 
   /**
@@ -5,7 +7,7 @@ jQuery(function() {
    *
    */
   var slideShow = (function(){
-    var cssId = '#slideshow', 
+    var cssId = '#slideshow',
       wrapper,
       image,
       orig,
@@ -20,8 +22,7 @@ jQuery(function() {
       durationSlide = 4000,
       durationPause = 9000,
       durationFirst = durationPause,
-      easing='linear',
-    
+
       rotate = function() {
       $(cssId + ' img')
         .eq(current)
@@ -39,7 +40,7 @@ jQuery(function() {
 
       togglePause = function(){
         pause = !pause;
-        if(!pause) {
+        if (!pause) {
           console.log("Work");
           rotate();
           //intervalId = window.setTimeout(rotate, durationPause);
@@ -69,7 +70,7 @@ jQuery(function() {
 
         current = 0;
         wrapper.css('position', 'relative');
-        image.css('position', 'relative');        
+        image.css('position', 'relative');
         image.css('top', '0');
         image.css('left', '0');
         zindex = parseInt(image.css('z-index')) | 0;
@@ -77,7 +78,7 @@ jQuery(function() {
         clone = image.clone();
         clone.css('position', 'absolute');
 
-        for(i = 0; i < images.length; i++) {
+        for (i = 0; i < images.length; i++) {
           clone.css('z-index', zindex - i - 1);
           clone.attr('src', host + path + images[i]);
           wrapper.append(clone.clone());
@@ -89,7 +90,7 @@ jQuery(function() {
 
       return {
         init: init
-      }
+    };
   })();
 
 
@@ -98,6 +99,11 @@ jQuery(function() {
    *
    */
   //slideShow.init();
-  slideShow.init({"cssId" : "#slideshow", "durationPause" : 4000, "durationSlide" : 2000, "durationFirst" : 4000});
+  slideShow.init({
+      "cssId" : "#slideshow",
+      "durationPause" : 4000,
+      "durationSlide" : 2000,
+      "durationFirst" : 4000
+  });
 
 });
