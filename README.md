@@ -32,6 +32,12 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
+v1.1.0 (2016-08-17)
+
+* Add local test environment.
+* Add test suite on travis and circleic.
+
+
 v1.0.0 (2016-08-17)
 
 * Started work in october 2015, planned release early 2017.
