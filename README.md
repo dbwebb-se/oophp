@@ -2,7 +2,8 @@ Databases and object-oriented programming in PHP (oophp)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/oophp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oophp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/mosbth/oophp.svg?branch=master)](https://travis-ci.org/mosbth/oophp)
+[![Build Status](https://travis-ci.org/dbwebb-se/oophp.svg?branch=master)](https://travis-ci.org/dbwebb-se/oophp)
+[![CircleCI](https://circleci.com/gh/dbwebb-se/oophp.svg?style=svg)](https://circleci.com/gh/dbwebb-se/oophp)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
@@ -31,7 +32,7 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
-v0.0.0x (2015-10-01)
+v1.0.0 (2016-08-17)
 
 * Started work in october 2015, planned release early 2017.
 
@@ -39,5 +40,5 @@ v0.0.0x (2015-10-01)
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015 Mikael Roos, me@mikaelroos.se   
+..:  Copyright (c) 2015 - 2016 Mikael Roos, me@mikaelroos.se   
 ```                                                            
