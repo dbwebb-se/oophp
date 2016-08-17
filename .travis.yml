@@ -35,7 +35,7 @@ before_script:
 
 
 script:
-    # Check version and environment
+    # Check version and environment 
     - make automated-tests-check
 
     # Run tests
