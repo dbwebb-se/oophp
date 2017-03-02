@@ -14,12 +14,10 @@ RewriteRule (.*) - [NC,L]
 
 # Rewrite 1 - For request via www.student.bth.se
 RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-#RewriteRule ^image/(.*)$ /~mosstud/kod-exempel/anax-flat/htdocs/cimage/imgd.php?src=$1 [QSA,NC,L] 
-RewriteRule ^image/(.*)$ /~mosstud/dbwebb-kurser/design/me/anax-flat/htdocs/cimage/imgd.php?src=$1 [QSA,NC,L]
+RewriteRule ^image/(.*)$ /~mosstud/dbwebb-kurser/oophp/me/anax-lite/htdocs/cimage/imgd.php?src=$1 [QSA,NC,L]
 
 RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-#RewriteRule (.*) /~mosstud/kod-exempel/anax-flat/htdocs/index.php/$1 [NC,L]
-RewriteRule (.*) /~mosstud/dbwebb-kurser/design/me/anax-flat/htdocs/index.php/$1 [NC,L]
+RewriteRule (.*) /~mosstud/dbwebb-kurser/oophp/me/anax-lite/htdocs/index.php/$1 [NC,L]
 
 
 # Rewrite 2 - For other requests
