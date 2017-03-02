@@ -1,9 +1,5 @@
-/slide/
-/tutorial/
-/literature/
-/.solution/
-/.solutions/
-/.default/
+/old
+/.solutions
 /bin
 /build
 /node_modules/
@@ -24,6 +20,10 @@
 /.gitmodules/
 /.gitignore
 
+# Limit git uploads
+me/**/.git
+me/**/.gitignore
+
 # Limit vendor uploads
 vendor/**/.git/
 vendor/**/.gitmodules/
@@ -35,9 +35,3 @@ npm-debug.log
 
 # Mac OS
 .DS_Store
-
-# webapp
-/me/**/platforms/
-
-# phpmvc
-/me/**/coverage/
