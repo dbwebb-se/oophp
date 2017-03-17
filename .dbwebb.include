@@ -1,0 +1,13 @@
+/.dbwebb*
+/.*rc
+/.*.xml
+/.*.conf
+
+/me/
+/me/**
+
+/example/
+/example/**
+
+- */
+- *
