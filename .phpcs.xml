@@ -10,6 +10,8 @@
         Custom rule set for htmlphp course.
     </description>
 
+    <exclude-pattern>imgd.php</exclude-pattern> 
+
     <arg name="encoding" value="utf-8"/>
     <arg name="warning-severity" value="0"/>
 

@@ -1,13 +1,20 @@
+# dbwebb config files
 /.dbwebb*
+- /.dbwebb.exclude
+- /.dbwebb.include
+- /.dbwebb.tests
+- /.dbwebb.version
+
+# Validator config files
 /.*rc
 /.*.xml
 /.*.conf
 
-/me/
-/me/**
-
 /example/
 /example/**
+
+/me/
+/me/**
 
 - */
 - *
