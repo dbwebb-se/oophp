@@ -1,3 +1,4 @@
+<?php
 /**
  * Set the error reporting.
  */
