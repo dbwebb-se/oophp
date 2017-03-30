@@ -14,6 +14,10 @@
 /example/**
 
 /me/
+- /me/anax-lite/.bin
+- vendor/mos/cimage/webroot
+- vendor/**/config
+- vendor/**/test
 /me/**
 
 - */
