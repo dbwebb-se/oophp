@@ -10,6 +10,8 @@
 -*/docs/*
 -*/lib/*
 -*.min.*
+-*.png
+-*.jpg
 
 -./me/*/vendor/*
 -./me/*/node_modules/*
