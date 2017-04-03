@@ -1,0 +1,50 @@
+#
+# dbwebb validate exclude and include files for validate and publish.
+# 
+# Paths start from courserepo, so path to me is "./me".
+#
+
+-*/.git/*
+-*/build/*
+-*/cache/*
+-*/docs/*
+-*/lib/*
+-*.min.*
+
+-./me/*/vendor/*
+-./me/*/node_modules/*
+
+#-*/phpliteadmin*
+#-*.tpl.php
+#-*/font-awesome.css
+#-*/lessc.inc.php
+
+
+
+#
+# Basis for the original expression within dbwebb validate
+#
+#EXCLUDE_PATHS='\*/example/webgl/\* \*/libs/\* \*/lib/\* \*/node_modules/\* \*/platforms/\* \*/plugins/\* \*/docs/api/\* \*/vendor/\* \*/3pp/\* \*/example/lekplats/\* \*/css/anax-grid/\* \*/me/anax-flat/\* \*/cache/\* \*/build/\* \*/.git/\* \*/slide/\*'
+#EXCLUDE_FILES='phpliteadmin\* \*.min.\* \*.tpl.php font-awesome.css lessc.inc.php'
+#-*/example/webgl/*
+#-*/libs/*
+#-*/lib/*
+#-*/node_modules/*
+#-*/platforms/*
+#-*/plugins/*
+#-*/docs/api/*
+#-*/vendor/*
+#-*/3pp/*
+#-*/example/lekplats/*
+#-*/css/anax-grid/*
+#-*/me/anax-flat/*
+#-*/cache/*
+#-*/build/*
+#-*/.git/*
+#-*/slide/*
+
+#-*/phpliteadmin*
+#-*.min.*
+#-*.tpl.php
+#-*/font-awesome.css
+#-*/lessc.inc.php

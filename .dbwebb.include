@@ -1,9 +1,10 @@
 # dbwebb config files
-/.dbwebb*
 - /.dbwebb.exclude
 - /.dbwebb.include
 - /.dbwebb.tests
 - /.dbwebb.version
+/.dbwebb/*
+/.dbwebb*
 
 # Validator config files
 /.*rc
@@ -18,6 +19,7 @@
 - /me/anax-lite/cache/cimage/*
 - vendor/mos/cimage/webroot
 - vendor/**/config
+- vendor/**/docs
 - vendor/**/test
 /me/**
 
