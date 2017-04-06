@@ -5,15 +5,19 @@ if (!$resultset) {
 $defaultRoute = "?route=show-all-paginate&"
 ?>
 
-<p>Items per page: <a href="">2</a> | <a href="">4</a> | <a href="">8</a></p>
+<p>Items per page: 
+    <a href="<?= mergeQueryString(["hits" => 2], $defaultRoute) ?>">2</a> |
+    <a href="<?= mergeQueryString(["hits" => 4], $defaultRoute) ?>">4</a> |
+    <a href="<?= mergeQueryString(["hits" => 8], $defaultRoute) ?>">8</a>
+</p>
 
 <table>
     <tr class="first">
         <th>Rad</th>
-        <th>Id</th>
-        <th>Bild</th>
-        <th>Titel</th>
-        <th>År</th>
+        <th>Id <?= orderby2("id", $defaultRoute) ?></th>
+        <th>Bild <?= orderby2("image", $defaultRoute) ?></th>
+        <th>Titel <?= orderby2("title", $defaultRoute) ?></th>
+        <th>År <?= orderby2("year", $defaultRoute) ?></th>
     </tr>
 <?php $id = -1; foreach ($resultset as $row) :
     $id++;
@@ -31,6 +35,6 @@ $defaultRoute = "?route=show-all-paginate&"
 <p>
     Pages:
     <?php for ($i = 1; $i <= $max; $i++) : ?>
-        <a href=""><?= $i ?></a> 
+        <a href="<?= mergeQueryString(["page" => $i], $defaultRoute) ?>"><?= $i ?></a> 
     <?php endfor; ?>
 </p>
