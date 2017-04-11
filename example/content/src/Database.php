@@ -71,6 +71,52 @@ class Database
 
 
     /**
+     * Execute a select-query with arguments and insert the results into
+     * a new object of the class.
+     *
+     * @param string $sql   statement to execute
+     * @param array  $param the params array
+     * @param string $class the class to create an object of and insert into
+     *
+     * @return array with resultset
+     */
+    public function executeFetchClass($sql, $param, $class = null)
+    {
+        if (!$class) {
+            $class = $param;
+            $param = [];
+        }
+        $sth = $this->execute($sql, $param);
+        $sth->setFetchMode(\PDO::FETCH_CLASS, $class);
+        return $sth->fetch();
+    }
+
+
+
+    /**
+     * Execute a select-query with arguments and insert the results into
+     * an existing object.
+     *
+     * @param string $sql   statement to execute
+     * @param array  $params the params array
+     * @param string $object the existing object to insert into
+     *
+     * @return array with resultset
+     */
+    public function executeFetchInto($sql, $param, $object = null)
+    {
+        if (!$object) {
+            $object = $param;
+            $param = [];
+        }
+        $sth = $this->execute($sql, $param);
+        $sth->setFetchMode(\PDO::FETCH_INTO, $object);
+        return $sth->fetch();
+    }
+
+
+
+    /**
      * Do INSERT/UPDATE/DELETE with optional parameters.
      *
      * @param string $sql   statement to execute
