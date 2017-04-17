@@ -9,12 +9,14 @@
 -*/cache/*
 -*/docs/*
 -*/lib/*
+-*/old/*
 -*.min.*
 -*.png
 -*.jpg
 
 -./me/*/vendor/*
 -./me/*/node_modules/*
+-./me/anax-lite/theme/*
 
 #-*/phpliteadmin*
 #-*.tpl.php
