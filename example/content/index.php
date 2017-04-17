@@ -131,11 +131,50 @@ EOD;
         $resultset = $db->executeFetchAll($sql, ["page"]);
         break;
 
+    case "blog":
+        $title = "View blog";
+        $view[] = "view/blog.php";
+
+        $sql = <<<EOD
+SELECT
+    *,
+    DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%dT%TZ') AS published_iso8601,
+    DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%d') AS published
+FROM content
+WHERE type=?
+ORDER BY published DESC
+;
+EOD;
+        $resultset = $db->executeFetchAll($sql, ["post"]);
+        break;
+
     default:
         if (substr($route, 0, 5) === "blog/") {
             //  Matches blog/slug, display content by slug and type post
-        } elseif (substr($route, 0, 4) === "blog") {
-            // Matches blog, show bloglist of type post
+            $sql = <<<EOD
+SELECT
+    *,
+    DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%dT%TZ') AS published_iso8601,
+    DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%d') AS published
+FROM content
+WHERE 
+    slug = ?
+    AND type = ?
+    AND (deleted IS NULL OR deleted > NOW())
+    AND published <= NOW()
+ORDER BY published DESC
+;
+EOD;
+            $slug = substr($route, 5);
+            $content = $db->executeFetch($sql, [$slug, "post"]);
+            if (!$content) {
+                header("HTTP/1.0 404 Not Found");
+                $title = "404";
+                $view[] = "view/404.php";
+                break;
+            }
+            $title = $content->title;
+            $view[] = "view/blogpost.php";
         } else {
             // Try matching content for type page and its path
             $sql = <<<EOD
@@ -146,11 +185,12 @@ SELECT
 FROM content
 WHERE
     path = ?
+    AND type = ?
     AND (deleted IS NULL OR deleted > NOW())
     AND published <= NOW()
 ;
 EOD;
-            $content = $db->executeFetch($sql, [$route]);
+            $content = $db->executeFetch($sql, [$route, "page"]);
             if (!$content) {
                 header("HTTP/1.0 404 Not Found");
                 $title = "404";

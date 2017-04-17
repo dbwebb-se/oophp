@@ -68,3 +68,7 @@ legend,
 button {
     font-size: large;
 }
+
+article {
+    margin-bottom: 24px;
+}
