@@ -2,3 +2,5 @@ me/
 bin/
 build/
 node_modules/
+composer.lock
+vendor/
