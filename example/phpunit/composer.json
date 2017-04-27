@@ -1,0 +1,14 @@
+{
+    "name": "mos/phpunit-test",
+    "description": "To check if phpunit is working.",
+    "license": "MIT",
+    "authors": [
+            {
+                "name": "Mikael Roos",
+                "email": "mos@dbwebb.se"
+            }
+    ],
+    "autoload": {
+        "psr-4": {"Mos\\": "src/"}
+    }
+}
