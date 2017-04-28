@@ -8,6 +8,7 @@
 -*/build/*
 -*/cache/*
 -*/docs/*
+-*/doc/*
 -*/lib/*
 -*/old/*
 -*.min.*
