@@ -10,7 +10,7 @@ This is short tutorial with code samples, on how to get going with phpunit for u
 * [Executing the test cases](#executing-the-test-cases)
 * [Review a test case](#review-a-test-case)
 * [Get code coverage](#get-code-coverage)
-* [Summary and further excercise](#summary-and-further-exercise)
+* [Summary and further excercise](#summary-and-further-excercise)
 
 
 
