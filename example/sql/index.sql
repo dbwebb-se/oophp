@@ -2,13 +2,13 @@
 -- https://dbwebb.se/kunskap/index-och-prestanda-i-mysql
 -- Example
 -- 
-DROP TABLE IF EXISTS Course;
-CREATE TABLE Course
+DROP TABLE IF EXISTS `Course`;
+CREATE TABLE `Course`
 (
 	`code` CHAR(6),
-	`nick` CHAR(8),
+	`nick` CHAR(12),
     `points` DECIMAL(3, 1),
-	`name` VARCHAR(40)
+	`name` VARCHAR(60)
 );
 
 DELETE FROM Course;
