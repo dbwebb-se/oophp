@@ -133,7 +133,7 @@ public function testCreateObject()
 
 A test method is considered as one test that can carry out zero or several assertions that verifies that a certain condition is fulfilled. The various methods for assertions are provided by phpunit.
 
-Tha aim is to use the class as a white box, its code is visual to the one who writes the test cases and one tries to execute as many class methods as possible and verifying various states of the tested class.
+The aim is to use the class as a white box test object, its code is visual to the one who writes the test cases and one tries to execute as many class methods as possible to verify various states of the tested class.
 
 The first approach is to write test cases for the public methods. It would require another test strategy to test a class having protected members not accessable from the class public API. Or testing a class having external dependencies or testing a class using persistent storage like a database. Those more advanced test cases are out of scope of this tutorial.
 
