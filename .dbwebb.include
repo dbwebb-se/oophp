@@ -21,6 +21,7 @@
 - vendor/**/config
 - vendor/**/docs
 - vendor/**/test
+- node_modules/
 /me/**
 
 - */
