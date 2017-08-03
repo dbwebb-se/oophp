@@ -1,11 +1,10 @@
-#!/usr/bin/env make -f
 #
-# Makefile for course repos
+#
 #
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
-# General setup
+# Generel stuff
 #
 
 # Detect OS
@@ -15,6 +14,7 @@ OS = $(shell uname -s)
 ECHO = echo
 
 # Make adjustments based on OS
+# http://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux/27776822#27776822
 ifneq (, $(findstring CYGWIN, $(OS)))
 	ECHO = /bin/echo -e
 endif
@@ -33,268 +33,306 @@ THIS_MAKEFILE := $(call WHERE-AM-I)
 # Echo some nice helptext based on the target comment
 HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
 
-# target: help                    - Displays help with targets available.
+
+
+# ------------------------------------------------------------------------
+#
+# Specifics
+#
+
+# Add local bin path for test tools
+#PATH := "./.bin:./vendor/bin:./node_modules/.bin:$(PATH)"
+#SHELL := env PATH=$(PATH) $(SHELL)
+BIN     := .bin
+PHPUNIT := $(BIN)/phpunit
+PHPLOC 	:= $(BIN)/phploc
+PHPCS   := $(BIN)/phpcs
+PHPCBF  := $(BIN)/phpcbf
+PHPMD   := $(BIN)/phpmd
+PHPDOC  := $(BIN)/phpdoc
+BEHAT   := $(BIN)/behat
+SHELLCHECK := $(BIN)/shellcheck
+BATS := $(BIN)/bats
+
+
+
+# target: help               - Displays help.
 .PHONY:  help
 help:
 	@$(call HELPTEXT,$@)
-	@echo "Usage:"
-	@echo " make [target] ..."
-	@echo "target:"
-	@egrep "^# target:" Makefile | sed 's/# target: / /g'
+	@$(ECHO) "Usage:"
+	@$(ECHO) " make [target] ..."
+	@$(ECHO) "target:"
+	@egrep "^# target:" $(THIS_MAKEFILE) | sed 's/# target: / /g'
 
 
 
-# ---------------------------------------------------------------------------
-#
-# Specifics
-# 
-
-# Add local bin path for test tools
-PATH := "$(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)"
-
-# Tools
-DBWEBB   		:= bin/dbwebb
-DBWEBB_VALIDATE := bin/dbwebb-validate
-DBWEBB_INSPECT  := bin/dbwebb-inspect
-PHPCS   := bin/phpcs
-PHPMD   := bin/phpmd
-
-
-
-# ----------------------------------------------------------------------------
-# 
-# Highlevel targets 
-#
-# target: prepare                 - Prepare the build directory.
-.PHONY: prepare
+# target: prepare            - Prepare for tests and build
+.PHONY:  prepare
 prepare:
 	@$(call HELPTEXT,$@)
-	[ -d build ]   || install -d build/webroot
-	[ -d bin/pip ] || install -d bin/pip
+	[ -d .bin ] || mkdir .bin
+	[ -d build ] || mkdir build
+	rm -rf build/*
 
 
 
-# target: install                 - Install needed utilities locally.
-.PHONY: install
-install: prepare dbwebb-validate-install dbwebb-inspect-install dbwebb-install npm-install composer-install
-	@$(call HELPTEXT,$@)
-
-	@# Disable PHP tools with arguments
-	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
-
-	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
-
-	@# Shellcheck 
-	@# tree (inspect) 
-	@# python through reqs and venv
-	@# Add to check on dbwebb-cli to try all parts php in path, make, composer, node, npm, python3, python, mm.
-
-
-
-# target: check                   - Check installed utilities.
-.PHONY: check
-check: dbwebb-validate-check
-	@$(call HELPTEXT,$@)
-
-
-
-# target: test                    - Install test tools & run tests.
-.PHONY: test
-test: check dbwebb-publish-run dbwebb-testrepo
-	@$(call HELPTEXT,$@)
-
-
-
-# target: clean                   - Remove all generated files.
+# target: clean              - Removes generated files and directories.
 .PHONY:  clean
 clean:
 	@$(call HELPTEXT,$@)
 	rm -rf build
-	rm -f npm-debug.log
 
 
 
-# target: clean-me                - Remove me-directory.
-.PHONY:  clean-me
-clean-me:
-	@$(call HELPTEXT,$@)
-	rm -rf me
-
-
-
-# target: clean-all               - Remove all installed files.
+# target: clean-all          - Removes generated files and directories.
 .PHONY:  clean-all
-clean-all: clean
+clean-all:
 	@$(call HELPTEXT,$@)
-	rm -rf bin
-	rm -rf node_modules
-	rm -rf vendor
+	rm -rf .bin build vendor composer.lock
 
 
 
-# ----------------------------------------------------------------------------
-# 
-# Shortcuts for frequent usage 
+# target: check              - Check version of installed tools.
+.PHONY:  check
+check: check-tools-bash check-tools-php
+	@$(call HELPTEXT,$@)
+
+
+
+# target: test               - Run all tests.
+.PHONY:  test
+test: bats phpunit phpcs phpmd phploc behat # shellcheck
+	@$(call HELPTEXT,$@)
+	composer validate
+
+
+
+# target: doc                - Generate documentation.
+.PHONY:  doc
+doc: phpdoc
+	@$(call HELPTEXT,$@)
+
+
+
+# target: build              - Do all build
+.PHONY:  build
+build: test doc #theme less-compile less-minify js-minify
+	@$(call HELPTEXT,$@)
+
+
+
+# target: install            - Install all tools
+.PHONY:  install
+install: prepare install-tools-bash install-tools-php
+	@$(call HELPTEXT,$@)
+
+
+
+# target: update             - Update the codebase and tools.
+.PHONY:  update
+update:
+	@$(call HELPTEXT,$@)
+	git pull
+	composer update
+
+
+
+# target: tag-prepare        - Prepare to tag new version.
+.PHONY: tag-prepare
+tag-prepare:
+	@$(call HELPTEXT,$@)
+
+
+
+# ------------------------------------------------------------------------
 #
-# target: validate                - Execute dbwebb validate what=part-to-validate.
-.PHONY: validate
-validate: dbwebb-validate
-	@$(call HELPTEXT,$@)
-
-
-
-# target: publish                 - Execute dbwebb publish what=part-to-validate.
-.PHONY: publish
-publish: dbwebb-publish
-	@$(call HELPTEXT,$@)
-
-
-
-# target: inspect                 - Execute dbwebb inspect what=kmom01.
-.PHONY: inspect
-inspect: dbwebb-inspect
-	@$(call HELPTEXT,$@)
-
-
-
-# ----------------------------------------------------------------------------
-# 
-# dbwebb cli 
+# PHP
 #
-# target: dbwebb-install          - Download and install dbwebb-cli.
-.PHONY: dbwebb-install
-dbwebb-install: prepare
+
+# target: install-tools-php  - Install PHP development tools.
+.PHONY: install-tools-php
+install-tools-php:
 	@$(call HELPTEXT,$@)
-	wget --quiet -O $(DBWEBB) https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2
-	chmod 755 $(DBWEBB)
-	$(DBWEBB) config create noinput
+	curl -Lso $(PHPDOC) https://www.phpdoc.org/phpDocumentor.phar && chmod 755 $(PHPDOC)
+
+	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
+
+	curl -Lso $(PHPCBF) https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar && chmod 755 $(PHPCBF)
+
+	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+
+	curl -Lso $(PHPUNIT) https://phar.phpunit.de/phpunit-5.7.9.phar && chmod 755 $(PHPUNIT)
+
+	curl -Lso $(PHPLOC) https://phar.phpunit.de/phploc.phar && chmod 755 $(PHPLOC)
+
+	curl -Lso $(BEHAT) https://github.com/Behat/Behat/releases/download/v3.3.0/behat.phar && chmod 755 $(BEHAT)
+
+	composer install
 
 
 
-# target: dbwebb-testrepo         - Test course repo.
-.PHONY: dbwebb-testrepo
-dbwebb-testrepo:
+
+# target: check-tools-php    - Check versions of PHP tools.
+.PHONY: check-tools-php
+check-tools-php:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB) --silent --local testrepo
+	which $(PHPUNIT) && $(PHPUNIT) --version
+	which $(PHPLOC) && $(PHPLOC) --version
+	which $(PHPCS) && $(PHPCS) --version && echo
+	which $(PHPMD) && $(PHPMD) --version && echo
+	which $(PHPCBF) && $(PHPCBF) --version && echo
+	which $(PHPDOC) && $(PHPDOC) --version && echo
+	which $(BEHAT) && $(BEHAT) --version && echo
 
 
 
-# ----------------------------------------------------------------------------
-# 
-# dbwebb validate & publish
+# target: phpunit            - Run unit tests for PHP.
+.PHONY: phpunit
+phpunit: prepare
+	@$(call HELPTEXT,$@)
+	[ ! -f .phpunit.xml ] || $(PHPUNIT) --configuration .phpunit.xml
+
+
+
+# target: phpcs              - Codestyle for PHP.
+.PHONY: phpcs
+phpcs: prepare
+	@$(call HELPTEXT,$@)
+	[ ! -f .phpcs.xml ] || $(PHPCS) --standard=.phpcs.xml | tee build/phpcs
+
+
+
+# target: phpcbf             - Fix codestyle for PHP.
+.PHONY: phpcbf
+phpcbf:
+	@$(call HELPTEXT,$@)
+	[ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml
+
+
+
+# target: phpmd              - Mess detector for PHP.
+.PHONY: phpmd
+phpmd: prepare
+	@$(call HELPTEXT,$@)
+	- [ ! -f .phpmd.xml ] || $(PHPMD) . text .phpmd.xml | tee build/phpmd
+
+
+
+# target: phploc             - Code statistics for PHP.
+.PHONY: phploc
+phploc: prepare
+	@$(call HELPTEXT,$@)
+	$(PHPLOC) src > build/phploc
+
+
+
+# target: phpdoc             - Create documentation for PHP.
+.PHONY: phpdoc
+phpdoc:
+	@$(call HELPTEXT,$@)
+	[ ! -f .phpdoc.xml ] || $(PHPDOC) --config=.phpdoc.xml
+
+
+
+# target: behat              - Run behat for feature tests.
+.PHONY: behat
+behat:
+	@$(call HELPTEXT,$@)
+	[ ! -d features ] || $(BEHAT)
+
+
+
+# ------------------------------------------------------------------------
 #
-# target: dbwebb-validate-install - Download and install dbwebb-validate.
-.PHONY: dbwebb-validate-install
-dbwebb-validate-install: prepare
-	@$(call HELPTEXT,$@)
-	wget --quiet -O $(DBWEBB_VALIDATE) https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2-validate
-	chmod 755 $(DBWEBB_VALIDATE)
-
-
-
-# target: dbwebb-validate-check   - Check version and environment for dbwebb-validate.
-.PHONY: dbwebb-validate-check
-dbwebb-validate-check:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --check
-
-
-
-# target: dbwebb-validate-run     - Run tests on /example with dbwebb-validate.
-.PHONY: dbwebb-validate-run
-dbwebb-validate-run:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) example
-
-
-
-# target: dbwebb-validate         - Execute dbwebb validate what=part-to-validate.
-.PHONY: dbwebb-validate
-dbwebb-validate:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(what) $(arg1) $(kmom)
-
-
-
-# target: dbwebb-publish-run      - Run tests on /example with dbwebb-publish.
-.PHONY: dbwebb-publish-run
-dbwebb-publish-run:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ example
-
-
-
-# target: dbwebb-publish          - Execute dbwebb publish what=part-to-validate-publish.
-.PHONY: dbwebb-publish
-dbwebb-publish:
-	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ $(what) $(arg1) $(kmom)
-
-
-
-# ----------------------------------------------------------------------------
-# 
-# dbwebb inspect 
+# Bash
 #
-# target: dbwebb-inspect-install  - Download and install dbwebb-inspect.
-.PHONY: dbwebb-inspect-install
-dbwebb-inspect-install: prepare
+
+# target: install-tools-bash - Install Bash development tools.
+.PHONY: install-tools-bash
+install-tools-bash:
 	@$(call HELPTEXT,$@)
-	wget --quiet -O $(DBWEBB_INSPECT) https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2-inspect
-	chmod 755 $(DBWEBB_INSPECT)
+	# Shellcheck
+	curl -s https://storage.googleapis.com/shellcheck/shellcheck-latest.linux.x86_64.tar.xz | tar -xJ -C build/ && rm -f .bin/shellcheck && ln build/shellcheck-latest/shellcheck .bin/
+
+	# Bats
+	curl -Lso $(BIN)/bats-exec-suite https://raw.githubusercontent.com/sstephenson/bats/master/libexec/bats-exec-suite
+	curl -Lso $(BIN)/bats-exec-test https://raw.githubusercontent.com/sstephenson/bats/master/libexec/bats-exec-test
+	curl -Lso $(BIN)/bats-format-tap-stream https://raw.githubusercontent.com/sstephenson/bats/master/libexec/bats-format-tap-stream
+	curl -Lso $(BIN)/bats-preprocess https://raw.githubusercontent.com/sstephenson/bats/master/libexec/bats-preprocess
+	curl -Lso $(BATS) https://raw.githubusercontent.com/sstephenson/bats/master/libexec/bats
+	chmod 755 $(BIN)/bats*
 
 
 
-# target: dbwebb-inspect-check    - Check version and environment for dbwebb-inspect.
-.PHONY: dbwebb-inspect-check
-dbwebb-inspect-check:
+
+# target: check-tools-bash   - Check versions of Bash tools.
+.PHONY: check-tools-bash
+check-tools-bash:
 	@$(call HELPTEXT,$@)
-	$(DBWEBB_INSPECT) --version
+	which $(SHELLCHECK) && $(SHELLCHECK) --version
+	which $(BATS) && $(BATS) --version
 
 
 
-# target: dbwebb-inspect          - Execute dbwebb inspect what=kmom01.
-.PHONY: dbwebb-inspect
-dbwebb-inspect:
+# target: shellcheck         - Run shellcheck for bash files.
+.PHONY: shellcheck
+shellcheck:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_INSPECT) . $(what) $(arg1) $(kmom)
+	[ ! -d src ] || $(SHELLCHECK) --shell=bash src/*.bash
 
 
 
-# ----------------------------------------------------------------------------
-# 
-# npm
+# target: bats               - Run bats for unit testing bash files.
+.PHONY: bats
+bats:
+	@$(call HELPTEXT,$@)
+	[ ! -d test ] || $(BATS) test/
+
+
+
+# ------------------------------------------------------------------------
 #
-# target: npm-install             - Install npm packages for development.
-.PHONY: npm-install
-npm-install: prepare
-	@$(call HELPTEXT,$@)
-	if [ -f package.json ]; then npm install --only=dev; fi
-
-
-
-# target: npm-update              - Update npm packages for development.
-.PHONY: npm-update
-npm-update:
-	@$(call HELPTEXT,$@)
-	if [ -f package.json ]; then npm update --only=dev; fi
-
-
-
-# ----------------------------------------------------------------------------
-# 
-# composer 
+# Theme
 #
-# target: composer-install        - Install composer packages for development.
-.PHONY: composer-install
-composer-install: prepare
+# target: theme              - Do make build install in theme/ if available.
+.PHONY: theme
+theme:
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; then composer install; fi
+	[ ! -d theme ] || ( cd theme && make build install )
 
 
 
-# target: composer-update         - Update composer packages for development.
-.PHONY: composer-update
-composer-update:
+# ------------------------------------------------------------------------
+#
+# Cimage
+#
+
+define CIMAGE_CONFIG
+<?php
+return [
+    "mode"         => "development",
+    "image_path"   =>  __DIR__ . "/../img/",
+    "cache_path"   =>  __DIR__ . "/../../cache/cimage/",
+    "autoloader"   =>  __DIR__ . "/../../vendor/autoload.php",
+];
+endef
+export CIMAGE_CONFIG
+
+# target: cimage-update           - Install/update Cimage to latest version.
+.PHONY: cimage-update
+cimage-update:
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; composer update; fi
+	composer require mos/cimage
+	install -d htdocs/cimage cache/cimage
+	chmod 777 cache/cimage
+	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
+	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
+	touch htdocs/cimage/img_config.php
+
+# target: cimage-config-create    - Create configfile for Cimage.
+.PHONY: cimage-config-create
+cimage-config-create:
+	@$(call HELPTEXT,$@)
+	$(ECHO) "$$CIMAGE_CONFIG" | bash -c 'cat > htdocs/cimage/img_config.php'
+	cat htdocs/cimage/img_config.php
