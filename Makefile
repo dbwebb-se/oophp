@@ -89,7 +89,7 @@ clean:
 .PHONY:  clean-all
 clean-all:
 	@$(call HELPTEXT,$@)
-	rm -rf .bin build vendor composer.lock
+	rm -rf .bin build vendor
 
 
 
