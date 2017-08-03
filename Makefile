@@ -85,6 +85,14 @@ clean:
 
 
 
+# target: clean-cache        - Clean the cache.
+.PHONY:  clean-cache
+clean-cache:
+	@$(call HELPTEXT,$@)
+	rm -rf cache/*/*
+
+
+
 # target: clean-all          - Removes generated files and directories.
 .PHONY:  clean-all
 clean-all:
@@ -133,7 +141,7 @@ install: prepare install-tools-bash install-tools-php
 .PHONY:  update
 update:
 	@$(call HELPTEXT,$@)
-	git pull
+	[ ! -d .git ] || git pull
 	composer update
 
 
