@@ -8,6 +8,7 @@ v1.2.x (2018-03-09)
 * Prepare for oophp v4.
 * Update validation tools in package.json.
 * Upgrade to CircleCI v2.
+* Add Docker through docker-compose.yaml.
 
 
 
