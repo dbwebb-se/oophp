@@ -31,4 +31,4 @@ v1.1.0 (2016-08-17)
 v1.0.0 (2016-08-17)
 --------------------
 
-* Started work in october 2015, planned release early 2017.
+* Started work in October 2015, planned release early 2017.

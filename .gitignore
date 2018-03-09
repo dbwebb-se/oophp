@@ -1,6 +1,12 @@
-me/
-bin/
+/bin/
+/build/
 build/
-node_modules/
-composer.lock
+/me/
 vendor/
+composer.lock
+/.venv/
+node_modules
+package-lock.json
+
+# Mac
+.DS_Store
