@@ -10,7 +10,7 @@ v1.2.x (2018-03-09)
 * Upgrade to CircleCI v2.
 * Add Docker through docker-compose.yaml.
 * Move Travis to PHP 7.0 and greater.
-
+* Change CSS and JS validation config files.
 
 
 v1.1.1 (2018-03-09)
