@@ -1,19 +1,15 @@
-Databases and object-oriented programming in PHP (oophp)
+Databases and object-oriented web technologies (oophp)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/oophp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oophp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/dbwebb-se/oophp.svg?branch=master)](https://travis-ci.org/dbwebb-se/oophp)
 [![CircleCI](https://circleci.com/gh/dbwebb-se/oophp.svg?style=svg)](https://circleci.com/gh/dbwebb-se/oophp)
 
-Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
+Course material for course "oophp", aimed at a swedish target audience as an introduction to web programming for computer science students at University level.
 
-Relased as part of a University course presented at:
+Relased as part of a University course: https://dbwebb.se/kurser/oophp
 
-* http://dbwebb.se/oophp
-
-The usage of this repo is also documented here (in swedish):
-
-* http://dbwebb.se/dbwebb-cli
+The course repo is managed by a [dbwebb command line utility](https://dbwebb.se/dbwebb-cli).
 
 
 
@@ -21,7 +17,7 @@ The usage of this repo is also documented here (in swedish):
 Acknowledgement
 -------------------
 
-This is a co-effort of several people using freely available documentation and tools from the open source community. 
+This is a co-effort of several people using freely available documentation and tools from the open source community.
 
 For contributors, see the commit history and the issues.
 
@@ -46,5 +42,5 @@ v1.0.0 (2016-08-17)
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015 - 2016 Mikael Roos, me@mikaelroos.se   
+..:  Copyright (c) 2015 - 2018 Mikael Roos, mos@dbwebb.se      
 ```                                                            
