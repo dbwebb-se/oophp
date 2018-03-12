@@ -14,6 +14,7 @@ v1.2.x (2018-03-09)
 * Remove older content in old/.
 * Remove example/slideshow.
 * Use new config files for .dbwebb.
+* Remove example/sql, not to be used.
 
 
 v1.1.1 (2018-03-09)
