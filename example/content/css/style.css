@@ -24,7 +24,8 @@ th {
     border-bottom: 1px solid #ccc;
 }
 
-th, td {
+th,
+td {
     padding: 4px;
 }
 
@@ -32,6 +33,7 @@ img.thumb {
     max-width: 100px;
     max-height: 100px;
 }
+
 footer {
     border-top: 1px solid #ccc;
 }
