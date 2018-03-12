@@ -11,7 +11,6 @@ dbwebb init-me
 # Kmom01
 #
 
-touch me/kmom01/skolan/skolan.sql
 
 
 
@@ -57,3 +56,17 @@ touch me/kmom01/skolan/skolan.sql
 #
 # Kmom10
 #
+
+
+
+# --------------------------------------------------------------------------
+#
+# Inspect
+#
+make dbwebb-inspect options="--yes --no-validate" what=kmom01
+make dbwebb-inspect options="--yes --no-validate" what=kmom02
+make dbwebb-inspect options="--yes --no-validate" what=kmom03
+make dbwebb-inspect options="--yes --no-validate" what=kmom04
+make dbwebb-inspect options="--yes --no-validate" what=kmom05
+make dbwebb-inspect options="--yes --no-validate" what=kmom06
+make dbwebb-inspect options="--yes --no-validate" what=kmom10

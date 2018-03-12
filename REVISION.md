@@ -13,6 +13,7 @@ v1.2.x (2018-03-09)
 * Change CSS and JS validation config files.
 * Remove older content in old/.
 * Remove example/slideshow.
+* Use new config files for .dbwebb.
 
 
 v1.1.1 (2018-03-09)
