@@ -11,6 +11,7 @@ v1.2.x (2018-03-09)
 * Add Docker through docker-compose.yaml.
 * Move Travis to PHP 7.0 and greater.
 * Change CSS and JS validation config files.
+* Remove older content in old/.
 
 
 v1.1.1 (2018-03-09)
