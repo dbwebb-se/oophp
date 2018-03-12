@@ -4,14 +4,14 @@
 # Usage: dbwebb inspect kmom01
 #
 # Sequence executed:
-# databas(), databaskmom01(), databaslast()
+# oophp(), oophpkmom01(), oophplast()
 #
 
 
 #
-# Test databas general
+# Test oophp general
 #
-databas()
+oophp()
 {
     inspectIntro
 }
@@ -21,91 +21,95 @@ databas()
 #
 # Test general, last in sequence
 #
-databaslast()
+oophplast()
 {
-    inspectMe "me/redovisa"
+    : #inspectMe "me/redovisa"
 }
 
 
 
 #
-# Test databas kmom01
+# Test oophp kmom01
 #
-databaskmom01()
+oophpkmom01()
 {
-    #inspectExerciseHeader "skolan1" "kurser/databas/$KMOM#uppgifter" "$KMOM/skolan1"
-    #databasskolan1 "skolan1"
+    #inspectExerciseHeader "skolan1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan1"
+    #oophpskolan1 "skolan1"
+    :
 }
 
 
 
 #
-# Test databas kmom02
+# Test oophp kmom02
 #
-databaskmom02()
+oophpkmom02()
 {
-    #inspectExerciseHeader "skolan2" "kurser/databas/$KMOM#uppgifter" "$KMOM/skolan2"
-    #databasskolan1 "skolan2"
-    #databasskolan2 "skolan2"
+    #inspectExerciseHeader "skolan2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan2"
+    #oophpskolan1 "skolan2"
+    #oophpskolan2 "skolan2"
 
-    #inspectExerciseHeader "terminal1" "kurser/databas/$KMOM#uppgifter" "$KMOM/terminal1"
+    #inspectExerciseHeader "terminal1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/terminal1"
     #local path="me/$KMOM/terminal1"
     #fileIsReadable "$path/config.json"
     #fileIsReadable "$path/larare.js"
     #fileIsReadable "$path/lonerevision.js"
+    :
 }
 
 
 
 #
-# Test databas kmom03
+# Test oophp kmom03
 #
-databaskmom03()
+oophpkmom03()
 {
-    #inspectExerciseHeader "skolan3" "kurser/databas/$KMOM#uppgifter" "$KMOM/skolan3"
-    #databasskolan1 "skolan3"
-    #databasskolan2 "skolan3"
-    #databasskolan3 "skolan3"
+    #inspectExerciseHeader "skolan3" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan3"
+    #oophpskolan1 "skolan3"
+    #oophpskolan2 "skolan3"
+    #oophpskolan3 "skolan3"
 
-    #inspectExerciseHeader "terminal2" "kurser/databas/$KMOM#uppgifter" "$KMOM/terminal2"
+    #inspectExerciseHeader "terminal2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/terminal2"
     #local path="me/$KMOM/terminal2"
     #fileIsReadable "$path/config.json"
     #fileIsReadable "$path/index.js"
 
-    #inspectExerciseHeader "er1" "kurser/databas/$KMOM#uppgifter" "$KMOM/er1"
+    #inspectExerciseHeader "er1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/er1"
     #local path="me/$KMOM/er1"
     #fileIsReadable "$path/er.pdf"
+    :
 }
 
 
 
 #
-# Test databas kmom04
+# Test oophp kmom04
 #
-databaskmom04()
+oophpkmom04()
 {
-    #inspectExerciseHeader "er2" "kurser/databas/$KMOM#uppgifter" "$KMOM/er2"
+    #inspectExerciseHeader "er2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/er2"
     #local path="me/$KMOM/er2"
     #fileIsReadable "$path/er.pdf"
     #fileIsReadable "$path/setup.sql"
     #fileIsReadable "$path/ddl.sql"
 
-    #inspectExerciseHeader "express-sql" "kurser/databas/$KMOM#uppgifter" "$KMOM/express-sql"
+    #inspectExerciseHeader "express-sql" "kurser/oophp/$KMOM#uppgifter" "$KMOM/express-sql"
     #local path="me/$KMOM/express-sql"
     #fileIsReadable "$path/config/db/bank.json"
     #fileIsReadable "$path/index.js"
     #fileIsReadable "$path/cli.js"
     #fileIsReadable "$path/package.json"
+    :
 }
 
 
 
 #
-# Test databas kmom
+# Test oophp kmom
 #
-databaskmom05()
+oophpkmom05()
 {
-    #inspectExerciseHeader "eshop2" "kurser/databas/$KMOM#uppgifter" "$KMOM/eshop2"
+    #inspectExerciseHeader "eshop2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/eshop2"
     #local path="me/$KMOM/eshop2"
     #fileIsReadable "$path/config/db/eshop.json"
     #fileIsReadable "$path/sql/eshop/setup.sql"
@@ -114,35 +118,37 @@ databaskmom05()
     #fileIsReadable "$path/index.js"
     #fileIsReadable "$path/cli.js"
     #fileIsReadable "$path/package.json"
+    :
 }
 
 
 
 #
-# Test databas kmom
+# Test oophp kmom
 #
-databaskmom06()
+oophpkmom06()
 {
-    #inspectExerciseHeader "skolan6" "kurser/databas/$KMOM#uppgifter" "$KMOM/skolan6"
+    #inspectExerciseHeader "skolan6" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan6"
     #local path="me/$KMOM/skolan6"
     #fileIsReadable "$path/program_ddl.sql"
     #fileIsReadable "$path/program_insert.sql"
     #fileIsReadable "$path/program_dml.sql"
 
-    #inspectExerciseHeader "bestall" "kurser/databas/$KMOM#uppgifter" "$KMOM/bestall"
+    #inspectExerciseHeader "bestall" "kurser/oophp/$KMOM#uppgifter" "$KMOM/bestall"
     #local path="me/$KMOM/bestall"
     #fileIsReadable "$path/config/db/skolan.json"
     #fileIsReadable "$path/index.js"
     #fileIsReadable "$path/cli.js"
     #fileIsReadable "$path/package.json"
+    :
 }
 
 
 
 #
-# Test databas kmom
+# Test oophp kmom
 #
-databaskmom10()
+oophpkmom10()
 {
     :
 }
