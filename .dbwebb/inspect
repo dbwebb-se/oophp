@@ -34,6 +34,10 @@ oophplast()
 oophpkmom01()
 {
     #inspectExerciseHeader "skolan1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan1"
+    #printUrl "moped.html" "$KMOM/lab1"
+
+
+    #inspectExerciseHeader "skolan1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan1"
     #oophpskolan1 "skolan1"
     :
 }

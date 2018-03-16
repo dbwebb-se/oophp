@@ -1,0 +1,5 @@
+Create a me-site for the oophp-course.
+
+Standard installation of Anax with modules for a website
+using $app as a container for the services.
+The router is a layouted according to function callback.
