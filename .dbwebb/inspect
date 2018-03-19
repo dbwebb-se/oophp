@@ -23,7 +23,36 @@ oophp()
 #
 oophplast()
 {
-    : #inspectMe "me/redovisa"
+    inspectMe "me/redovisa" "" "" "" "redovisa"
+}
+
+
+
+#
+# Check details on the repo
+#
+function oophprepo()
+{
+    local repo="$1"
+    local target="me/$repo"
+    
+    headerForTest "-- Repo $repo" "-- ${DBW_WWW}$DBW_COURSE/$target" 
+    printUrl "" "$target"  
+
+    isGitRepo "$target"
+    hasGitTagBetween "$EXEC_DIR/$repo" "$2" "$3"
+
+    inspectCommand "" "$EXEC_DIR/$repo" "git remote -v" ""
+    inspectCommand "" "$EXEC_DIR/$repo" "git tag" ""
+    inspectCommand "" "$EXEC_DIR/$repo" "git status" ""
+    inspectCommand "" "$EXEC_DIR/$repo" "git log -n 20 --pretty=format:\"%h_%ad_:_%s%d_[%an]\" --graph --date=short" ""
+
+    #inspectCommand "" "$EXEC_DIR/$repo" "git stash" ""
+    #inspectCommand "" "$EXEC_DIR/$repo" "git checkout -b inspect $tag" ""
+
+    # All repos does not include make test
+    # Make test need test environment
+    #inspectCommand "Makefile" "$EXEC_DIR/$repo" "make install test" ""
 }
 
 
@@ -33,6 +62,8 @@ oophplast()
 #
 oophpkmom01()
 {
+    oophprepo "redovisa" "1.0.0" "2.0.0"
+
     #inspectExerciseHeader "skolan1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan1"
     #printUrl "moped.html" "$KMOM/lab1"
 
@@ -49,6 +80,8 @@ oophpkmom01()
 #
 oophpkmom02()
 {
+    oophprepo "redovisa" "2.0.0" "3.0.0"
+
     #inspectExerciseHeader "skolan2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan2"
     #oophpskolan1 "skolan2"
     #oophpskolan2 "skolan2"
@@ -68,6 +101,8 @@ oophpkmom02()
 #
 oophpkmom03()
 {
+    oophprepo "redovisa" "3.0.0" "4.0.0"
+
     #inspectExerciseHeader "skolan3" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan3"
     #oophpskolan1 "skolan3"
     #oophpskolan2 "skolan3"
@@ -91,6 +126,8 @@ oophpkmom03()
 #
 oophpkmom04()
 {
+    oophprepo "redovisa" "4.0.0" "5.0.0"
+
     #inspectExerciseHeader "er2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/er2"
     #local path="me/$KMOM/er2"
     #fileIsReadable "$path/er.pdf"
@@ -113,6 +150,8 @@ oophpkmom04()
 #
 oophpkmom05()
 {
+    oophprepo "redovisa" "5.0.0" "6.0.0"
+
     #inspectExerciseHeader "eshop2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/eshop2"
     #local path="me/$KMOM/eshop2"
     #fileIsReadable "$path/config/db/eshop.json"
@@ -132,6 +171,8 @@ oophpkmom05()
 #
 oophpkmom06()
 {
+    oophprepo "redovisa" "6.0.0" "7.0.0"
+
     #inspectExerciseHeader "skolan6" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan6"
     #local path="me/$KMOM/skolan6"
     #fileIsReadable "$path/program_ddl.sql"
@@ -154,5 +195,5 @@ oophpkmom06()
 #
 oophpkmom10()
 {
-    :
+    oophprepo "redovisa" "10.0.0" "11.0.0"
 }

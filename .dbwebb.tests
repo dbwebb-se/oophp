@@ -11,6 +11,37 @@ dbwebb init-me
 # Kmom01
 #
 
+#
+# php20
+#
+dbwebb validate php20
+
+
+
+#
+# oophp1
+#
+dbwebb validate oophp1
+
+
+
+#
+# guess
+#
+dbwebb validate guess
+
+
+
+#
+# redovisa
+#
+rsync -a example/redovisa me
+cd me/redovisa && composer install
+cd me/redovisa && git init
+cd me/redovisa && git add .
+cd me/redovisa && git commit -m "Initial commit"
+cd me/redovisa && git tag -a v1.0.0 -m "kmom01"
+dbwebb validate redovisa
 
 
 
@@ -19,6 +50,11 @@ dbwebb init-me
 # Kmom02
 #
 
+#
+# redovisa
+#
+cd me/redovisa && git tag -a v2.0.0 -m "kmom02"
+dbwebb validate redovisa
 
 
 
@@ -27,6 +63,12 @@ dbwebb init-me
 # Kmom03
 #
 
+#
+# redovisa
+#
+cd me/redovisa && git tag -a v3.0.0 -m "kmom03"
+dbwebb validate redovisa
+
 
 
 # --------------------------------------------------------------------------
@@ -34,6 +76,11 @@ dbwebb init-me
 # Kmom04
 #
 
+#
+# redovisa
+#
+cd me/redovisa && git tag -a v4.0.0 -m "kmom04"
+dbwebb validate redovisa
 
 
 
@@ -42,6 +89,11 @@ dbwebb init-me
 # Kmom05
 #
 
+#
+# redovisa
+#
+cd me/redovisa && git tag -a v5.0.0 -m "kmom05"
+dbwebb validate redovisa
 
 
 
@@ -50,12 +102,24 @@ dbwebb init-me
 # Kmom06
 #
 
+#
+# redovisa
+#
+cd me/redovisa && git tag -a v6.0.0 -m "kmom06"
+dbwebb validate redovisa
+
 
 
 # --------------------------------------------------------------------------
 #
 # Kmom10
 #
+
+#
+# redovisa
+#
+cd me/redovisa && git tag -a v10.0.0 -m "kmom10"
+dbwebb validate redovisa
 
 
 

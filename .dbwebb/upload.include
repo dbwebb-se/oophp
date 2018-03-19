@@ -20,14 +20,13 @@
 /me/
 - build/
 - node_modules/
+- .bin
+- cache/cimage/*
+- vendor/mos/cimage/webroot
+- vendor/**/config
+- vendor/**/docs
+- vendor/**/test
 
-#- /me/anax-lite/.bin
-#- /me/anax-lite/cache/cimage/*
-#- vendor/mos/cimage/webroot
-#- vendor/**/config
-#- vendor/**/docs
-#- vendor/**/test
-#- node_modules/
 #-./me/*/vendor/*
 #-./me/*/node_modules/*
 #-./me/anax-lite/theme/*
