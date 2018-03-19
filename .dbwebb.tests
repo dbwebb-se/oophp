@@ -21,6 +21,27 @@ dbwebb validate php20
 #
 # oophp1
 #
+touch me/kmom01/oophp1/config.php
+touch me/kmom01/oophp1/autoload.php
+touch me/kmom01/oophp1/index_hello.php
+touch me/kmom01/oophp1/index_error.php
+touch me/kmom01/oophp1/index_exception.php
+touch me/kmom01/oophp1/index_stdclass.php
+touch me/kmom01/oophp1/index_person1.php
+touch me/kmom01/oophp1/index_person2.php
+touch me/kmom01/oophp1/index_setters.php
+touch me/kmom01/oophp1/index_constructor.php
+touch me/kmom01/oophp1/index_autoload.php
+touch me/kmom01/oophp1/index_exception_own.php
+touch me/kmom01/oophp1/index_session.php
+touch me/kmom01/oophp1/index_session_destroy.php
+install -d me/kmom01/oophp1/src
+touch me/kmom01/oophp1/src/Person1.php
+touch me/kmom01/oophp1/src/Person2.php
+touch me/kmom01/oophp1/src/Person3.php
+touch me/kmom01/oophp1/src/Person4.php
+touch me/kmom01/oophp1/src/Person5.php
+touch me/kmom01/oophp1/src/PersonException.php
 dbwebb validate oophp1
 
 
@@ -28,6 +49,14 @@ dbwebb validate oophp1
 #
 # guess
 #
+mkdir me/kmom01/guess/src
+cd me/kmom01/guess && cp ../../../example/guess/src/Guess.php src
+touch me/kmom01/guess/src/GuessException.php
+touch me/kmom01/guess/config.php
+touch me/kmom01/guess/autoload.php
+touch me/kmom01/guess/index_get.php
+touch me/kmom01/guess/index_post.php
+touch me/kmom01/guess/index_session.php
 dbwebb validate guess
 
 

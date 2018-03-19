@@ -64,13 +64,42 @@ oophpkmom01()
 {
     oophprepo "redovisa" "1.0.0" "2.0.0"
 
-    #inspectExerciseHeader "skolan1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan1"
-    #printUrl "moped.html" "$KMOM/lab1"
+    local assignment="guess"
+    inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
+    printUrl "" "me/$KMOM/$assignment"
+    local path="me/$KMOM/$assignment"
+    fileIsReadable "$path/src/Guess.php"
+    fileIsReadable "$path/src/GuessException.php"
+    fileIsReadable "$path/config.php"
+    fileIsReadable "$path/autoload.php"
+    fileIsReadable "$path/index_get.php"
+    fileIsReadable "$path/index_post.php"
+    fileIsReadable "$path/index_session.php"
 
-
-    #inspectExerciseHeader "skolan1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan1"
-    #oophpskolan1 "skolan1"
-    :
+    local assignment="oophp1"
+    inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
+    printUrl "" "me/$KMOM/$assignment"
+    local path="me/$KMOM/$assignment"
+    fileIsReadable "$path/config.php"
+    fileIsReadable "$path/autoload.php"
+    fileIsReadable "$path/index_hello.php"
+    fileIsReadable "$path/index_error.php"
+    fileIsReadable "$path/index_exception.php"
+    fileIsReadable "$path/index_stdclass.php"
+    fileIsReadable "$path/index_person1.php"
+    fileIsReadable "$path/index_person2.php"
+    fileIsReadable "$path/index_setters.php"
+    fileIsReadable "$path/index_constructor.php"
+    fileIsReadable "$path/index_autoload.php"
+    fileIsReadable "$path/index_exception_own.php"
+    fileIsReadable "$path/index_session.php"
+    fileIsReadable "$path/index_session_destroy.php"
+    fileIsReadable "$path/src/Person1.php"
+    fileIsReadable "$path/src/Person2.php"
+    fileIsReadable "$path/src/Person3.php"
+    fileIsReadable "$path/src/Person4.php"
+    fileIsReadable "$path/src/Person5.php"
+    fileIsReadable "$path/src/PersonException.php"
 }
 
 
