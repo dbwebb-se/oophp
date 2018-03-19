@@ -11,4 +11,6 @@ En fin och representativ bild för kursen, enligt ditt egna val.
 
 [FIGURE src=image/car.png?w=300 caption="En fin bil som demobild."]
 
-Länka till [kursrepot på GitHub](https://github.com/dbwebbse/XXX).
+Länka till [dbwebb kursrepot på GitHub](https://github.com/dbwebbse/XXX).
+
+Länka till [ditt eget repo för me/redovisa på GitHub](https://github.com/XXX/XXX).

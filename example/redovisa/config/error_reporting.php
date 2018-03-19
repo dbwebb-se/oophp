@@ -8,9 +8,9 @@
  * Set the error reporting.
  *
  */
-error_reporting(-1);              // Report all type of errors
-ini_set('display_errors', 1);     // Display all errors
-
+//error_reporting(-1);                  // Report all type of errors
+error_reporting(E_ALL ^ E_DEPRECATED);  // Report no deprecated errors
+ini_set('display_errors', 1);           // Display all errors
 
 
 /**
