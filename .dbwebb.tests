@@ -41,7 +41,7 @@ touch me/kmom01/oophp1/src/Person2.php
 touch me/kmom01/oophp1/src/Person3.php
 touch me/kmom01/oophp1/src/Person4.php
 touch me/kmom01/oophp1/src/Person5.php
-touch me/kmom01/oophp1/src/PersonException.php
+touch me/kmom01/oophp1/src/PersonAgeException.php
 dbwebb validate oophp1
 
 

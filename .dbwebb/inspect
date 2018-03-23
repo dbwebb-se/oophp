@@ -99,7 +99,7 @@ oophpkmom01()
     fileIsReadable "$path/src/Person3.php"
     fileIsReadable "$path/src/Person4.php"
     fileIsReadable "$path/src/Person5.php"
-    fileIsReadable "$path/src/PersonException.php"
+    fileIsReadable "$path/src/PersonAgeException.php"
 }
 
 
