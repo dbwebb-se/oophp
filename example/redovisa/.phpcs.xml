@@ -2,11 +2,12 @@
 <ruleset name="PHPCS rule set">
     <description>Custom rule set.</description>
 
-    <file>src</file>
-    <file>test</file>
+    <file>.</file>
 
-    <exclude-pattern>*.tpl.*</exclude-pattern>
-    <exclude-pattern>test/config.php</exclude-pattern>
+    <exclude-pattern>doc/</exclude-pattern>
+    <exclude-pattern>htdocs/</exclude-pattern>
+    <exclude-pattern>view/</exclude-pattern>
+    <exclude-pattern>vendor/</exclude-pattern>
 
 <!--
     <arg name="encoding" value="utf-8"/>

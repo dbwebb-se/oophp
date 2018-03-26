@@ -19,8 +19,10 @@ $app = new \Anax\App\AppDIMagic();
 $di->setShared("app", $app);
 $app->setDI($di);
 
-// Include more routes
-require(__DIR__ . "/../src/route/app.php");
+// Include user defined routes using $app-style.
+foreach (glob(__DIR__ . "/../src/route/*.php") as $filename) {
+    require $filename;
+}
 
 // Leave to router to match incoming request to routes
 $app->router->handle(

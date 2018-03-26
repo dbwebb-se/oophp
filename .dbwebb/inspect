@@ -111,6 +111,8 @@ oophpkmom02()
 {
     oophprepo "redovisa" "2.0.0" "3.0.0"
 
+    # Spara ditt diagram i filen `doc/guess/class.pdf`.
+
     #inspectExerciseHeader "skolan2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan2"
     #oophpskolan1 "skolan2"
     #oophpskolan2 "skolan2"
