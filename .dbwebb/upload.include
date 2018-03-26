@@ -18,9 +18,10 @@
 /example/**
 
 /me/
+- doc/
 - build/
 - node_modules/
-- .bin
+- .bin/
 - cache/cimage/*
 - vendor/mos/cimage/webroot
 - vendor/**/config
