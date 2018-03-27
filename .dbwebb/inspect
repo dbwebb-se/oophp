@@ -111,18 +111,24 @@ oophpkmom02()
 {
     oophprepo "redovisa" "2.0.0" "3.0.0"
 
-    # Spara ditt diagram i filen `doc/guess/class.pdf`.
+    local assignment="oophp2"
+    inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
+    printUrl "" "me/$KMOM/$assignment"
+    local path="me/$KMOM/$assignment"
+    fileIsReadable "$path/style.css"
+    fileIsReadable "$path/dice-faces.jpg"
+    fileIsReadable "$path/autoload_namespace.php"
+    fileIsReadable "$path/index_namespace.php"
+    fileIsReadable "$path/index_dice.php"
+    fileIsReadable "$path/index_dicehand.php"
+    fileIsReadable "$path/index_dicegraphic.php"
+    fileIsReadable "$path/src/Person/Person.php"
+    fileIsReadable "$path/src/Dice/Dice.php"
+    fileIsReadable "$path/src/Dice/DiceHand.php"
+    fileIsReadable "$path/src/Dice/DiceGraphic.php"
 
-    #inspectExerciseHeader "skolan2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan2"
-    #oophpskolan1 "skolan2"
-    #oophpskolan2 "skolan2"
-
-    #inspectExerciseHeader "terminal1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/terminal1"
-    #local path="me/$KMOM/terminal1"
-    #fileIsReadable "$path/config.json"
-    #fileIsReadable "$path/larare.js"
-    #fileIsReadable "$path/lonerevision.js"
-    :
+    # Files related to me/redovisa
+    fileIsReadable "me/redovisa/doc/class/dice100.pdf"
 }
 
 

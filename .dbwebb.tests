@@ -80,8 +80,30 @@ dbwebb validate redovisa
 #
 
 #
+# oophp2
+#
+cp example/redovisa/htdocs/css/style.css me/kmom02/oophp2/
+touch me/kmom02/oophp2/dice-faces.jpg
+touch me/kmom02/oophp2/autoload_namespace.php
+touch me/kmom02/oophp2/index_namespace.php
+touch me/kmom02/oophp2/index_dice.php
+touch me/kmom02/oophp2/index_dicehand.php
+touch me/kmom02/oophp2/index_dicegraphic.php
+install -d me/kmom02/oophp2/src/Person
+install -d me/kmom02/oophp2/src/Dice
+touch me/kmom02/oophp2/src/Person/Person.php
+touch me/kmom02/oophp2/src/Dice/Dice.php
+touch me/kmom02/oophp2/src/Dice/DiceHand.php
+touch me/kmom02/oophp2/src/Dice/DiceGraphic.php
+dbwebb validate oophp2
+
+
+
+#
 # redovisa
 #
+install -d me/redovisa/doc/class
+touch me/redovisa/doc/class/dice100.pdf
 cd me/redovisa && git tag -a v2.0.0 -m "kmom02"
 dbwebb validate redovisa
 
