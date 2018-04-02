@@ -13,7 +13,7 @@ class Guess
 
     /**
      * Constructor to initiate the object with current game settings,
-     * if available. Randomize the number if null is sent in.
+     * if available. Randomize the current number if no value is sent in.
      *
      * @param int $number The current secret number, default -1 to initiate
      *                    the number from start.
