@@ -21,6 +21,6 @@
 <p>Your guess <?= $guess ?> is <b><?= $res ?></b></p>
 <?php endif; ?>
 
-<?php if(isset($_GET["doCheat"])): ?>
+<?php if (isset($_GET["doCheat"])) : ?>
 <P>Cheat: <?= $game->number() ?></p>
 <?php endif; ?>
