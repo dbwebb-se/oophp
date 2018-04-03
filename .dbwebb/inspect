@@ -144,7 +144,7 @@ oophpkmom03()
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
     local path="me/$KMOM/$assignment"
     fileIsReadable "$path/Makefile"
-    inspectCommand "Makefile" "$EXEC_DIR/$KMOM/$assignment" "make test"
+    inspectCommand "Makefile" "$EXEC_DIR/$KMOM/$assignment" "make install test"
 }
 
 
