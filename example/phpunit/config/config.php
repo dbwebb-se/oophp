@@ -11,7 +11,13 @@ ini_set("display_errors", 1);     // Display all errors
  * Default exception handler.
  */
 set_exception_handler(function ($e) {
-    echo "Uncaught exception: <p>"
+    echo "<p>Anax: Uncaught exception:</p><p>Line "
+        . $e->getLine()
+        . " in file "
+        . $e->getFile()
+        . "</p><p><code>"
+        . get_class($e)
+        . "</code></p><p>"
         . $e->getMessage()
         . "</p><p>Code: "
         . $e->getCode()

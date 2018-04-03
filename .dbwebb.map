@@ -13,10 +13,11 @@ me/kmom01/guess
 me/kmom02/oophp2
 
 # kmom03
-me/kmom03/pdo
-me/kmom03/login
+me/kmom03/phpunit
 
 # kmom04
+#me/kmom03/pdo
+#me/kmom03/login
 me/kmom04/content
 me/kmom04/textfilter
 

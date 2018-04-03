@@ -140,20 +140,11 @@ oophpkmom03()
 {
     oophprepo "redovisa" "3.0.0" "4.0.0"
 
-    #inspectExerciseHeader "skolan3" "kurser/oophp/$KMOM#uppgifter" "$KMOM/skolan3"
-    #oophpskolan1 "skolan3"
-    #oophpskolan2 "skolan3"
-    #oophpskolan3 "skolan3"
-
-    #inspectExerciseHeader "terminal2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/terminal2"
-    #local path="me/$KMOM/terminal2"
-    #fileIsReadable "$path/config.json"
-    #fileIsReadable "$path/index.js"
-
-    #inspectExerciseHeader "er1" "kurser/oophp/$KMOM#uppgifter" "$KMOM/er1"
-    #local path="me/$KMOM/er1"
-    #fileIsReadable "$path/er.pdf"
-    :
+    local assignment="phpunit"
+    inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
+    local path="me/$KMOM/$assignment"
+    fileIsReadable "$path/Makefile"
+    inspectCommand "Makefile" "$EXEC_DIR/$KMOM/$assignment" "make test"
 }
 
 

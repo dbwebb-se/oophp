@@ -115,6 +115,14 @@ dbwebb validate redovisa
 #
 
 #
+# phpunit
+#
+rsync -av example/phpunit me/kmom03
+dbwebb validate phpunit
+
+
+
+#
 # redovisa
 #
 cd me/redovisa && git tag -a v3.0.0 -m "kmom03"

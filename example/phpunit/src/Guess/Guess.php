@@ -3,48 +3,49 @@
 namespace Mos\Guess;
 
 /**
- * Guess my number.
+ * Guess my number, a class supporting the game through GET, POST and SESSION.
  */
 class Guess
 {
     /**
-     * @var integer $number the number to guess.
-     * @var number  $tries  number of tries allowed.
+     * @var int $number   The current secret number.
+     * @var int $tries    Number of tries a guess has been made.
      */
-    public $number;
-    public $tries;
+    private $number;
+    private $tries;
 
 
 
     /**
-     * Constructor to initiate a object.
+     * Constructor to initiate the object with current game settings,
+     * if available. Randomize the current number if no value is sent in.
      *
-     * @param null|integer $number the number to guess.
-     * @param  integer     $tries  number of tries allowed.
+     * @param int $number The current secret number, default -1 to initiate
+     *                    the number from start.
+     * @param int $tries  Number of tries a guess has been made,
+     *                    default 6.
      */
-    public function __construct($number = null, $tries = 6)
+    public function __construct(int $number = -1, int $tries = 6)
     {
         $this->number = $number;
         $this->tries = $tries;
 
-        if (is_null($number)) {
-            $this->random($tries);
+        if ($number === -1) {
+            $this->random();
         }
     }
 
 
 
     /**
-     * Randomize a new number.
-     *
-     * @param  integer $tries  number of tries allowed.
+     * Randomize the secret number between 1 and 100 to initiate a new game.
      *
      * @return void
      */
-    public function random($tries = 6)
+    public function random()
     {
         $this->number = rand(1, 100);
-        $this->tries = $tries;
+        $this->tries = 6;
     }
 
 
@@ -52,7 +53,7 @@ class Guess
     /**
      * Get number of tries left.
      *
-     * @return integer as number of tries left.
+     * @return int as number of tries made.
      */
     public function tries()
     {
@@ -62,9 +63,9 @@ class Guess
 
 
     /**
-     * Get the current guess number.
+     * Get the secret number.
      *
-     * @return integer as current random number.
+     * @return int as the secret number.
      */
     public function number()
     {
@@ -74,19 +75,17 @@ class Guess
 
 
     /**
-     * Make a guess.
+     * Make a guess, decrease remaining guesses and return a string stating
+     * if the guess was correct, too low or to high or if no guesses remains.
+     * 
+     * @throws GuessException when guessed number is out of bounds.
      *
-     * @param integer $number a guess.
-     *
-     * @return string saying if the guess was correct, to high or
-     *                to low.
-     *
-     * @throws GuessException when guess is out of range.
+     * @return string to show the status of the guess made.
      */
     public function makeGuess($number)
     {
         if ($number < 1 || $number > 100) {
-            throw new GuessException("Out of range.");
+            throw new GuessException("Your guess is out of bounds.");
         }
 
         if ($this->tries < 1) {
@@ -99,6 +98,7 @@ class Guess
         } elseif ($this->number < $number) {
             return "to high...";
         }
+
         return "correct!!!";
     }
 }
