@@ -111,7 +111,7 @@ This states that all three test cases were carried out, containing a total of 8 
 
 This is how it could look like when executing the test suite through `make test`.
 
-!(Run phpunit in the terminal)[img/phpunit-terminal.png]
+![Run phpunit in the terminal](img/phpunit-terminal.png)
 
 Lets use code coverage to see how mych of the code is covered by the current test suite.
 
@@ -124,9 +124,9 @@ Lets look at the code coverage report that is generated. It is a report saved in
 
 Open a web browser to `build/coverage/index.html` and review the report.
 
-!(Overview of code coverage)[img/code-coverage-overview.png]
+![Overview of code coverage](img/code-coverage-overview.png)
 
-!(Details of code coverage)[img/code-coverage-details.png]
+![Details of code coverage](img/code-coverage-details.png)
 
 As a general rule of thumb, try go get the report to show the color green. It is nice to have 100% code coverage, but sometimes its just fine with 70%. The percentage of code coverage is not the single most important metric of how good your test suite are.
 
@@ -152,8 +152,6 @@ Review a test case
 A basic setup for a test class is as follows, it is a class with any namespace and name ending with `Test` and extending the class `\PHPUnit\Framework\TestCase`.
 
 ```php
-<?php
-
 namespace Mos\Guess;
 
 use PHPUnit\Framework\TestCase;
