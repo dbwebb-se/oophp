@@ -126,7 +126,7 @@ Open a web browser to `build/coverage/index.html` and review the report.
 
 ![Overview of code coverage](img/code-coverage-overview.png)
 
-![Details of code coverage](img/code-coverage-details.png)
+![Details of code coverage](img/code-coverage-detail.png)
 
 As a general rule of thumb, try go get the report to show the color green. It is nice to have 100% code coverage, but sometimes its just fine with 70%. The percentage of code coverage is not the single most important metric of how good your test suite are.
 
