@@ -18,13 +18,14 @@
 /example/**
 
 /me/
-- doc/
+- doc/api/
 - build/
 - node_modules/
 - .bin/
 - cache/cimage/*
 - vendor/mos/cimage/webroot
 - vendor/**/config
+- vendor/**/doc
 - vendor/**/docs
 - vendor/**/test
 
