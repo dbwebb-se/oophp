@@ -136,8 +136,35 @@ dbwebb validate redovisa
 #
 
 #
+# oophp3
+#
+install -d me/kmom04/oophp3/src/Dice
+
+touch me/kmom04/oophp3/index_histogram.php
+touch me/kmom04/oophp3/src/Dice/HistogramTrait.php
+touch me/kmom04/oophp3/src/Dice/DiceHistogram.php
+
+touch me/kmom04/oophp3/index_interface.php
+touch me/kmom04/oophp3/src/Dice/Histogram.php
+touch me/kmom04/oophp3/src/Dice/HistogramInterface.php
+touch me/kmom04/oophp3/src/Dice/DiceHistogram2.php
+touch me/kmom04/oophp3/src/Dice/HistogramTrait2.php
+
+dbwebb validate oophp3
+
+
+
+#
+# 100 game with intelligence
+#
+touch me/redovisa/doc/class/codecoverage.png
+
+
+
+#
 # redovisa
 #
+touch me/redovisa/doc/class/codecoverage.png
 cd me/redovisa && git tag -a v4.0.0 -m "kmom04"
 dbwebb validate redovisa
 

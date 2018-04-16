@@ -16,14 +16,16 @@ me/kmom02/oophp2
 me/kmom03/phpunit
 
 # kmom04
-#me/kmom03/pdo
-#me/kmom03/login
-me/kmom04/content
-me/kmom04/textfilter
+me/kmom04/oophp3
 
 # kmom05
-me/kmom05/phpunit1
-#me/kmom05/cart
+me/kmom05
+
+#me/kmom03/pdo
+#me/kmom03/login
+#me/kmom04/content
+#me/kmom04/textfilter
+#me/kmom05/phpunit1
 
 # kmom06
 me/kmom06/phpunit2

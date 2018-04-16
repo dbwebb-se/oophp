@@ -156,19 +156,21 @@ oophpkmom04()
 {
     oophprepo "redovisa" "4.0.0" "5.0.0"
 
-    #inspectExerciseHeader "er2" "kurser/oophp/$KMOM#uppgifter" "$KMOM/er2"
-    #local path="me/$KMOM/er2"
-    #fileIsReadable "$path/er.pdf"
-    #fileIsReadable "$path/setup.sql"
-    #fileIsReadable "$path/ddl.sql"
+    local assignment="oophp3"
+    inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
+    printUrl "" "me/$KMOM/$assignment"
+    local path="me/$KMOM/$assignment"
+    fileIsReadable "$path/index_histogram.php"
+    fileIsReadable "$path/src/Dice/HistogramTrait.php"
+    fileIsReadable "$path/src/Dice/DiceHistogram.php"
+    fileIsReadable "$path/index_interface.php"
+    fileIsReadable "$path/src/Dice/Histogram.php"
+    fileIsReadable "$path/src/Dice/HistogramInterface.php"
+    fileIsReadable "$path/src/Dice/DiceHistogram2.php"
+    fileIsReadable "$path/src/Dice/HistogramTrait2.php"
 
-    #inspectExerciseHeader "express-sql" "kurser/oophp/$KMOM#uppgifter" "$KMOM/express-sql"
-    #local path="me/$KMOM/express-sql"
-    #fileIsReadable "$path/config/db/bank.json"
-    #fileIsReadable "$path/index.js"
-    #fileIsReadable "$path/cli.js"
-    #fileIsReadable "$path/package.json"
-    :
+    # Files related to me/redovisa
+    fileIsReadable "me/redovisa/doc/class/codecoverage.png"
 }
 
 
