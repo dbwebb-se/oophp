@@ -26,7 +26,7 @@ class Database
         } catch (Exception $e) {
             // Rethrow to hide connection details, through the original
             // exception to view all connection details.
-            //throw $e;
+            throw $e;
             throw new PDOException("Could not connect to database, hiding details.");
         }
     }

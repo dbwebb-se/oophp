@@ -26,7 +26,7 @@ set_exception_handler(function ($e) {
  * Details for connecting to the database.
  */
 $databaseConfig = [
-    "dsn"      => "mysql:host=localhost;dbname=oophp;",
+    "dsn"      => "mysql:host=127.0.0.1;dbname=oophp;",
     "login"    => "user",
     "password" => "pass",
     "options"  => [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"],

@@ -127,6 +127,7 @@ switch ($route) {
 
     case "movie-select":
         $movieId = getPost("movieId");
+
         if (getPost("doDelete")) {
             $sql = "DELETE FROM movie WHERE id = ?;";
             $db->execute($sql, [$movieId]);
@@ -152,9 +153,10 @@ switch ($route) {
     case "movie-edit":
         $title = "UPDATE movie";
         $view[] = "view/movie-edit.php";
-        $movieId = getPost("movieId") ?: getGet("movieId");
+
+        $movieId    = getPost("movieId") ?: getGet("movieId");
         $movieTitle = getPost("movieTitle");
-        $movieYear = getPost("movieYear");
+        $movieYear  = getPost("movieYear");
         $movieImage = getPost("movieImage");
 
         if (getPost("doSave")) {

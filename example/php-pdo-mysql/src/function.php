@@ -92,8 +92,8 @@ EOD;
 
 /**
  * Use current querystring as base, extract it to an array, merge it
- * with incoming $options and recreate the querystring using the resulting
- * array.
+ * with incoming $options and recreate the querystring using the
+ * resulting array.
  *
  * @param array  $options to merge into exitins querystring
  * @param string $prepend to the resulting query string
