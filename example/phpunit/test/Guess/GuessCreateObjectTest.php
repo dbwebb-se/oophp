@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test cases for class Guess.
  */
-class GuessCreateObjectTesst extends TestCase
+class GuessCreateObjectTest extends TestCase
 {
     /**
      * Construct object and verify that the object has the expected
