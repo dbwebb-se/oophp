@@ -21,13 +21,14 @@ me/kmom04/oophp3
 # kmom05
 me/kmom05/pdo
 
+# kmom06
+me/kmom06
+
 #me/kmom03/login
 #me/kmom04/content
 #me/kmom04/textfilter
 #me/kmom05/phpunit1
-
-# kmom06
-me/kmom06/phpunit2
+#me/kmom06/phpunit2
 
 # kmom10
 me/kmom10/proj
