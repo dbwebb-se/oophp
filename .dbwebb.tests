@@ -189,6 +189,16 @@ dbwebb validate redovisa
 #
 
 #
+# content
+#
+dbwebb validate content
+
+#
+# textfilter
+#
+dbwebb validate textfilter
+
+#
 # redovisa
 #
 cd me/redovisa && git tag -a v6.0.0 -m "kmom06"
