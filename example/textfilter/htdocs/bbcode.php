@@ -12,7 +12,8 @@ require __DIR__ . "/../src/config.php";
  *
  * @returns string the formatted text.
  */
-function bbcode2html($text) {
+function bbcode2html($text)
+{
     $search = [
         '/\[b\](.*?)\[\/b\]/is',
         '/\[i\](.*?)\[\/i\]/is',

@@ -12,7 +12,8 @@ require __DIR__ . "/../src/config.php";
  *
  * @return string the formatted text.
  */
-function makeClickable($text) {
+function makeClickable($text)
+{
     return preg_replace_callback(
         '#\b(?<![href|src]=[\'"])https?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#',
         function ($matches) {
@@ -22,7 +23,7 @@ function makeClickable($text) {
     );
 }
 
-$text = file_get_contents(__DIR__ . "/../text/clickable.html");
+$text = file_get_contents(__DIR__ . "/../text/clickable.txt");
 $html = makeClickable($text);
 
 
@@ -34,7 +35,7 @@ $html = makeClickable($text);
 
 <h1>Showing off Clickable</h1>
 
-<h2>Source in clickable.html</h2>
+<h2>Source in clickable.txt</h2>
 <pre><?= wordwrap(htmlentities($text)) ?></pre>
 
 <h2>Source formatted as HTML</h2>

@@ -28,7 +28,9 @@ class TextFilter
      *
      * @return string with the formatted text.
      */
-    public function parse($text, $filter) { }
+    public function parse($text, $filter)
+    {
+    }
 
 
 
@@ -39,7 +41,9 @@ class TextFilter
      *
      * @return string the formatted text.
      */
-    public function bbcode2html($text) { }
+    public function bbcode2html($text)
+    {
+    }
 
 
 
@@ -50,7 +54,9 @@ class TextFilter
      *
      * @return string with formatted anchors.
      */
-    public function makeClickable($text) { }
+    public function makeClickable($text)
+    {
+    }
 
 
 
@@ -61,7 +67,9 @@ class TextFilter
      *
      * @return string as the formatted html text.
      */
-    public function markdown($text) { }
+    public function markdown($text)
+    {
+    }
 
 
 
@@ -72,5 +80,7 @@ class TextFilter
      *
      * @return string the formatted text.
      */
-    public function nl2br($text) { }
+    public function nl2br($text)
+    {
+    }
 }
