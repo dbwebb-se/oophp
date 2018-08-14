@@ -2,6 +2,14 @@ Revision history
 ===================
 
 
+v1.2.1 (2018-08-14)
+--------------------
+
+* Fix validation and pass test on PHP 7.2.
+* Prepare to upgrade to use Anax Flat/Lite for redovisa.
+
+
+
 v1.2.0 (2018-03-12)
 --------------------
 
@@ -17,6 +25,7 @@ v1.2.0 (2018-03-12)
 * Remove example/sql, not to be used.
 
 
+
 v1.1.1 (2018-03-09)
 --------------------
 
@@ -25,11 +34,13 @@ v1.1.1 (2018-03-09)
 * Before upgrade to oophp v4.
 
 
+
 v1.1.0 (2016-08-17)
 --------------------
 
 * Add local test environment.
 * Add test suite on travis and circleic.
+
 
 
 v1.0.0 (2016-08-17)
