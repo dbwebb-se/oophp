@@ -2,6 +2,7 @@ Databases and object-oriented web technologies (oophp)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/oophp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oophp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/dbwebb-se/oophp.svg?branch=master)](https://travis-ci.org/dbwebb-se/oophp)
 [![CircleCI](https://circleci.com/gh/dbwebb-se/oophp.svg?style=svg)](https://circleci.com/gh/dbwebb-se/oophp)
 

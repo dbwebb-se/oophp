@@ -117,7 +117,7 @@ check: dbwebb-validate-check docker-check
 .PHONY: test
 test: dbwebb-publish-example dbwebb-testrepo
 	@$(call HELPTEXT,$@)
-
+	[ -f composer.json ] || composer validate
 
 
 # target: testrepo                - Runs unit tests on course repo.

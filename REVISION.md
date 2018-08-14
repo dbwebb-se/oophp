@@ -2,6 +2,13 @@ Revision history
 ===================
 
 
+v1.2.2 (2018-08-14)
+--------------------
+
+* Add composer and publish on Packagist (perhaps alter how one works with course repos).
+
+
+
 v1.2.1 (2018-08-14)
 --------------------
 
