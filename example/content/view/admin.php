@@ -16,8 +16,7 @@ if (!$resultset) {
         <th>Actions</th>
     </tr>
 <?php $id = -1; foreach ($resultset as $row) :
-    $id++;
-?>
+    $id++; ?>
     <tr>
         <td><?= $row->id ?></td>
         <td><?= $row->title ?></td>

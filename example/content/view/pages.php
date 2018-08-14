@@ -14,8 +14,7 @@ if (!$resultset) {
         <th>Deleted</th>
     </tr>
 <?php $id = -1; foreach ($resultset as $row) :
-    $id++;
-?>
+    $id++; ?>
     <tr>
         <td><?= $row->id ?></td>
         <td><a href="?route=<?= $row->path ?>"><?= $row->title ?></a></td>

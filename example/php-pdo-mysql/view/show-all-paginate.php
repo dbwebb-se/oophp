@@ -20,8 +20,7 @@ $defaultRoute = "?route=show-all-paginate&"
         <th>År <?= orderby2("year", $defaultRoute) ?></th>
     </tr>
 <?php $id = -1; foreach ($resultset as $row) :
-    $id++;
-?>
+    $id++; ?>
     <tr>
         <td><?= $id ?></td>
         <td><?= $row->id ?></td>
