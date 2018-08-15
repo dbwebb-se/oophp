@@ -6,6 +6,7 @@ v1.2.* (2018-08-14)
 --------------------
 
 * Travis only build on PHP 7.2.
+* Moved redovisa to old, prepare to add new redovisa.
 
 
 
