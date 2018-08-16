@@ -1,0 +1,16 @@
+{
+    "name" : "anax/noname",
+    "description": "A me page for the oophp course.",
+    "license": "MIT",
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {"Anax\\": "src/"}
+    },
+    "require": {
+        "anax/anax-oophp-me": "^1.0.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
