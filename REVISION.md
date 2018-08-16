@@ -2,6 +2,13 @@ Revision history
 ===================
 
 
+v1.3.2 (2018-08-16)
+--------------------
+
+* Make pass tests on circle with updated docker image.
+
+
+
 v1.3.1 (2018-08-16)
 --------------------
 
