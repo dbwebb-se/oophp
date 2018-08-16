@@ -4,6 +4,9 @@ namespace Mos\TextFilter;
 
 /**
  * Filter and format text content.
+ *
+ * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+ * @SuppressWarnings(PHPMD.UnusedPrivateField)
  */
 class TextFilter
 {

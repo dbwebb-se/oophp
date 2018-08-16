@@ -96,7 +96,7 @@ install: prepare dbwebb-validate-install dbwebb-inspect-install dbwebb-install n
 	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
 
 	# curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
-	curl -Lso $(PHPMD) http://www.student.bth.se/~mosstud/download/phpmd.phar && chmod 755 $(PHPMD)
+	curl -Lso $(PHPMD) http://www.student.bth.se/~mosstud/download/phpmd && chmod 755 $(PHPMD)
 
 	@# Shellcheck
 	@# tree (inspect)

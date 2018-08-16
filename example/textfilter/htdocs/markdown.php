@@ -14,6 +14,8 @@ require __DIR__ . "/../src/config.php";
  * @param string text The text to be converted.
  *
  * @return string the formatted text.
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
  */
 function markdown($text)
 {

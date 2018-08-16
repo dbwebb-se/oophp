@@ -2,6 +2,13 @@ Revision history
 ===================
 
 
+v1.3.1 (2018-08-16)
+--------------------
+
+* Fixed code validation in example/textfilter.
+
+
+
 v1.3.0 (2018-08-16)
 --------------------
 
