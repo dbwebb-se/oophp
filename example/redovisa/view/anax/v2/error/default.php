@@ -7,7 +7,7 @@ namespace Anax\View;
  */
 
 // Show incoming variables and view helper functions
-echo showEnvironment(get_defined_vars(), get_defined_functions());
+//echo showEnvironment(get_defined_vars(), get_defined_functions());
 
 // Get detailed error message from the router, if any
 $message = $di->get("router")->getErrorMessage();
