@@ -6,7 +6,7 @@
 /**
  * Set one of Development or Production mode.
  */
-define(ANAX_DEVELOPMENT, true);
+define("ANAX_DEVELOPMENT", true);
 //define(ANAX_PRODUCTION, true);
 
 
@@ -14,7 +14,7 @@ define(ANAX_DEVELOPMENT, true);
 /**
  * Set true or false to activate session by default.
  */
-define(ANAX_WITH_SESSION, true);
+define("ANAX_WITH_SESSION", true);
 
 
 
