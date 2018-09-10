@@ -8,7 +8,12 @@ return [
     "services" => [
         "response" => [
             "shared" => true,
-            "callback" => "\Anax\Response\ResponseUtility",
+            //"callback" => "\Anax\Response\Response",
+            "callback" => function () {
+                $obj = new \Anax\Response\ResponseUtility();
+                $obj->setDI($this);
+                return $obj;
+            }
         ],
     ],
 ];
