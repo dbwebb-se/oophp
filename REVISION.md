@@ -7,6 +7,7 @@ v1.3.4 (2018-09-10)
 --------------------
 
 * Added example/minesweeper.
+* Update example/redovisa with fix on anax/response redirect donfig/di initiation.
 
 
 
