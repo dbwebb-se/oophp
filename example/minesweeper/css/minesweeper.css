@@ -1,0 +1,27 @@
+/**
+ * Minesweeper CSS
+ */
+.board .row {
+    overflow: auto;
+}
+
+.board .block {
+    display: block;
+    float: left;
+    width: 2em;
+    height: 2em;
+    background-color: pink;
+    margin: 1px;
+    border: 2px outset #333;
+    text-decoration: none;
+}
+
+.board .block.open {
+    border: 2px inset #333;
+    background-color: #eee;
+}
+
+.board .block.open.mine::after {
+    content: "\1F4A3";
+    font-size: 1.5em;
+}

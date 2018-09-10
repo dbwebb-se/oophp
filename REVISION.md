@@ -2,10 +2,19 @@ Revision history
 ===================
 
 
+
+v1.3.4 (2018-09-10)
+--------------------
+
+* Added example/minesweeper.
+
+
+
 v1.3.3 (2018-08-28)
 --------------------
 
 * Updated files in example/redovisa.
+* Change dbwebb-cli min version to support new lab url.
 
 
 
