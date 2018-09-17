@@ -126,9 +126,6 @@ oophpkmom02()
     fileIsReadable "$path/src/Dice/Dice.php"
     fileIsReadable "$path/src/Dice/DiceHand.php"
     fileIsReadable "$path/src/Dice/DiceGraphic.php"
-
-    # Files related to me/redovisa
-    fileIsReadable "me/redovisa/doc/class/dice100.pdf"
 }
 
 
@@ -145,6 +142,9 @@ oophpkmom03()
     local path="me/$KMOM/$assignment"
     fileIsReadable "$path/Makefile"
     #inspectCommand "Makefile" "$EXEC_DIR/$KMOM/$assignment" "make install test"
+
+    # Files related to me/redovisa
+    fileIsReadable "me/redovisa/doc/class/dice100.pdf"
 }
 
 
