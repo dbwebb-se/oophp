@@ -40,6 +40,11 @@ return [
             "handler" => "\Anax\Controller\SampleController",
         ],
         [
+            "info" => "Sample app controller.",
+            "mount" => "appstyle",
+            "handler" => "\Anax\Controller\SampleAppController",
+        ],
+        [
             "info" => "Throw standard exception.",
             "path" => "exception",
             "handler" => function () {

@@ -42,3 +42,10 @@ $app->router->get("lek/hello-world-page", function () use ($app) {
         "title" => $title,
     ]);
 });
+
+
+
+// /**
+//  * Mount a controller o a specific mount point.
+//  */
+// $app->router->addController("test/appstyle", "Anax\Controller\SampleAppController");

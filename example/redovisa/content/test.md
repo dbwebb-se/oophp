@@ -40,6 +40,7 @@ Routes with a controller
 Here are some routes using a controller mounted on `test/controller`.
 
 * [controller/](test/controller) (the index action)
+* [controller/dump-di](test/controller/dump-di) (dump content of \$di)
 * [controller/info](test/controller/info)
 * [controller/create](test/controller/create)
 * [controller/argument/some-value](test/controller/argument/some-value) (method takes one argument)
@@ -59,3 +60,13 @@ Here is a action method taking a variadic parameter and can then take any amount
 * [controller/variadic/one](test/controller/variadic/one) (one arguments)
 * [controller/variadic/one/two](test/controller/variadic/one/two) (two arguments)
 * [controller/variadic/one/two/3](test/controller/variadic/one/two/3) (three arguments)
+
+
+
+Routes with a app-style controller
+------------------------
+
+Here you can test the app-style controller which gets injected with $app.
+
+* [appstyle/](test/appstyle) (the index action)
+* [appstyle/dump-app](test/appstyle/dump-app) (dump content of $app)
