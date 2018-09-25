@@ -1,4 +1,8 @@
 <?php
+/**
+ * @codingStandardsIgnoreStart
+ * @SuppressWarnings(PHPMD)
+ */
 abstract class Animal
 {
     private $type;

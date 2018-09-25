@@ -1,13 +1,16 @@
 <?php
-
+// @codingStandardsIgnoreStart
 class Session
 {
     public function get($key)
     {
-        return "b"; //$_SESSION[$key];
+        return $key; //$_SESSION[$key];
     }
 }
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 class A
 {
     private $a = "A";
@@ -15,15 +18,11 @@ class A
 
     public function injectSession($session)
     {
-        echo "I\n";
-        var_dump($this->session);
         $this->session = $session;
     }
 
     public function aa()
     {
-        echo "A\n";
-        var_dump($this->session);
         $b = $this->session->get("b");
         return $this->a;
     }
@@ -31,7 +30,6 @@ class A
 
 $session = new Session();
 $a = new A();
-echo "B\n";
 $a->injectSession($session);
 echo $a->aa();
 echo "\n\n";

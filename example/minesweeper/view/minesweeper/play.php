@@ -24,7 +24,7 @@ $size = 64/8;
         $block = $game->getBlock($pos);
         $open = $block->isOpen() ? "open" : null;
         $mine = $block->hasMine() ? "mine" : null;
-    ?>
+        ?>
         <a href="<?= url("minesweeper/push/$pos") ?>" class="block <?= $open ?> <?= $mine ?>"></a>
     <?php endfor; ?>
     </div>

@@ -1,36 +1,46 @@
 <?php
+/**
+ * @codingStandardsIgnoreStart
+ * @SuppressWarnings(PHPMD)
+ */
 trait B
 {
     private $b = "B";
 
-    public function b()
+    public function bb()
     {
         return $this->b;
     }
 }
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 trait C
 {
-    public function c()
+    public function cc()
     {
         return "C";
     }
 }
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 class A
 {
     use B, C;
 
     private $a = "A";
 
-    public function a()
+    public function aa()
     {
         return $this->a;
     }
 }
 
 $a = new A();
-echo $a->a() . "\n";
-echo $a->b() . "\n";
-echo $a->c() . "\n";
+echo $a->aa() . "\n";
+echo $a->bb() . "\n";
+echo $a->cc() . "\n";
 echo "\n\n";

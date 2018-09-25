@@ -15,6 +15,8 @@ use Anax\Commons\ContainerInjectableTrait;
  * ContainerInjectableInterface, like this sample class does.
  * The controller is mounted on a particular route and can then handle all
  * requests for that mount point.
+ *
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class SampleController implements ContainerInjectableInterface
 {
