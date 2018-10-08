@@ -1,12 +1,10 @@
 <?php
 
-use \Michelf\MarkdownExtra;
+use Michelf\MarkdownExtra;
 
 // Include essentials
-require __DIR__ . "/../vendor/autoload.php";
 require __DIR__ . "/../src/config.php";
-
-
+require __DIR__ . "/../vendor/autoload.php";
 
 /**
  * Helper, Markdown formatting converting to HTML.
