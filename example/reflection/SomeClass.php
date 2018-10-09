@@ -1,4 +1,8 @@
 <?php
+/**
+ * @codingStandardsIgnoreStart
+ * @SuppressWarnings(PHPMD)
+ */
 
 interface ThatInterface
 {
