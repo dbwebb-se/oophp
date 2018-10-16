@@ -83,7 +83,7 @@ $title = ($title ?? "No title") . ($baseTitle ?? " | No base title defined");
 </div>
 <?php endif; ?>
 
-<?php if (isset($stylesheets)) : ?>
+<?php if (isset($javascripts)) : ?>
     <?php foreach ($javascripts as $javascript) : ?>
     <script async src="<?= asset($javascript) ?>"></script>
     <?php endforeach; ?>
