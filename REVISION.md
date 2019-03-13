@@ -3,6 +3,13 @@ Revision history
 
 
 
+v1.3.5 (2019-03-13)
+--------------------
+
+* Tag oophp v4, before update to oophp v5.
+
+
+
 v1.3.4 (2018-09-10)
 --------------------
 

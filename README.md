@@ -29,5 +29,5 @@ Feel free to help building up the repository with more content suited for traini
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015 - 2018 Mikael Roos, mos@dbwebb.se      
+..:  Copyright (c) 2015 - 2019 Mikael Roos, mos@dbwebb.se      
 ```                                                            
