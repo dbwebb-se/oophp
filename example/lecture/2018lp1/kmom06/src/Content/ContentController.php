@@ -67,7 +67,7 @@ class ContentController implements AppInjectableInterface
 
         // $this->app->db->connect();
         $sql = "UPDATE content SET title=?, data=? WHERE id=?;";
-        $res = $this->app->db->execute($sql, $params);
+        $this->app->db->execute($sql, $params);
 
         return $this->app->response->redirect("content/edit/$id");
     }
