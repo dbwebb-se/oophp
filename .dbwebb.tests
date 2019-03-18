@@ -21,28 +21,28 @@ dbwebb validate php20
 #
 # oophp1
 #
-touch me/kmom01/oophp1/config.php
-touch me/kmom01/oophp1/autoload.php
-touch me/kmom01/oophp1/index_hello.php
-touch me/kmom01/oophp1/index_error.php
-touch me/kmom01/oophp1/index_exception.php
-touch me/kmom01/oophp1/index_stdclass.php
-touch me/kmom01/oophp1/index_person1.php
-touch me/kmom01/oophp1/index_person2.php
-touch me/kmom01/oophp1/index_setters.php
-touch me/kmom01/oophp1/index_constructor.php
-touch me/kmom01/oophp1/index_autoload.php
-touch me/kmom01/oophp1/index_exception_own.php
-touch me/kmom01/oophp1/index_session.php
-touch me/kmom01/oophp1/index_session_destroy.php
-install -d me/kmom01/oophp1/src
-touch me/kmom01/oophp1/src/Person1.php
-touch me/kmom01/oophp1/src/Person2.php
-touch me/kmom01/oophp1/src/Person3.php
-touch me/kmom01/oophp1/src/Person4.php
-touch me/kmom01/oophp1/src/Person5.php
-touch me/kmom01/oophp1/src/PersonAgeException.php
-dbwebb validate oophp1
+touch me/guide/config.php
+touch me/guide/autoload.php
+touch me/guide/index_hello.php
+touch me/guide/index_error.php
+touch me/guide/index_exception.php
+touch me/guide/index_stdclass.php
+touch me/guide/index_person1.php
+touch me/guide/index_person2.php
+touch me/guide/index_setters.php
+touch me/guide/index_constructor.php
+touch me/guide/index_autoload.php
+touch me/guide/index_exception_own.php
+touch me/guide/index_session.php
+touch me/guide/index_session_destroy.php
+install -d me/guide/src
+touch me/guide/src/Person1.php
+touch me/guide/src/Person2.php
+touch me/guide/src/Person3.php
+touch me/guide/src/Person4.php
+touch me/guide/src/Person5.php
+touch me/guide/src/PersonAgeException.php
+dbwebb validate guide
 
 
 
@@ -82,20 +82,22 @@ dbwebb validate redovisa
 #
 # oophp2
 #
-cp example/redovisa/htdocs/css/style.css me/kmom02/oophp2/
-touch me/kmom02/oophp2/dice-faces.jpg
-touch me/kmom02/oophp2/autoload_namespace.php
-touch me/kmom02/oophp2/index_namespace.php
-touch me/kmom02/oophp2/index_dice.php
-touch me/kmom02/oophp2/index_dicehand.php
-touch me/kmom02/oophp2/index_dicegraphic.php
-install -d me/kmom02/oophp2/src/Person
-install -d me/kmom02/oophp2/src/Dice
-touch me/kmom02/oophp2/src/Person/Person.php
-touch me/kmom02/oophp2/src/Dice/Dice.php
-touch me/kmom02/oophp2/src/Dice/DiceHand.php
-touch me/kmom02/oophp2/src/Dice/DiceGraphic.php
-dbwebb validate oophp2
+install -d me/guide/css
+cp example/redovisa/htdocs/css/style.css me/guide/css/
+install -d me/guide/img
+touch me/guide/img/dice-faces.jpg
+touch me/guide/autoload_namespace.php
+touch me/guide/index_namespace.php
+touch me/guide/index_dice.php
+touch me/guide/index_dicehand.php
+touch me/guide/index_dicegraphic.php
+install -d me/guide/src/Person
+install -d me/guide/src/Dice
+touch me/guide/src/Person/Person.php
+touch me/guide/src/Dice/Dice.php
+touch me/guide/src/Dice/DiceHand.php
+touch me/guide/src/Dice/DiceGraphic.php
+dbwebb validate guide
 
 
 
@@ -138,19 +140,19 @@ dbwebb validate redovisa
 #
 # oophp3
 #
-install -d me/kmom04/oophp3/src/Dice
+install -d me/guide/src/Dice
 
-touch me/kmom04/oophp3/index_histogram.php
-touch me/kmom04/oophp3/src/Dice/HistogramTrait.php
-touch me/kmom04/oophp3/src/Dice/DiceHistogram.php
+touch me/guide/index_histogram.php
+touch me/guide/src/Dice/HistogramTrait.php
+touch me/guide/src/Dice/DiceHistogram.php
 
-touch me/kmom04/oophp3/index_interface.php
-touch me/kmom04/oophp3/src/Dice/Histogram.php
-touch me/kmom04/oophp3/src/Dice/HistogramInterface.php
-touch me/kmom04/oophp3/src/Dice/DiceHistogram2.php
-touch me/kmom04/oophp3/src/Dice/HistogramTrait2.php
+touch me/guide/index_interface.php
+touch me/guide/src/Dice/Histogram.php
+touch me/guide/src/Dice/HistogramInterface.php
+touch me/guide/src/Dice/DiceHistogram2.php
+touch me/guide/src/Dice/HistogramTrait2.php
 
-dbwebb validate oophp3
+dbwebb validate guide
 
 
 
