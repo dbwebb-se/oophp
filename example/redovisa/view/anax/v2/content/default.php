@@ -3,7 +3,7 @@
 namespace Anax\View;
 
 /**
- * Template file to render a view.
+ * Template file to render a view with content.
  */
 
 // Show incoming variables and view helper functions

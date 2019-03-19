@@ -400,6 +400,18 @@ bats:
 
 # ------------------------------------------------------------------------
 #
+# Developer
+#
+# target: scaff-reinstall         - Reinstall using scaffolding processing scripts.
+.PHONY: scaff-reinstall
+scaff-reinstall:
+	@$(call HELPTEXT,$@)
+	#rm -rf -v !(composer.*|vendor|.anax); .anax/scaffold/postprocess.bash
+
+
+
+# ------------------------------------------------------------------------
+#
 # Theme
 #
 # target: theme                   - Do make build install in theme/ if available.

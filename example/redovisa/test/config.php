@@ -9,7 +9,6 @@
  * Define essential Anax paths, end with /
  */
 define("ANAX_INSTALL_PATH", realpath(__DIR__ . "/.."));
-//define("ANAX_APP_PATH", ANAX_INSTALL_PATH);
 
 
 
@@ -20,9 +19,16 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 
 
 
- /**
-  * Include others.
-  */
+/**
+ * Use $di as global identifier (used in views by viewhelpers).
+ */
+$di = null;
+
+
+
+/**
+ * Include others.
+ */
 foreach (glob(__DIR__ . "/Mock/*.php") as $file) {
     require $file;
 }

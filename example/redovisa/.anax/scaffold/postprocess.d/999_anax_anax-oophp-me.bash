@@ -17,9 +17,16 @@ rm -f content/about.md
 
 # Get items from htdocs/.
 rsync -a vendor/anax/anax-oophp-me/htdocs ./
+rm htdocs/css/style.css
+
+# # Get/remove items from src/.
+# rsync -a vendor/anax/anax-oophp-me/src ./
 
 # Copy the source for Controllers.
-rsync -a vendor/anax/controller/src/Controller/{Development,ErrorHandler,FlatFileContent,Sample}Controller.php ./src/Controller/
+#rsync -a vendor/anax/controller/src/Controller/{Development,ErrorHandler,FlatFileContent,Sample}Controller.php ./src/Controller/
+
+# Get the Makefile.
+rsync -a vendor/anax/anax-oophp-me/Makefile ./
 
 # Copy the source for Page.
 rsync -a vendor/anax/page/src/Page/Page.php ./src/Page/
@@ -35,7 +42,3 @@ sedi "s/ | Anax/ | oophp/g" config/page.php
 
 # Remove htdocs/cimage/index.html to ease debugging
 rm -f htdocs/cimage/index.html
-
-# Fix what htaccess to use
-cp htdocs/.htaccess_wwwstudent htdocs/.htdocs
-#rm -f htdocs/.htaccess_*

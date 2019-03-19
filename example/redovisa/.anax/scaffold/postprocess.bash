@@ -18,6 +18,7 @@ rsync -a vendor/anax/anax-oophp-me/.anax/scaffold/postprocess.d .anax/scaffold/
 echo -n "Processing scaffolding scripts: "
 for file in .anax/scaffold/postprocess.d/*.bash; do
     echo -n "."
+    #echo "$file"
     bash "$file"
 done
 echo " done."

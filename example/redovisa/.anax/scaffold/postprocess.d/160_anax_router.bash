@@ -12,3 +12,6 @@ rsync -a vendor/anax/router/config/ config/
 
 # Use SampleController as test/controller.
 sedi 's/\\Route\\MockHandlerControllerCatchAll/\\Controller\\SampleController/' config/router/800_test.php
+
+# Use SampleAppController as test/appstyle.
+sedi 's/\\Route\\MockHandlerAppController/\\Controller\\SampleAppController/' config/router/800_test.php

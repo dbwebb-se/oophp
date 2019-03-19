@@ -40,7 +40,7 @@ return [
             "handler" => "\Anax\Controller\SampleController",
         ],
         [
-            "info" => "Sample app controller.",
+            "info" => "Sample controller app style.",
             "mount" => "appstyle",
             "handler" => "\Anax\Controller\SampleAppController",
         ],
