@@ -1,3 +1,8 @@
+---
+author: mos
+revision:
+    "2019-03-21": "(A, mos) Första utgåvan."
+---
 Styleväljare
 ===========================
 
@@ -27,7 +32,7 @@ Du kan alltså själv skapa en länk till en viss sida, lägga till `?style=kmom
 
 För att nollställa stylesheetväljaren så använder du `?style=none`.
 
-Här är en länk som leder till [denna sidan inklusive stylen satt till kmom01](verktyg/stylevaljare?style=kmom01).
+Här är en länk som leder till [denna sidan inklusive stylen satt till dbwebb-se](verktyg/stylevaljare?style=dbwebb-se).
 
 Du kan återställa stylen till [default style via denna länken](verktyg/stylevaljare?style=none).
 
@@ -49,7 +54,7 @@ return [
             "stylesheets" => [
                 // Change here to set another default stylesheet
                 "css/dbwebb-se.min.css",
-                //"css/kmom01.css",
+                //"css/another.min.css",
             ],
 ```
 

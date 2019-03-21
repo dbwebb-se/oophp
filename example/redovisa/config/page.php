@@ -10,6 +10,7 @@ return [
     // all the other views are rendered.
     "layout" => [
         "region" => "layout",
+        // Change here to use your own templatefile as layout
         "template" => "anax/v2/layout/dbwebb_se",
         "data" => [
             "baseTitle" => " | oophp",
@@ -18,7 +19,9 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
+                // Change here to set another default stylesheet
                 "css/dbwebb-se.min.css",
+                //"css/another.min.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",

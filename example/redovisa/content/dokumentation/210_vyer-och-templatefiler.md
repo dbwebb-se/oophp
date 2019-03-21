@@ -1,13 +1,20 @@
-Vyer och Template filer
+---
+author: mos
+revision:
+    "2019-03-21": "(A, mos) Första utgåvan."
+---
+Vyer och templatefiler
 =========================
 
-Webbsidornas innehåll renderas med hjälp av template-filer. Man kan påverka webbsidans html-struktur genom att redigera och/eller välja vilka template-filer som används i renderingen.
+Webbsidornas innehåll renderas med hjälp av templatefiler. Man kan påverka webbsidans html-struktur genom att redigera och/eller välja vilka templatefiler som används i renderingen.
 
 En vy är en enhet som kan renderas, ofta med en template-fil och en data-array `$data` som anpassar vyn med specifikt innehåll.
 
 
+<!-- Inkludera hur frontmatter kan kopplas till vyn -->
 
-Vy
+
+Vy {#vy}
 -------------------------
 
 En vy kallar vi den enhet av en template-fil och tillhörande data.
@@ -16,14 +23,14 @@ Vi kan se webbsidans innehåll som en samling av vyer. Varje vy renderas (normal
 
 
 
-Templatefiler
+Templatefiler {#templatefil}
 -------------------------
 
 De templatefiler som används i kursen ligger främst under katalogen `view`. Du kan studera hur de ser ut. Ibland kan det vara bra att veta mer i detalj vilka möjligheter en template-fil erbjuder. En template-fil kan vara skriven för att hantera olika parametrar som skickas till din via `$data`.
 
 
 
-Egna templatefiler
+Egna templatefiler {#egen}
 -------------------------
 
 Du kan skapa egna templatefiler genom att förslagsvis ta en kopia av någon som finns och sedan redigera den som du vill.
@@ -32,7 +39,7 @@ Kanske vill man att templatefilen skall hantera ett visst värde som skickas i a
 
 
 
-Regioner
+Regioner {#region}
 -------------------------
 
 Alla vyer har en position, en plats, på webbsidan där dess innehåll placeras. Dessa platser kallar vi regioner. En vy renderas i en region.

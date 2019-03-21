@@ -35,7 +35,7 @@ $di = new Anax\DI\DIFactoryConfig();
 $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
 ```
 
-Nu had vi de viktiga sökvägarna på plats, diverse grundinställningar är gjorda och autoloadern är laddad.
+Nu har vi de viktiga sökvägarna på plats, diverse grundinställningar är gjorda och autoloadern är laddad.
 
 Alla ramverkets tjänster är laddade och redo, dock ej nödvändigtvis aktiverade, i tjänstekontainern `$di`.
 

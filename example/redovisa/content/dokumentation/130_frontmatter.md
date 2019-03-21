@@ -1,33 +1,39 @@
 ---
+author: mos
 revision:
     "2018-10-23": "(A, mos) Första utgåvan."
 ---
 Frontmatter
 ===========================
 
-Frontmatter är en optionell del i de filer som ligger under `content/`. Frontmattern ger en möjlighet att tillföra extra information till den webbsida som skall renderas.
+Frontmatter är en optionell del i de "flat file content" filer som ligger under `content/`. Frontmattern ger en möjlighet att tillföra extra information till den webbsida som skall renderas.
 
-Informationen i frontmattern kallas också meta-information eller meta data, data om datat.
+Informationen i frontmattern kallas också meta-information eller meta data, data om datat. Man kan se frontmattern som ett sätt att hantera data som annars hade legat i en databas.
 
 
 
-YAML och JSON som frontmatter
+YAML och JSON som frontmatter {#yaml}
 ---------------------------
 
-I våra exempelfiler under `content/` används [YAML](http://yaml.org/) som frontmatter. Ramverket stöder också JSON som frontmatter.
+I de exempelfiler som ligger under `content/` används [YAML](http://yaml.org/) som frontmatter. Ramverket stöder också JSON som frontmatter.
 
 Oavsett hur frontmattern skrivs så kan man tänka att dess information lagras i en datastruktur som ramverket senare kan använda när webbsidan renderas.
 
+Du kan alltså lägga godtycklig information i frontmattern, viss information  tar ramverket hänsyn till och annan information kan du lägga där för att senare använda när sidan renderas via templatefilerna.
+
+<!-- någonstans behövs i detalj förklara hur frontmattern tolkas av ramverket -->
 
 
-Revisionshistorik som frontmatter
+
+Revisionshistorik som frontmatter {#revision}
 ---------------------------
 
  Ett exempel på frontmatter kan vara att tillföra en revisionshistorik över dokumentet.
  
- Här är ett exempel på YAML frontmatter som ger en lista över de versioner som ett dokument har haft. Listan är en key/value lista som innehåller ett datum och en sträng som förklarar versionen.
+ Här är ett exempel på YAML frontmatter som ger (en författare och) en lista över de versioner som ett dokument har haft. Listan är en key/value lista som innehåller ett datum och en sträng som förklarar versionen.
  
  ```yaml
+author: mos
 revision:
     "2018-09-24": "(C, mos) Genomgång efter ny desktopapplikation av SQLite."
     "2015-10-13": "(B, mos) Stava rätt på filnamn till databasen."

@@ -13,26 +13,27 @@
 /.*.json
 
 /example/
-- build/
-- node_modules/
-/example/**
-
 /me/
-- doc/api/
-- build/
-- node_modules/
-- .bin/
-- cache/cimage/*
-- vendor/mos/cimage/webroot
-- vendor/**/config
-- vendor/**/doc
-- vendor/**/docs
-- vendor/**/test
 
-#-./me/*/vendor/*
-#-./me/*/node_modules/*
-#-./me/anax-lite/theme/*
+- /**/.anax
+- /**/.bin
+- /**/.circleci
+- /**/.docker
+- /**/.git
+- /**/build
+- /**/cache/cimage/*
+- /**/cache/anax/*
+- /**/doc/api/
+- /**/node_modules
+- /**/theme/src/@*/*
+- /**/theme/htdocs
+- /**/vendor/mos/cimage/webroot
+- /**/vendor/**/doc
+- /**/vendor/**/docs
+- /**/vendor/**/htdocs
+- /**/vendor/**/test
 
+/example/**
 /me/**
 
 - */

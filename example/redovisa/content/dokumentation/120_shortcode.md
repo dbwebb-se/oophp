@@ -1,9 +1,14 @@
+---
+author: mos
+revision:
+    "2019-03-19": "(A, mos) Kopierad från ramverk1 och genomgången."
+---
 Shortcode
 ===========================
 
 Shortcode är ett koncept som adderar ett lager till Markdown. Man skriver en shortcode som i sin tur genererar en sekvens av HTML.
 
-Shortcode är inte Markdown utan ett koncept som förenklar att lägga till en bild med bildtext, en youtube video, en codepen, en asciinema eller en annand godtycklig webbresurs som kan inkluderas i ett dokument via en sekvens av html-element.
+Shortcode är inte Markdown utan ett generellt koncept som förenklar att lägga till en bild med bildtext, en youtube video, en codepen, en asciinema eller en annand godtycklig webbresurs som kan inkluderas i ett dokument via en sekvens av html-konstruktioner.
 
 
 
@@ -28,7 +33,7 @@ Här följer ett par exempel på hur man använder dessa shortcodes.
 Bilder med shortcode
 ---------------------------
 
-[FIGURE src=image/eld.jpg?width=1100&height=100&crop-to-fit class="right" caption="En eld som tar upp hela sidan."]
+[FIGURE src=image/eld.jpg?width=1100&height=100&crop-to-fit caption="En eld som tar upp hela sidan."]
 
 [FIGURE src=image/eld.jpg?width=300 class="right" caption="En liten eld som flyter till höger."]
 
@@ -64,7 +69,7 @@ Här skriver vi information om varför vi väljer att varna användaren.
 Video
 ---------------------------
 
-Så här kan man länka till en video och inkludera den i artikeln, med eller utan referens till den spellistan som videon kan ingå i.
+Så här kan man länka till en video och inkludera den i artikeln, med eller utan referens till den spellistan som videon kan ingå i och med en eventuell text under.
 
 [YOUTUBE width=700 src=eUBMCd7Tj6Q list=PLKtP9l5q3ce_TF99y6BbUFC0Xzt6Pd9Ts caption="Mikael visar hur man felsöker med en gummianka."]
 
@@ -73,7 +78,7 @@ Så här kan man länka till en video och inkludera den i artikeln, med eller ut
 Codepen
 ---------------------------
 
-Med en Codepen kan man inkludera exempel på HTML, CSS och JavaScript i sitt dokument.
+Med en Codepen kan man inkludera exempel på HTML, CSS och JavaScript i sitt dokument tillsammans med en caption.
 
 [CODEPEN src=LpOqgN caption="En Codepen med färger, bara som ett exempel."]
 
@@ -82,6 +87,6 @@ Med en Codepen kan man inkludera exempel på HTML, CSS och JavaScript i sitt dok
 Asciinema
 ---------------------------
 
-Här är en Asciinema som säger hej och välkommen.
+Här är en Asciinema som säger hej och välkommen, inklusive en caption.
 
 [ASCIINEMA src=207899 caption="Kossan i cowsay hälsar välkommen till design-kursen."]

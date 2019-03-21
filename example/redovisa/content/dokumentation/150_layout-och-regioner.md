@@ -1,9 +1,14 @@
+---
+author: mos
+revision:
+    "2019-03-21": "(A, mos) Första utgåvan."
+---
 Layout och regioner
 ===========================
 
 När du nu skall styla din webbplats så underlättar det att veta hur sidan är uppdelad.
 
-Den struktur som ramverket använder för webbsidorna är en gemensam layout för alla webbsidor och där layouten är indelad i regioner.
+Den struktur som ramverket använder för webbsidorna är en gemensam layout för alla webbsidor där layouten är indelad i regioner.
 
 Till varje region kan man lägga innehåll och då visas regionen med dess innehåll.
 
@@ -21,10 +26,14 @@ I vårt fall renderas hela layouten med hjälp av templatefilen som är definier
 ```php
 return [
     "layout" => [
+        // Change here to use your own templatefile as layout
         "template" => "anax/v2/layout/dbwebb_se",
+        // fler inställningar...
+    ],
+];
 ```
 
-Man kan studera källkoden i templatefilen då den ligger under `view/` katalogen.
+Man kan studera källkoden i templatefilen då den ligger under `view/` katalogen, enligt sökvägen ovan med filändelsen `.php`.
 
 
 

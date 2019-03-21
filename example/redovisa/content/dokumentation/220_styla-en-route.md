@@ -1,3 +1,8 @@
+---
+author: mos
+revision:
+    "2019-03-21": "(A, mos) Första utgåvan."
+---
 Styla en route
 =========================
 
@@ -5,7 +10,7 @@ Ibland vill man ge en viss sida, eller en grupp av sidor, en speciell style. Om 
 
 
 
-Route som body klass
+Route som body klass {#body}
 -------------------------
 
 Den layout vi jobbar med har valt att alltid lägga till en css-klass på body-elementet som motsvarar den route sidan har. Klassen börjar med "route-" och följs av routen där `/` är ersatt mer `-`.
@@ -16,7 +21,7 @@ För att dubbelkolla så kan du kan öppna devtools och inspektera vilka klasser
 
 
 
-Styla en sida, en route
+Styla en sida, en route {#style}
 -------------------------
 
 Då du har en css-klass på body-elementet så är det bara att lägga style på den klassen för att addera specifik style till den sidan.
@@ -29,7 +34,7 @@ Då du har en css-klass på body-elementet så är det bara att lägga style på
 
 
 
-Styla flera underliggande sidor
+Styla flera underliggande sidor {#flera}
 -------------------------
 
 Du vet att alla routes under `.route-verktyg*` hör till denna guiden. Då kan du använda den kunskapen för att styla samtliga undersidor med hjälp av [css attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors).

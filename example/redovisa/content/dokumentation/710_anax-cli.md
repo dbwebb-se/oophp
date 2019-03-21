@@ -1,3 +1,8 @@
+---
+author: mos
+revision:
+    "2019-03-21": "(A, mos) Första utgåvan."
+---
 Anax CLI
 ==========================
 
@@ -7,7 +12,7 @@ För Anax finns terminalklienten [`anax/anax-cli`](https://github.com/canax/anax
 
 
 
-Installera anax-cli.
+Installera anax-cli {#installera}
 --------------------------
 
 Via GitHub kan du läsa [README](https://github.com/canax/anax-cli/blob/master/README.md) för hur du installerar och använder anax-cli.
