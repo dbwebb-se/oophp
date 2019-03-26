@@ -83,7 +83,7 @@ dbwebb validate redovisa
 # oophp2
 #
 install -d me/guide/css
-cp example/redovisa/htdocs/css/style.css me/guide/css/
+cp example/redovisa/htdocs/css/empty.css me/guide/css/style.css
 install -d me/guide/img
 touch me/guide/img/dice-faces.jpg
 touch me/guide/autoload_namespace.php

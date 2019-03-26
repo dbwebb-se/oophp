@@ -13,6 +13,9 @@ En vy är en enhet som kan renderas, ofta med en template-fil och en data-array 
 
 <!-- Inkludera hur frontmatter kan kopplas till vyn -->
 
+<!-- Förklara var vyerna ligger och hur man jobbar i dem -->
+
+
 
 Vy {#vy}
 -------------------------

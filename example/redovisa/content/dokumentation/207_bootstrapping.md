@@ -29,17 +29,21 @@ require ANAX_INSTALL_PATH . "/config/commons.php";
 
 // Get the autoloader by using composers version.
 require ANAX_INSTALL_PATH . "/vendor/autoload.php";
-
-// Add all framework services to $di
-$di = new Anax\DI\DIFactoryConfig();
-$di->loadServices(ANAX_INSTALL_PATH . "/config/di");
 ```
 
 Nu har vi de viktiga sökvägarna på plats, diverse grundinställningar är gjorda och autoloadern är laddad.
 
-Alla ramverkets tjänster är laddade och redo, dock ej nödvändigtvis aktiverade, i tjänstekontainern `$di`.
+```php
+// Enable to also use $app style to access services
+$di = new Anax\DI\DIMagic();
+$di->loadServices(ANAX_INSTALL_PATH . "/config/di");
+$app = $di;
+$di->set("app", $app);
+```
 
-När ramverket är uppstartat så sker (2) och (3) i en sekvens i följande kod.
+Alla ramverkets tjänster är laddade och redo, dock ej nödvändigtvis aktiverade. De ligger i tjänstekontainern `$app` som är ett lager ovanpå den verkliga kontainern `$di`.
+
+När ramverket är uppstartat så sker hantering av requesten och rendering av svaret i en sekvens i följande kod.
 
 ```php
 // Send the response that the router returns from the route handler
@@ -57,6 +61,4 @@ Routern har i sin konfiguration ett antal routes och om någon, eller flera av d
 
 Svaret renderas med response-klassens `send()`.
 
-Det är allt.
-
-Bootstrap, request, router, hanterare, response.
+Det är allt. Bootstrap, request, router, hanterare, response ger tillsammans en cykel av ramverket.

@@ -1,4 +1,4 @@
-Routes
+Router och routes
 ==========================
 
 Här finns information om hur du kommer igång att skapa en route och hur du ser vilka routes som är laddade i ramverket.
@@ -8,7 +8,13 @@ Här finns information om hur du kommer igång att skapa en route och hur du ser
 Modulen anax/router
 ------------------------
 
-Du kan studera källkoden bakom [modulen `anax/router` på repot på GitHub](https://github.com/canax/router). Modulen är också [publicerad på packagist](https://packagist.org/packages/anax/router).
+I ramverket Anax används modulen anax/router för att hantera inkommande requests och mappa mot en route-hanterare.
+
+Du kan läsa README (och studera källkoden) för [modulen `anax/router` på repot på GitHub](https://github.com/canax/router). Modulen är också [publicerad på packagist](https://packagist.org/packages/anax/router).
+
+
+<!--
+FÖRKLARA MER I DETALJ HUR MAN ANVÄNDER ROUTERN.
 
 
 
@@ -40,3 +46,5 @@ Följande routes är till för felhantering och används för att visa hur ramve
 * [403](test/403) throwing a ForbiddenException.
 * [404](test/404) throwing a NotFoundException.
 * [500](test/500) throwing a InternalErrorException.
+
+-->

@@ -62,7 +62,7 @@ function oophprepo()
 #
 oophpkmom01()
 {
-    oophprepo "redovisa" "1.0.0" "2.0.0"
+    #oophprepo "redovisa" "1.0.0" "2.0.0"
 
     local assignment="guess"
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
@@ -109,7 +109,7 @@ oophpkmom01()
 #
 oophpkmom02()
 {
-    oophprepo "redovisa" "2.0.0" "3.0.0"
+    #oophprepo "redovisa" "2.0.0" "3.0.0"
 
     local assignment="guide"
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$assignment"
@@ -135,7 +135,7 @@ oophpkmom02()
 #
 oophpkmom03()
 {
-    oophprepo "redovisa" "3.0.0" "4.0.0"
+    #oophprepo "redovisa" "3.0.0" "4.0.0"
 
     local assignment="phpunit"
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$KMOM/$assignment"
@@ -154,7 +154,7 @@ oophpkmom03()
 #
 oophpkmom04()
 {
-    oophprepo "redovisa" "4.0.0" "5.0.0"
+    #oophprepo "redovisa" "4.0.0" "5.0.0"
 
     local assignment="guide"
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$assignment"
@@ -180,7 +180,7 @@ oophpkmom04()
 #
 oophpkmom05()
 {
-    oophprepo "redovisa" "5.0.0" "6.0.0"
+    #oophprepo "redovisa" "5.0.0" "6.0.0"
 }
 
 
@@ -190,7 +190,7 @@ oophpkmom05()
 #
 oophpkmom06()
 {
-    oophprepo "redovisa" "6.0.0" "7.0.0"
+    #oophprepo "redovisa" "6.0.0" "7.0.0"
 }
 
 
@@ -200,5 +200,5 @@ oophpkmom06()
 #
 oophpkmom10()
 {
-    oophprepo "redovisa" "10.0.0" "11.0.0"
+    #oophprepo "redovisa" "10.0.0" "11.0.0"
 }
