@@ -54,9 +54,7 @@ cd me/kmom01/guess && cp ../../../example/guess/src/Guess.php src
 touch me/kmom01/guess/src/GuessException.php
 touch me/kmom01/guess/config.php
 touch me/kmom01/guess/autoload.php
-touch me/kmom01/guess/index_get.php
-touch me/kmom01/guess/index_post.php
-touch me/kmom01/guess/index_session.php
+touch me/kmom01/guess/index.php
 dbwebb validate guess
 
 

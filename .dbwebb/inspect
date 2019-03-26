@@ -74,9 +74,10 @@ oophpkmom01()
     fileIsReadable "$path/src/GuessException.php"
     fileIsReadable "$path/config.php"
     fileIsReadable "$path/autoload.php"
-    fileIsReadable "$path/index_get.php"
-    fileIsReadable "$path/index_post.php"
-    fileIsReadable "$path/index_session.php"
+    #fileIsReadable "$path/index_get.php"
+    #fileIsReadable "$path/index_post.php"
+    #fileIsReadable "$path/index_session.php"
+    fileIsReadable "$path/index.php"
 
     local assignment="guide"
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$assignment"
