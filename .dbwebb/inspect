@@ -24,6 +24,8 @@ oophp()
 oophplast()
 {
     inspectMe "me/redovisa" "" "" "" "redovisa"
+    local path="me/redovisa"
+    fileIsReadable "$path/github.txt"
 }
 
 

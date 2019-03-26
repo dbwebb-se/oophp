@@ -65,6 +65,7 @@ dbwebb validate guess
 # redovisa
 #
 rsync -a example/redovisa me
+touch me/redovisa/github.txt
 cd me/redovisa && composer install --no-dev
 cd me/redovisa && git init
 cd me/redovisa && git add .
