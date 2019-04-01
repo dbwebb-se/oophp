@@ -56,6 +56,27 @@ services:
 
 
 
+    # Anax images to test various PHP versions
+    php73:
+        image: anax/dev:php73
+        volumes: [ ".:/home/anax/repo" ]
+
+    php73-apache:
+        image: anax/dev:php73-apache
+        ports: [ "10073:80" ]
+        volumes: [ ".:/home/anax/repo" ]
+
+    php72:
+        image: anax/dev:php72
+        volumes: [ ".:/home/anax/repo" ]
+
+    php72-apache:
+        image: anax/dev:php72-apache
+        ports: [ "10072:80" ]
+        volumes: [ ".:/home/anax/repo" ]
+
+
+
     # General services from default docker-compose.yaml
     course-databas:
         image: dbwebb/courserepo:databas
