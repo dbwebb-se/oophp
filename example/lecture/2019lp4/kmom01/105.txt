@@ -1,0 +1,7 @@
+   Uppgifter
+   ------------------------
+   
+   * Guide: OO PHP (två inledande sektioner)
+   * Gissa numret med PHP (fristående)
+   
+   * me/redovisa med Anax ramverket (likt design-kursen)

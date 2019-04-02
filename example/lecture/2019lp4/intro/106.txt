@@ -1,0 +1,11 @@
+   Undervisning
+   ------------------------
+   
+   * https://dbwebb.se/oophp/studieplan
+   * https://dbwebb.se/oophp/lektionsplan
+   
+   * Tis kl13: Genomgång via video (ej sal)
+   * Ons kl13: Föreläsning (sal/stream)
+   * Tor 9-16: Programmeringsstuga labbsal
+   
+   * Gitter, forum

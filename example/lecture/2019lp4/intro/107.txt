@@ -1,0 +1,11 @@
+   Fokusområden
+   ------------------------
+   
+   * Klassiska objektorienterade konstruktioner
+   * Objektorienterad programmering i webbaserat ramverk
+   * Databaser
+   * Enhetstestning
+   
+   samt 
+   
+   * Verktyg och tekniker och allmänt strul

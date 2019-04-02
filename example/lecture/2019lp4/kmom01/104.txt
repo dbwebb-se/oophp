@@ -1,0 +1,16 @@
+   Läs & Studera
+   ------------------------
+   
+   * Bok
+       * Webbutveckling med PHP och MySQL
+       * PHP Apprentice - An online book for learning PHP
+   
+   * Artiklar
+       * Kom igång med programmering i PHP
+       * PHP-manualen, Klasser och Objekt
+       * PHP The Right Way
+   
+   * Ramverket Anax
+       * GitHub organisation, moduler, källkod
+       * PHP-FIG : PSR-1, PSR-2 kodstandard
+       * phpcs, phpmd (installera som linters i texteditor)

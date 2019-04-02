@@ -1,0 +1,8 @@
+   Om kursen
+   ------------------------
+   
+   * Upplägg klassisk dbwebb-kurs
+   * Kmom01-06, kmom07/10
+   * Kmom01 är släppt
+   * Kmom02 och framåt är gula, släpps JIT
+   * Examination med projekt

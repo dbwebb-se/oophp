@@ -1,0 +1,12 @@
+   Labbmiljön
+   ------------------------
+   
+   * Som design-kursen
+   
+   * PHP 7.2/7.3 (cli + webb)
+   * Composer
+   * Make
+   * (Git, GitHub)
+   
+   * MySQL alt SQLite (från kmom05)
+   * MySQL på studentservern

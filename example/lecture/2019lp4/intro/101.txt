@@ -1,0 +1,7 @@
+   oophp
+   ========================
+   
+   Kursstart med oophp
+   
+   Du kan se dessa slides under kursrepot:
+       example/lecture/2019lp4/intro/slide.md
