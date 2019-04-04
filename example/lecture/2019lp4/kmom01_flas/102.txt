@@ -1,0 +1,15 @@
+   Agenda
+   ------------------------
+   
+   Del I
+   
+   * Objektorientering i PHP
+   * Klass, objekt, metod, property, autoloader
+   * GET, POST, SESSION, header
+   * Parse url
+   
+   Del II
+   
+   * Ramverk, katalogstruktur, moduler, källkod
+   * Bootstrap, tjänster, config, request, router, response 
+   * Flatfile content, routes, kontroller

@@ -1,0 +1,6 @@
+   GET, POST, SESSION, header
+   ------------------------
+   
+   * Repetera hur dessa fungerar och hur man debuggar dem
+   
+   * Koda ett exempel

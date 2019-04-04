@@ -1,0 +1,8 @@
+   Flatfile content, routes, kontroller
+   ------------------------
+   
+   * Flatfile content
+   * Routes
+   * Kontroller
+   
+   * Gå igenom begreppen genom att kika in i ramverket

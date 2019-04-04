@@ -1,0 +1,4 @@
+   Ramverk, katalogstruktur, moduler, källkod
+   ------------------------
+   
+   * Titta in i ramverket, dess moduler och strukturen

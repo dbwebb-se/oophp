@@ -1,0 +1,13 @@
+   Objektorientering i PHP
+   ------------------------
+   
+   * Kika manualen: googla "php manual"
+   
+   * Koda ett exempel med
+       * klass
+       * objekt
+       * metoder
+       * medlemsvariabler, properties
+       * constructor, destructor
+       * typehinting
+       * autoloader

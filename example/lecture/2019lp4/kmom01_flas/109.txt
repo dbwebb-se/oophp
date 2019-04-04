@@ -1,0 +1,11 @@
+   Bootstrap, tjänster, config, request, router, response
+   ------------------------
+   
+   * Bootstrap
+   * Tjänster
+   * Config
+   * Request
+   * Response
+   * Router
+   
+   * Gå igenom begreppen genom att kika in i ramverket

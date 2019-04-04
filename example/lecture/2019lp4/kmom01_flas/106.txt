@@ -1,0 +1,11 @@
+   Parse url
+   ------------------------
+   
+   * Vi gör ett försök att förstå en central del
+     i ett ramverk, hur inkommande url hanteras.
+   
+   * Koda ett exempel:
+       * en egen Request-klass
+       * Request method
+       * getCurrentUrl()
+       * split current url into parts (parse_url)
