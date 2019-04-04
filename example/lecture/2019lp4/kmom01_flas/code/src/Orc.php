@@ -3,7 +3,7 @@
 class Orc
 {
     private $age = 42;
-    private $living;
+    //private $living "Somehwere";
     private $name = "Orb";
 
     public function setName(string $name) : string
