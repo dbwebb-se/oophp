@@ -17,26 +17,23 @@
 -./.venv
 
 -*/build/*
--*/coverage/*
--*/node_modules/*
--*/vendor/*
+-*/cache/*
 -*/cimage/*
-
-+./build/webroot/*
--./build/webroot/*/build/*
--./build/webroot/*/coverage/*
--./build/webroot/*/node_modules/*
--./build/webroot/*/vendor/*
-
-
-#+./me/*/src/*
-#+./me/*/test/*
-#+./me/*/css/*
-
-#-./me/*/platforms/*
-#+./me/*/platforms/browser/www/*.html
-#+./me/*/platforms/browser/www/css/*.css
-#+./me/*/platforms/browser/www/js/*.js
+-*/coverage/*
+-*/docs/*
+-*/doc/*
+-*/lib/*
+-*/css/*
+-*/img/*
+-*/node_modules/*
+-*/old/*
+-*/theme/*
+-*/vendor/*
+-*/view/anax/v2/*
+-*.min.*
+-*.png
+-*.jpg
+-./.venv
 
 # -- Really remove files, even if found below +subdirs
 #--*font-awesome*
