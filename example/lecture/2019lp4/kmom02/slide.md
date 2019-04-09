@@ -35,7 +35,7 @@ Tillbakablick kmom01
 * Arv och komposition
 * UML kontra automatisk dokumentation
 * Namespace och autoloader
-* Koda i ramverket (re-engineer)
+* Koda i ramverket (reengineer)
 * Ramverkskoncept:
     * request
     * response
