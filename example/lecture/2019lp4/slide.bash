@@ -7,6 +7,7 @@ for slide in ???.txt; do
     printf "\n"
     sed -i -e 's/^/   /' "$slide"
     sed -i -e 's/```//' "$slide"
+    sed -i -e 's/\\\\/\\/g' "$slide"
     cat "$slide"
     #printf "\n\n\n%s" "$slide"
     printf "\n\n\n"
