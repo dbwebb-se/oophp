@@ -1,0 +1,11 @@
+   Objektorientering (och code refactoring)
+   ------------------------
+   
+   * Objekt/klass, en sammanhållen enhet
+       * metoder (beteende, behaviour)
+       * medlemsvariabler/attribut/properties (status, state)
+   
+   * Inkapsling
+       * Publikt API
+       * Dölj implementationen för utomstående
+       * Gör private av det som inte behövs synas av användaren

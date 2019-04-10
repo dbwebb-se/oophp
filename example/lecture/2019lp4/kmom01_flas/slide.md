@@ -1,7 +1,7 @@
 oophp kmom01
 ========================
 
-Föreläsning i samband med Kmom01
+Föreläsning i samband med kmom01
 
 Kmom01: Objektorientering i PHP
 

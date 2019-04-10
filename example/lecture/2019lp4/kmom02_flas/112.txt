@@ -1,0 +1,15 @@
+   Språk är Multiparadigm
+   ------------------------
+   
+   * Programmeringsspråk kan stödja flera paradigmer
+       * JavaScript
+       * Python
+       * PHP
+   
+   * Kan jag koda OOP i C eller Bash?
+   
+   * Är JavaScript OOP?
+       * Objektbaserad programmering
+       * Prototypbaserad programmering
+       * Klassbaserad programmering
+       * Modulbaserad programmering

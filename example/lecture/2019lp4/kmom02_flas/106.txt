@@ -1,0 +1,15 @@
+   Vad innebär Code refactoring?
+   ------------------------
+   
+   * Reengineering och "Code refactoring"
+       https://en.wikipedia.org/wiki/Code_refactoring
+   
+   * Gör om, gör "snyggare".
+   * "Snyggare" innebär:
+       * Förbättra icke-funktionella attribut
+       * Bättre läsbarhet
+       * Minskad komplexitet
+       * Ökad "maintainability"
+       * Stark intern arkitektur
+       * Korrekt användning av objektmodellen
+       * Enklare vidareutveckla

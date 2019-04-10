@@ -1,0 +1,13 @@
+   Agenda
+   ------------------------
+   
+   Del I
+   
+   * Status
+   * Code refactoring (attityd)
+   * Objektorientering
+   * Programmeringsparadigmer
+   
+   Del II
+   
+   * Koda lite kanske?

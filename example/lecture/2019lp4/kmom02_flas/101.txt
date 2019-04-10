@@ -1,0 +1,6 @@
+   oophp kmom02
+   ========================
+   
+   Föreläsning i samband med kmom02
+   
+   Kmom02: Arv och Komposition

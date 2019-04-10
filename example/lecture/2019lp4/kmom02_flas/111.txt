@@ -1,0 +1,12 @@
+   Programmeringsparadigmer
+   ------------------------
+   
+   * Imperativ programmering
+       * Strukturerad programmering
+       * Procedurell programmering
+       * Objektorienterad programmering
+   
+   * Deklarativ programmering
+       * Funktionell programmering
+       * SQL (data driven)
+       * Matematisk
