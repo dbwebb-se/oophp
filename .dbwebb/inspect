@@ -148,6 +148,7 @@ oophpkmom03()
 
     # Files related to me/redovisa
     fileIsReadable "me/redovisa/doc/class/dice100.pdf"
+    fileIsReadable "me/redovisa/doc/class/codecoverage.png"
 }
 
 
