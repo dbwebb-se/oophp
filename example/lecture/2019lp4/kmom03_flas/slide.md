@@ -5,18 +5,6 @@ Föreläsning i samband med kmom03
 
 Kmom03: Enhetstestning
 
-flas:
-* OO-konstruktioner
-* 
-* Testbar kod
-* Kodkvalitet
-* make test och dess delar?
-* 
-* enhetstester
-* phpmd?
-* 
-* testa cimage
-*
 
 
 Agenda
@@ -24,20 +12,27 @@ Agenda
 
 * Tillbakablick kmom02
 * Översikt kmom03
-* Tips till genomförande
+* Enhetstestning
+* Programmeringsfilosofi
+* Kika in i komplex kod
+* Se test suite för Anax moduler
 
 
 
 Tillbakablick kmom02
 ------------------------
 
+* Namespace och autoloader
 * Arv och komposition i PHP
-* Koda i ramverket med:
-    * GET
-    * POST
-    * SESSION
-    * redirect
+* Inkapsling
+* Små specifika klasser, små specifika metoder
 * Code refactoring
+* Koda i ramverket med:
+    * GET, POST, SESSION
+    * Router
+    * Request
+    * Response / redirect
+    * Vyer, templatefiler
 
 
 
@@ -55,86 +50,257 @@ Tillbakablick kmom02
     * router
     * session
     * view
-
-
+* Samt enhetstestning
 
 
 
 Uppgifter
 ------------------------
 
-* Guide: Arv och Komposition (tärningar i klasstruktur)
-* Flytta spelet till ramverket
-* Generera dokumentation med phpdoc
+* Kom igång med PHPUnit
+* Tärningsspel 100
 
 * Tagga, committa, pusha  GitHub
 
 
 
-Arv
+Enhetstestning
 ------------------------
 
-* Arv med extend
+* Dela upp din kod i testbara enheter
+* Testa varje enhet för sig själv
+* Vår "enhet" motsvaras normalt av en klass
 
-```
-class Car extends Vehicle
-```
+* I Anax görs även enhetstestning på konfigurationsfiler (annan typ av "enhet")
+* Bestäm själv vad som är din enhet, kanske är det flera klasser som samverkar
+* Din "enhet" kan vi även kalla "test objekt"
 
 
 
-Komposition
+Testfall
 ------------------------
 
-* Komposition, består av, använder
+* Testa en del av din enhet, ditt test objekt
+* Körs individuellt och skilt från andra testfall
+* "Kan" bero av andra testfall (beroende)
+* Kan föregås av setUp och avslutas med tearDown
+* I PHPUnit är vårt testfall en testmetod i en testklass
+
+
+
+Test fixture
+------------------------
+
+* Testfall kan behöva förberedelse
+* Kan föregås av setUp och avslutas med tearDown
+* setUp / tearDown körs före/efter varje testfall, testmetod
+
+* Alla testmetoder som samlas i en klass, kan ha gemesam fixture
+* setUpBeforeClass och tearDownAfterClass
+
+
+
+Organisera testerna
+------------------------
+
+* System Under Test (SUT) ligger i src/
+* Dina testklasser ligger under test/
+* Dina testklasser blir din "Test Suite"
+
+* Exakt vad som skall testas kan konfigureras
+* Vi använder .phpunit.xml
+* Bootstrap "värmer upp" inför testerna
+* Vi har bootstrap i test/config.php
+
+
+
+Testfall och assertion
+------------------------
+
+* assertInstanceOf()
+assertInstanceOf($expected, $actual[, $message = ''])
+
+* assertEquals()
+assertEquals(mixed $expected, mixed $actual[, string $message = ''])
 
 ```
-class DiceHand
+public function testCreateObjectNoArguments()
 {
-    private $dices = [];
-
-    public __constructor()
-    {
-        $this->$dices[0] = new Dice();
-        $this->$dices[1] = new Dice();
-    }
+    $guess = new Guess();
+    $this->assertInstanceOf("\Mos\Guess\Guess", $guess);
+    $res = $guess->tries();
+    $exp = 6;
+    $this->assertEquals($exp, $res);
 }
 ```
 
 
 
-UML kontra automatisk dokumentation
+Testfall och exception
 ------------------------
 
-* Designa med UML
-* Koda (och dokumentera samtidigt)
-* Dokumentera med automatik
+```
+/**
+ * Try controller handlers that fails.
+ */
+class RouteHandlerControllerFailTest extends TestCase
+{
+    /**
+     * Too few arguments.
+     *
+     * @expectedException Anax\Route\Exception\NotFoundException
+     */
+    public function testToFewArguments()
+    {
+        $route = new Route();
+        $route->set(null, "user", null, "Anax\Route\MockHandlerController");
+        $path = "user/view";
+        $this->assertTrue($route->match($path, "GET"));
+        $route->handle($path);
+    }
+```
 
 
 
-Namespace och autoloader
+Test doubles
 ------------------------
 
-* Hur namespace och autoloader samverkar
-* Läs om PHP-FIG, PSR-4 och composer autoloader
-* Tänk på stora och små bokstäver i katalog- och filnamn
+"Sometimes it is just plain hard to test the
+system under test (SUT) because it depends on
+other components that cannot be used in the
+test environment."
 
-$dice = new \\Mos\\Dice\\DiceHand();
+"When we are writing a test in which we cannot
+(or chose not to) use a real depended-on component (DOC),
+we can replace it with a Test Double."
 
-composer mappar \\Mos mot src/
+"The Test Double doesn’t have to behave exactly
+like the real DOC; it merely has to provide the
+same API as the real one so that the SUT thinks
+it is the real one!"
 
-Autoloadern letar efter:
- src/Dice/DiceHand.php
+Mocka, mockin, stub, stubbing
 
 
 
-Koda i ramverket (re-engineer)
+Andra former av testning
 ------------------------
 
-* Ta din lösning från kmom01
-* Koda in den i ramverket, enligt ramverkets struktur
+* Integrationstestning
+* Funktionstestning
+* Systemtestning
+* Acceptanstest
 
-* Reengineering och "Code refactoring"
-    https://en.wikipedia.org/wiki/Code_refactoring
+
+
+Automatiserad testning
+------------------------
+
+* Byggtjänst som checkar ut och gör "make install test"
+* Säkerställ att ändringar inte påverkar befintlig kod
+
+* Tänk om någon annan gör ändringar i din kod
+* Tänk om eventuella ändringar förstör applikationen? 
+
+* Grunden för:
+    * Continous Integration (CI)
+    * Continous Delivery (CD)
+    * Developer operations (devops)
+
+
+
+Paus?
+------------------------
+
+___________________________________
+< Chilla lite, kanske?            >
+-----------------------------------
+       \   ^__^
+        \  (oo)\_______
+           (__)\       )\/\
+               ||----w |
+               ||     ||
+
+
+
+Skriv testbar kod
+------------------------
+
+* Kod som är enkel att enhetstesta
+
+
+
+Vad är testbar kod
+------------------------
+
+* Små klasser
+* Små metoder
+* Klasser som inte beror av andra klasser
+* Metoder som inte beror av objektets "state"
+* Metoder som har låg komplexitet
+
+
+
+Premature optimization
+------------------------
+
+* "premature optimization is the root of all evil"
+
+"Programmers waste enormous amounts of time thinking
+about, or worrying about, the speed of noncritical
+parts of their programs, and these attempts at
+efficiency actually have a strong negative impact
+when debugging and maintenance are considered. We
+should forget about small efficiencies, say about
+97% of the time: premature optimization is the root
+of all evil. Yet we should not pass up our
+opportunities in that critical 3%."
+
+
+
+Premature optimization...
+------------------------
+
+"However, PrematureOptimization can be defined 
+(in less loaded terms) as optimizing before we
+know that we need to."
+
+"Optimizing up front is often regarded as breaking
+YouArentGonnaNeedIt (YAGNI)"
+
+You Arent Gonna Need It (YAGNI)
+"Always implement things when you actually need them,
+never when you just foresee that you need them."
+
+
+
+Fler programmeringsprinciper
+------------------------
+
+* If it ain't broke, don't fix it
+* KISS principle
+* Don't repeat yourself (DRY)
+* Worse is better
+* Overengineering
+* There's more than one way to do it (Tim Toady)
+
+
+
+Hur ser komplex kod ut?
+------------------------
+
+* Kör phpmd på klassen CImage.php...
+* Använd Scrutinizer för att se kodtäckning på klassen
+
+
+
+Kodgenomgång testkod
+------------------------
+
+* Kika på en del av testkoden i Anax modulerna
+
+* Mängden kod som skrivs
+* Jämför koden under src/ med koden under test/
 
 
 
@@ -144,18 +310,35 @@ Ramverkskoncept
 * request
 * response
 * router
+* session
 * view
 
-Läs README på https://github.com/canax
+* Undvik POST, GET, SESSION
+* Små routehanterare
+* Tydliga routehanterare (ett ansvarsområde)
+
+
+
+Ambition
+------------------------
+
+* Försök testa så mycket av din kod som möjligt
+* Kodtäckning "grön badge"?
+* 100%?
+
+* Hur testa routerkoden?
+* Vi löser det nästa kmom
+
+* (Lägg till dig på Scrutinizer)
 
 
 
 Avslutningsvis
 ------------------------
 
-_____________________
-< Jobba, jobba jobba >
----------------------
+__________________________________________
+< Testa, eller inte testa, det är frågan >
+------------------------------------------
        \   ^__^
         \  (oo)\_______
            (__)\       )\/\
