@@ -1,9 +1,15 @@
-Välkommen till kursen oophp.
+Välkommen till kursen oophp!
 
 Jag kollade snabbt igenom din inlämning och utskrifterna från "dbwebb inspect" så att alla saker ligger på rätt plats och att filerna validerar.
 
 Jag kollade igenom din redovisningstext så att allt såg bra ut.
 
+Jag kikade på din GitHub och såg att sakerna fanns på plats och titta en extra gång på dina commits.
+
+Jag kollade in ditt spel i me/kmom01/guess så att det fungerade och att felfall hanterades med exception.
+
 Allt är väl, så här långt. Kör på.
 
 $TEACHER_SIGNATURE
+
+PS. Glöm inte att fråga i forumet för mer utförliga svar på funderingar eller för feedback på kod och lösningar.

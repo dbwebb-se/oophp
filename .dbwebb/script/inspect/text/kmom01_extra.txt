@@ -1,1 +1,17 @@
 FIX. Du har valideringsfel som gör att det inte går att rätta din inlämning. Kör "dbwebb update" följt av "dbwebb inspect" och laga felen.
+
+FIX. Du har valideringsfel. Kör "dbwebb update" följt av "dbwebb inspect" och laga felen.
+
+FIX. Du har en del valideringsfel, laga dem och glöm inte att göra dbwebb validate.
+
+FIX. Du har inte uppdaterat redovisa/htdocs/.htaccess så att bilderna och/eller navbaren fungerar på studentservern. Lös det till nästa kmom.
+
+FIX. Länken till ditt GitHub-repo funkade inte, uppdatera den i me/redovisa/github.txt
+
+FIX. "Skriv mer redovisningstext", se instruktionen i https://dbwebb.se/kurser/oophp-v5/redovisa#text
+
+FIX. Jag kunde inte se ett felmeddelande när jag gjorde en gissning på 101, vill du fixa så det blir synligt för användaren när man gör en felaktig gissning?
+
+FIX. Jag saknade din inlämning under me/kmom01/guess, har du glömt att ladda upp filerna?
+
+KOMMENTAR. Jag kunde inte testa om du kastade exception då du hade en JS/formulär lösning på det. Men vi låter det vara så.
