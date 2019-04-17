@@ -1,5 +1,0 @@
-   Objektorientering och omgivningen
-   ------------------------
-   
-   Låt oss ta en kort paus från objektorientering
-   och vidga vyn till programmeringsparadigmer.

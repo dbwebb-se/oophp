@@ -1,6 +1,0 @@
-   Komposition
-   ------------------------
-   
-   * En klass
-       * innehåller en annan klass
-       * använder en annan klass

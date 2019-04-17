@@ -1,8 +1,0 @@
-   Motivation till Code refactoring
-   ------------------------
-   
-   * Code smell
-   * Duplicate code
-   * Renlärighet till programmeringsmodellen
-   * Technical debt
-   * phpcs, phpmd

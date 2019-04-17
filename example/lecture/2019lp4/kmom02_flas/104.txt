@@ -1,6 +1,0 @@
-   Status
-   ------------------------
-   
-   * Vi fulkodar i kmom01
-   * Vi snyggar till i kmom02
-       * men också lite mer komplicerat, strukturerat

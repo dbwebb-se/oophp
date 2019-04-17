@@ -1,7 +1,0 @@
-   Arv eller Komposition?
-   ------------------------
-   
-   * Återanvändning av kod
-   * Objektorienterad struktur
-   
-   * "Composition over inheritance"

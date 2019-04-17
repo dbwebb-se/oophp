@@ -1,9 +1,0 @@
-   Code refactoring, kmom01 till kmom02
-   ------------------------
-   
-   * Ta din lösning från kmom01
-   * Koda in den i ramverket, enligt ramverkets struktur
-   
-   * Hur tänka (generellt) när man organiserar sin kod?
-       * A) Lös uppgiften
-       * B) Bygg för "code refactoring"
