@@ -82,9 +82,11 @@ dbwebb validate redovisa
 # oophp2
 #
 install -d me/guide/css
-cp example/redovisa/htdocs/css/empty.css me/guide/css/style.css
+#cp example/redovisa/htdocs/css/empty.css me/guide/css/style.css
+cp example/redovisa/htdocs/css/empty.css me/guide/style.css
 install -d me/guide/img
-touch me/guide/img/dice-faces.jpg
+#touch me/guide/img/dice-faces.jpg
+touch me/guide/dice-faces.jpg
 touch me/guide/autoload_namespace.php
 touch me/guide/index_namespace.php
 touch me/guide/index_dice.php
@@ -158,7 +160,7 @@ dbwebb validate guide
 #
 # 100 game with intelligence
 #
-touch me/redovisa/doc/class/codecoverage.png
+touch me/redovisa/doc/class/codecoverage2.png
 
 
 

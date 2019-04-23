@@ -118,8 +118,10 @@ oophpkmom02()
     inspectExerciseHeader "$assignment" "kurser/oophp/$KMOM#uppgifter" "$assignment"
     printUrl "" "me/$assignment"
     local path="me/$assignment"
-    fileIsReadable "$path/css/style.css"
-    fileIsReadable "$path/img/dice-faces.jpg"
+    #fileIsReadable "$path/css/style.css"
+    fileIsReadable "$path/style.css"
+    #fileIsReadable "$path/img/dice-faces.jpg"
+    fileIsReadable "$path/dice-faces.jpg"
     fileIsReadable "$path/autoload_namespace.php"
     fileIsReadable "$path/index_namespace.php"
     fileIsReadable "$path/index_dice.php"
@@ -174,7 +176,7 @@ oophpkmom04()
     fileIsReadable "$path/src/Dice/HistogramTrait2.php"
 
     # Files related to me/redovisa
-    fileIsReadable "me/redovisa/doc/class/codecoverage.png"
+    fileIsReadable "me/redovisa/doc/class/codecoverage2.png"
 }
 
 
