@@ -10,6 +10,6 @@ for slide in ???.txt; do
     sed -i -e 's/\\\\/\\/g' "$slide"
     cat "$slide"
     #printf "\n\n\n%s" "$slide"
-    printf "\n\n\n"
+    printf "\n"
     read -r _
 done

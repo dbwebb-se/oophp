@@ -10,294 +10,290 @@ Kmom04: Trait och Interface
 Agenda
 ------------------------
 
-* Tillbakablick kmom02
-* Översikt kmom03
+* Tillbakablick kmom03
+* Översikt kmom04
+* Objektorienterade konstruktioner
+* Kontroller
+* Ramverksklasser för GET, POST, SESSION
+
+
+
+Tillbakablick kmom03
+------------------------
+
+* Spel 100
 * Enhetstestning
-* Programmeringsfilosofi
-* Kika in i komplex kod
-* Se test suite för Anax moduler
+* Routes
+  https://github.com/mosbth/oophp-v5
 
 
 
-Tillbakablick kmom02
+Översikt kmom04
 ------------------------
 
-* Namespace och autoloader
-* Arv och komposition i PHP
-* Inkapsling
-* Små specifika klasser, små specifika metoder
-* Code refactoring
-* Koda i ramverket med:
-    * GET, POST, SESSION
-    * Router
-    * Request
-    * Response / redirect
-    * Vyer, templatefiler
+* Objektorienterade konstruktioner
+    * Interface
+    * Trait
+* Kontroller
+* Ramverkstänk
+* Enhetstestning
 
 
 
-Rutes kontra kontroller-klass
+Uppgiften kmom04
 ------------------------
 
-* Jämför routes med callbacks och hur en kontroller-klass fungerar
-
-
-
-Vad är en kontroller?
-------------------------
-
-* MVC
-* Fördelar?
-
-
-
-Testa kontroller-klass
-------------------------
-
-Hur testar man en kontroller-klass.
-
-
-
-Ramverkets klasser kontra GET, POST, SESSION
-------------------------
-
-* Mer testbas kod
-* Accessa inte globala variabler inuti din kod
-* Vad säger phpmd om sånt?
-
-
-
-Anax moduler
-------------------------
-
-* anax/common
-* anax/controller
-* anax/session
+* Guiden "Trait och Interface"
+* Uppdatera 100-spelet med intelligens och kontroller
 
 
 
 Objektorienterade konstruktioner
 ------------------------
 
+* Static keyword
 * Abstrakta klasser
+* Generalisering av typer
 * Interface
 * Trait
-* Magiska metoder
-* Generalisering av typer
-* Static
+
+
+
+Static keyword
+------------------------
+
+* Static medlemsvariabel eller metod
+* Static tillhör klassen, inte objektet
+* Samma värde delas för alla objekt
+* self::
+* Jämför const
+
+
+
+Static medlemsvariabel
+------------------------
+
+```
+class Foo
+{
+    public static $my_static = "foo";
+
+    public function staticValue() {
+        return self::$my_static;
+    }
+}
+```
+
+
+
+Static metod
+------------------------
+
+* Kan anropas utan ett object
+* Kan inte använda $this->
+
+```
+class Foo
+{
+    public static function aStaticMethod() { /* some code */ }
+}
+
+Foo::aStaticMethod();
+```
 
 
 
 Abstrakta klasser
 ------------------------
 
-* TBD
+* En klass som inte kan instansieras
+* En klass som inte går att göra ett objekt av
+* Nyckelordet `abstract`
 
 
 
-Interface
+Abstrakta klasser skapa
 ------------------------
 
-* TBD
+```
+abstract class AbstractClass
+{
+    public function printOut() {
+        print $this->getValue() . "\n";
+    }
+}
 
-* SessionInterface
-* anax/commons
+class ConcreteClass extends AbstractClass {};
+
+$obj = new AbstractClass(); // FAILS
+$obj = new ConcreteClass(); // SUCCESS
+```
 
 
 
-Trait
+Abstrakta klasser/metod, tvinga implementation
 ------------------------
 
-* TBD
+* En klass med abstrakta metoder
+* Måste implementeras av subklassen
+
+
+
+Abstrakta klasser/metod, tvinga implementation...
+------------------------
+
+```
+abstract class AbstractClass
+{
+    abstract function printOut();
+}
+
+class ConcreteClass extends AbstractClass {};
+
+$obj = new AbstractClass(); // FAILS
+$obj = new ConcreteClass(); // FAILS
+```
 
 
 
 Generalisering av typer
 ------------------------
 
-* TBD
+* Ta en Canvas (som man kan rita på)
+* Tänk att klassen Canvas har en metod add(DrawableObject)
+* Metoden tar alla objekt som är av klassen DrawableObject
+* Även objekt som ärver av DrawableObject
+
+* I Canvas-klassen förutsätts att en instans av DrawableObject
+  har en metod som heter draw()
+
+* Klassen Canvas kan stödja ritning av alla objekt som är
+  av typen DrawableObject.
 
 
 
-Static
+Generalisering av typer...
 ------------------------
-
-* Static medlemsvariabel
-* Static medod
-* static::
-* Jämför const
-
-
-
-
-
-
-
-
-
-
-
-
-Uppgifter
-------------------------
-
-* Kom igång med PHPUnit
-* Tärningsspel 100
-
-* Tagga, committa, pusha  GitHub
-
-
-
-Enhetstestning
-------------------------
-
-* Dela upp din kod i testbara enheter
-* Testa varje enhet för sig själv
-* Vår "enhet" motsvaras normalt av en klass
-
-* I Anax görs även enhetstestning på konfigurationsfiler (annan typ av "enhet")
-* Bestäm själv vad som är din enhet, kanske är det flera klasser som samverkar
-* Din "enhet" kan vi även kalla "test objekt"
-
-
-
-Testfall
-------------------------
-
-* Testa en del av din enhet, ditt test objekt
-* Körs individuellt och skilt från andra testfall
-* "Kan" bero av andra testfall (beroende)
-* Kan föregås av setUp och avslutas med tearDown
-* I PHPUnit är vårt testfall en testmetod i en testklass
-
-
-
-Test fixture
-------------------------
-
-* Testfall kan behöva förberedelse
-* Kan föregås av setUp och avslutas med tearDown
-* setUp / tearDown körs före/efter varje testfall, testmetod
-
-* Alla testmetoder som samlas i en klass, kan ha gemesam fixture
-* setUpBeforeClass och tearDownAfterClass
-
-
-
-Organisera testerna
-------------------------
-
-* System Under Test (SUT) ligger i src/
-* Dina testklasser ligger under test/
-* Dina testklasser blir din "Test Suite"
-
-* Exakt vad som skall testas kan konfigureras
-* Vi använder .phpunit.xml
-* Bootstrap "värmer upp" inför testerna
-* Vi har bootstrap i test/config.php
-
-
-
-Testfall och assertion
-------------------------
-
-* assertInstanceOf()
-assertInstanceOf($expected, $actual[, $message = ''])
-
-* assertEquals()
-assertEquals(mixed $expected, mixed $actual[, string $message = ''])
 
 ```
-public function testCreateObjectNoArguments()
+Class Canvas
 {
-    $guess = new Guess();
-    $this->assertInstanceOf("\Mos\Guess\Guess", $guess);
-    $res = $guess->tries();
-    $exp = 6;
-    $this->assertEquals($exp, $res);
+    public function add(DrawableObject $obj)
+    {
+        $obj->draw();
+    }
 }
 ```
 
 
 
-Testfall och exception
+Generalisering av typer...
 ------------------------
 
 ```
-/**
- * Try controller handlers that fails.
- */
-class RouteHandlerControllerFailTest extends TestCase
+$square = new Square();
+$line = new Line();
+
+$canvas->add($square);
+$canvas->add($line);
+```
+
+
+
+Interface
+------------------------
+
+* Generalisering av typer, utan arvshierarki
+
+* Tänk att klassen Canvas har en metod add(DrawableInterface)
+* Klassen Square implements DrawableInterface
+
+```
+$square = new Square();
+$line = new Line();
+
+$canvas->add($square);
+$canvas->add($line);
+```
+
+
+
+Interface...
+------------------------
+
+```
+Class Canvas
 {
-    /**
-     * Too few arguments.
-     *
-     * @expectedException Anax\Route\Exception\NotFoundException
-     */
-    public function testToFewArguments()
+    public function add(DrawableInterface $obj)
     {
-        $route = new Route();
-        $route->set(null, "user", null, "Anax\Route\MockHandlerController");
-        $path = "user/view";
-        $this->assertTrue($route->match($path, "GET"));
-        $route->handle($path);
+        $obj->draw();
     }
+}
 ```
 
 
 
-Test doubles
+Interface...
 ------------------------
 
-"Sometimes it is just plain hard to test the
-system under test (SUT) because it depends on
-other components that cannot be used in the
-test environment."
+```
+Interface DrawableInterface
+{
+    public function draw();
+};
+```
 
-"When we are writing a test in which we cannot
-(or chose not to) use a real depended-on component (DOC),
-we can replace it with a Test Double."
-
-"The Test Double doesn’t have to behave exactly
-like the real DOC; it merely has to provide the
-same API as the real one so that the SUT thinks
-it is the real one!"
-
-Mocka, mockin, stub, stubbing
+```
+class Square implements DrawableInterface
+{
+    public function draw() { /* the body */ }
+};
+```
 
 
 
-Andra former av testning
+Trait
 ------------------------
 
-* Integrationstestning
-* Funktionstestning
-* Systemtestning
-* Acceptanstest
+* Återanvänd klasstrukturer utan arv
+* Trait är en återanvändbar komponent, ser ut som en klass
+* Trait kan användas av en klass
+* Trait kan inte instansieras på egen hand
 
 
 
-Automatiserad testning
+Trait exempel
 ------------------------
 
-* Byggtjänst som checkar ut och gör "make install test"
-* Säkerställ att ändringar inte påverkar befintlig kod
+```
+trait DrawerSimpleTrait
+{
+    public function draw() { /* the body */ }
+};
+```
 
-* Tänk om någon annan gör ändringar i din kod
-* Tänk om eventuella ändringar förstör applikationen? 
-
-* Grunden för:
-    * Continous Integration (CI)
-    * Continous Delivery (CD)
-    * Developer operations (devops)
-
+```
+class Square implements DrawableInterface
+{
+    use DrawerSimpleTrait;
+};
+```
 
 
-Paus?
+
+Multipla arv
+------------------------
+
+* Multiple inheritance stöds ej i PHP
+* Använd Interface och Trait som en variant
+
+
+
+Andningspaus
 ------------------------
 
 ___________________________________
-< Chilla lite, kanske?            >
+< Take a deep breath... >
 -----------------------------------
        \   ^__^
         \  (oo)\_______
@@ -307,122 +303,201 @@ ___________________________________
 
 
 
-Skriv testbar kod
+Kontroller klass
 ------------------------
 
-* Kod som är enkel att enhetstesta
+* Model View Controller (MVC)
+* Vi har vyer (V)
+* Låt oss anamma Controller (C)
 
 
 
-Vad är testbar kod
+MVC flöde
 ------------------------
 
-* Små klasser
-* Små metoder
-* Klasser som inte beror av andra klasser
-* Metoder som inte beror av objektets "state"
-* Metoder som har låg komplexitet
+User  Controller   Model  View
+--------->
+
+           --------->
+
+           ----------------->
+
+< ----------
 
 
 
-Premature optimization
+Routes kontra kontroller klass
 ------------------------
 
-* "premature optimization is the root of all evil"
+* Hur ser vanliga routes ut?
+* https://github.com/mosbth/oophp-v5
 
-"Programmers waste enormous amounts of time thinking
-about, or worrying about, the speed of noncritical
-parts of their programs, and these attempts at
-efficiency actually have a strong negative impact
-when debugging and maintenance are considered. We
-should forget about small efficiencies, say about
-97% of the time: premature optimization is the root
-of all evil. Yet we should not pass up our
-opportunities in that critical 3%."
+* Nackdelar?
+* Testbarhet
+* Återanvända koddelar
 
 
 
-Premature optimization...
+En kontroller klass
 ------------------------
 
-"However, PrematureOptimization can be defined 
-(in less loaded terms) as optimizing before we
-know that we need to."
-
-"Optimizing up front is often regarded as breaking
-YouArentGonnaNeedIt (YAGNI)"
-
-You Arent Gonna Need It (YAGNI)
-"Always implement things when you actually need them,
-never when you just foresee that you need them."
+* Studera exempel på kontroller klasser
+  https://github.com/canax/controller
+  https://github.com/canax/stylechooser
 
 
 
-Fler programmeringsprinciper
+Hur montera en kontroller klass
 ------------------------
 
-* If it ain't broke, don't fix it
-* KISS principle
-* Don't repeat yourself (DRY)
-* Worse is better
-* Overengineering
-* There's more than one way to do it (Tim Toady)
+* Se exempel
+  https://github.com/canax/controller
+  https://github.com/canax/stylechooser
+
+* Kontrollera att kontrollern är monterad
+  dev/router
 
 
 
-Hur ser komplex kod ut?
+Testbar kontroller klass
 ------------------------
 
-* Kör phpmd på klassen CImage.php...
-* Använd Scrutinizer för att se kodtäckning på klassen
+* När koden är omsluten av en klass,
+  enklare att testa med enhetstester.
 
 
 
-Kodgenomgång testkod
+Användning av interface och trait
 ------------------------
 
-* Kika på en del av testkoden i Anax modulerna
+* Kontroller klassen använder sig av interface och trait
+* Studera interface och trait i anax/commons
+  https://github.com/canax/commons
 
-* Mängden kod som skrivs
-* Jämför koden under src/ med koden under test/
+* Återanvändbar kodstycken (trait)
+* Tydlig generalisering av typer (interface)
+
+* Routern kollar om kontrollern implementerar interfacet (reflection)
+  https://github.com/canax/router/blob/master/src/Route/RouteHandler.php
 
 
 
-Ramverkskoncept
+Reflection (överkurs)
 ------------------------
 
-* request
-* response
-* router
-* session
-* view
+* Möjligheten att skriva kod som inspekterar annan kod
+  när programmet körs
+* Om en klass implementerar ett interface, använd det
+  (anropa metoder)
 
-* Undvik POST, GET, SESSION
-* Små routehanterare
-* Tydliga routehanterare (ett ansvarsområde)
+
+
+Ramverkets klasser kontra GET, POST, SESSION
+------------------------
+
+* Likforma hur utvecklarna skriver koden
+* Snyggare kod
+* Mer felsäker kod
+* Mer testbar kod
+
+* Accessa inte globala variabler inuti din kod
+* Vad säger phpmd om sånt?
+
+
+
+PHPMD om GET, POST, SESSION
+------------------------
+
+* Controversial Rules
+
+"Accessing a super-global variable directly is considered
+a bad practice. These variables should be encapsulated in
+objects that are provided by a framework."
+
+```
+class Foo {
+    public function bar() {
+        $name = $_POST['foo'];
+    }
+}
+```
+
+
+
+Disabla PHPMD felmeddelanden
+------------------------
+
+```
+class Foo {
+    /**
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
+    public function bar() {
+        $name = $_POST['foo'];
+    }
+}
+```
+
+
+
+Anax objekt mappar superglobals
+------------------------
+
+* anax/request (GET, POST, SERVER, body)
+* anax/session (SESSION)
+
+
+
+$app->request->getPost
+------------------------
+
+* https://github.com/canax/request
+
+```
+# Read a value
+$val = $_POST[$key] ?? null;
+$val = $app->request->getPost($key);
+
+# Read a value and use $default if $key is not set.
+$val = $_POST[$key] ?? $default;
+$val = $app->request->getPost($key, $default);
+```
+
+
+
+$app->session->get
+------------------------
+
+* https://github.com/canax/session
+
+```
+# Read a value
+$val = $_POST[$key] ?? null;
+$val = $app->request->getPost($key);
+
+# Read a value and use $default if $key is not set.
+$val = $_POST[$key] ?? $default;
+$val = $app->request->getPost($key, $default);
+```
 
 
 
 Ambition
 ------------------------
 
+* Medvetenhet om OO konstruktioner och hur de används (i ramverk)
+* Skriv OO kod i ramverket, enligt dess "reglemente"
 * Försök testa så mycket av din kod som möjligt
-* Kodtäckning "grön badge"?
-* 100%?
-
-* Hur testa routerkoden?
-* Vi löser det nästa kmom
-
-* (Lägg till dig på Scrutinizer)
+* Kodtäckning 100%?
 
 
 
 Avslutningsvis
 ------------------------
 
-__________________________________________
-< Testa, eller inte testa, det är frågan >
-------------------------------------------
+_________________________________________________________________
+< Jag har kontrollen, eller kontroller, eller hur det nu var... >
+-----------------------------------------------------------------
        \   ^__^
         \  (oo)\_______
            (__)\       )\/\
