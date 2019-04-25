@@ -187,6 +187,7 @@ oophpkmom04()
 oophpkmom05()
 {
     #oophprepo "redovisa" "5.0.0" "6.0.0"
+    :
 }
 
 
@@ -197,6 +198,7 @@ oophpkmom05()
 oophpkmom06()
 {
     #oophprepo "redovisa" "6.0.0" "7.0.0"
+    :
 }
 
 
@@ -207,4 +209,5 @@ oophpkmom06()
 oophpkmom10()
 {
     #oophprepo "redovisa" "10.0.0" "11.0.0"
+    :
 }

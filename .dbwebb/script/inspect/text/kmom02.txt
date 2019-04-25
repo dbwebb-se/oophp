@@ -1,13 +1,15 @@
-Då ska vi se vad kmom02 resulterade i...
+Då tar vi kmom02.
 
-Som vanligt kollar jag igenom din inlämning med "dbwebb inspect" så att allt ligger på plats och validerar. I detta kmom introducerade vi JavaScript-validering.
+Som vanligt kollar jag igenom din inlämning med "dbwebb inspect" så att allt ligger på plats och validerar.
 
-Jag läste igenom din redovisningstext så att allt såg bra ut. I detta kmom var jag extra intresserad av hur du uppfattade introduktionen av JavaScript, Node.js.
+Jag kollar igenom din redovisningstext så att allt ser bra ut.
 
-Jag installerade din miljö för Node.js från "me/package.json" och testkörde dina program i "me/terminal1". Jag vill se att de kan koppla sig mot databasen i guiden och att de får ut rätt resultat. Jag vill även se att du strukturerat koden i minst en extern modul.
+Jag kikade på din GitHub och såg att sakerna fanns på plats och titta en extra gång på dina commits och taggar.
 
-Allt jag kollade på såg bra ut. Kör på.
+Jag kollade in ditt spel så att det fanns integrerat i me-sidan.
+
+Gott kämpat, kör på.
 
 $TEACHER_SIGNATURE
 
-PS. Glöm inte att du kan få svar på alla frågor och funderingar om du ställer dem i forumet.
+PS. Jag tar tillfället i akt att åter påminna om möjligheten att ställa frågor i forumet om du söker mer utförliga svar på funderingar eller för feedback på kod och lösningar.
