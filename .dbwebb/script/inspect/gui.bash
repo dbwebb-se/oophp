@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="v1.4.0 (2019-03-26)"
+VERSION="v1.4.1 (2019-04-26)"
 
 # Include ./functions.bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -12,7 +12,8 @@ DBWEBB_GUI_CONFIG_FILE="$HOME/.dbwebb/gui_config.bash"
 # shellcheck source=$HOME/.dbwebb.gui_config.bash
 [[ -f $DBWEBB_GUI_CONFIG_FILE ]] && source "$DBWEBB_GUI_CONFIG_FILE"
 
-
+# Save INSPECT_PID to be able to kill it
+DBWEBB_INSPECT_PID=
 
 # Preconditions
 hash dialog 2>/dev/null \
@@ -582,7 +583,14 @@ makeInspectDocker()
     header "dbwebb inspect" "Do dbwebb inspect in the background and write output to logfile '$LOGFILE_INSPECT'." | tee -a "$LOGFILE"
     #header "dbwebb inspect" | tee -a "$LOGFILE"
 
-    (make docker-run what="make inspect what=$kmom options='--yes'" > "$LOGFILE_INSPECT" 2>&1 &)
+    if [[ ! -z $DBWEBB_INSPECT_PID ]]; then
+        echo "Killing $DBWEBB_INSPECT_PID"
+        kill -9 $DBWEBB_INSPECT_PID
+    fi
+
+    make docker-run what="make inspect what=$kmom options='--yes'" > "$LOGFILE_INSPECT" 2>&1 &
+    DBWEBB_INSPECT_PID="$!"
+
     #make docker-run what="make inspect what=$kmom options='--yes'" 2>&1  | tee -a "$LOGFILE"
 }
 
