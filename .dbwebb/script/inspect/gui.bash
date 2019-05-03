@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="v1.4.1 (2019-04-26)"
+VERSION="v1.4.2 (2019-05-03)"
 
 # Include ./functions.bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -584,11 +584,12 @@ makeInspectDocker()
     #header "dbwebb inspect" | tee -a "$LOGFILE"
 
     if [[ ! -z $DBWEBB_INSPECT_PID ]]; then
-        echo "Killing $DBWEBB_INSPECT_PID"
+        echo "Killing $DBWEBB_INSPECT_PID" | tee "$LOGFILE_INSPECT"
         kill -9 $DBWEBB_INSPECT_PID
+        DBWEBB_INSPECT_PID=
     fi
 
-    make docker-run what="make inspect what=$kmom options='--yes'" > "$LOGFILE_INSPECT" 2>&1 &
+    setsid make docker-run what="make inspect what=$kmom options='--yes'" > "$LOGFILE_INSPECT" 2>&1 &
     DBWEBB_INSPECT_PID="$!"
 
     #make docker-run what="make inspect what=$kmom options='--yes'" 2>&1  | tee -a "$LOGFILE"
