@@ -15,3 +15,7 @@ FIX. Länken till ditt GitHub-repo funkade inte, uppdatera den i me/redovisa/git
 PS. Glöm inte att ha en hyffsad omfattning på din redovisningstext, du kan lite mer än du visar i detta kmom.
 
 FIX. Dina enhetstester fungerade inte, det gick inte att köra "make phpunit" i terminalen.
+
+KOMMENTAR. Snyggt att du lyckades med enhetstesterna av kontrollern.
+
+KOMMENTAR. Jag ser att du försökte testa delar av kontroller, bra gjort.
