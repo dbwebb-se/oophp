@@ -255,7 +255,8 @@ install-tools-php:
 
 	curl -Lso $(PHPCBF) https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar && chmod 755 $(PHPCBF)
 
-	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+	curl -Lso $(PHPMD) https://dbwebb.se/php/download/phpmd.phar && chmod 755 $(PHPMD)
+	#curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
 	# curl -Lso $(PHPMD) http://www.student.bth.se/~mosstud/download/phpmd.phar && chmod 755 $(PHPMD)
 
 	curl -Lso $(PHPLOC) https://phar.phpunit.de/phploc.phar && chmod 755 $(PHPLOC)
@@ -296,7 +297,7 @@ check-tools-php:
 .PHONY: phpunit
 phpunit: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -d "test" ] || $(PHPUNIT) --configuration .phpunit.xml $(options)
+	[ ! -d "test" ] || [ ! -f $(PHPUNIT) ] || $(PHPUNIT) --configuration .phpunit.xml $(options)
 
 
 
@@ -304,7 +305,7 @@ phpunit: prepare
 .PHONY: phpcs
 phpcs: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -f .phpcs.xml ] || $(PHPCS) --standard=.phpcs.xml | tee build/phpcs
+	[ ! -f .phpcs.xml ] || [ ! -f $(PHPCS) ] || $(PHPCS) --standard=.phpcs.xml | tee build/phpcs
 
 
 
@@ -313,9 +314,9 @@ phpcs: prepare
 phpcbf:
 	@$(call HELPTEXT,$@)
 ifneq ($(wildcard test),)
-	[ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml
+	[ ! -f .phpcs.xml ] || [ ! -f $(PHPCBF) ] || $(PHPCBF) --standard=.phpcs.xml
 else
-	[ ! -f .phpcs.xml ] || $(PHPCBF) --standard=.phpcs.xml src
+	[ ! -f .phpcs.xml ] || [ ! -f $(PHPCBF) ] || $(PHPCBF) --standard=.phpcs.xml src
 endif
 
 
@@ -324,7 +325,7 @@ endif
 .PHONY: phpmd
 phpmd: prepare
 	@$(call HELPTEXT,$@)
-	- [ ! -f .phpmd.xml ] || [ ! -d src ] || $(PHPMD) . text .phpmd.xml | tee build/phpmd
+	- [ ! -f .phpmd.xml ] || [ ! -d src ] || [ ! -f $(PHPMD) ] || $(PHPMD) . text .phpmd.xml | tee build/phpmd
 
 
 
@@ -332,7 +333,7 @@ phpmd: prepare
 .PHONY: phploc
 phploc: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -d src ] || $(PHPLOC) src > build/phploc
+	[ ! -d src ] || [ ! -f $(PHPLOC) ] || $(PHPLOC) src > build/phploc
 
 
 
@@ -340,7 +341,7 @@ phploc: prepare
 .PHONY: phpdoc
 phpdoc:
 	@$(call HELPTEXT,$@)
-	[ ! -d doc ] || $(PHPDOC) --config=.phpdoc.xml
+	[ ! -d doc ] || [ ! -f $(PHPDOC) ] || $(PHPDOC) --config=.phpdoc.xml
 
 
 
@@ -348,7 +349,7 @@ phpdoc:
 .PHONY: behat
 behat:
 	@$(call HELPTEXT,$@)
-	[ ! -d features ] || $(BEHAT)
+	[ ! -d features ] || [ ! -f $(BEHAT) ] || $(BEHAT)
 
 
 # ------------------------------------------------------------------------
