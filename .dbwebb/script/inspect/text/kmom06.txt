@@ -1,11 +1,9 @@
-Då tar vi kmom06, det sista innan examinationen.
+Då tar vi kmom06, sedan är det bara projektet kvar.
 
-Jag kör en "dbwebb inspect".
+Jag kör en "dbwebb inspect", läser igenom redovisningstexten och slänger ett öga på dina taggar och commit-historik på GitHub.
 
-Jag läser igenom redovisningstexten.
+Jag tittar på uppgiften om "innehåll i databasen" så att den ser okey ut i förhållande till specen.
 
-Jag tittar över din eshop så att den uppfyller kraven från uppgiften.
-
-Oavsett vad, när du nått så här långt så är du riktigt nära. Bra gjort.
+Gott kämpat så här långt.
 
 $TEACHER_SIGNATURE
