@@ -65,6 +65,7 @@ dbwebb validate guess
 rsync -a example/redovisa me
 touch me/redovisa/github.txt
 cd me/redovisa && composer install --no-dev
+cd me/redovisa && chmod 777 cache/*
 cd me/redovisa && git init
 cd me/redovisa && git add .
 cd me/redovisa && git commit -m "Initial commit"
