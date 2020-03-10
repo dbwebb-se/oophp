@@ -3,7 +3,14 @@ Revision history
 
 
 
-v1.4.0 (2020-03-10)
+v1.4.x (2020-03-10)
+--------------------
+
+* Upgrade dbwebb-cli revision to v2.6.2 (2020-03-09).
+
+
+
+v1.3.6 (2020-03-10)
 --------------------
 
 * Before preparing for spring 2020.
