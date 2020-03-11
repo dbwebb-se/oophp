@@ -7,9 +7,7 @@ composer.lock
 /.venv/
 node_modules
 package-lock.json
-
-log-gui-inspect.ansi
-log-gui-main.ansi
+.log/
 
 # Mac
 .DS_Store
