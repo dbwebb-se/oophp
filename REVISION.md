@@ -9,6 +9,7 @@ v1.4.x (2020-03-10)
 * Upgrade dbwebb-cli revision to v2.6.2 (2020-03-09).
 * Upgrade to use latest version of gui bash for inspect.
 * Update docker-compose file for new structure.
+* Add database files to setup database.
 
 
 
