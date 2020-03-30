@@ -35,7 +35,7 @@ Run the environment as a cli. Use `composer` within.
 docker-compose run php bash
 ```
 
-Missed anax command.
+Missed anax command to create new site, stopped testing there.
 
 -->
 
