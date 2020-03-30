@@ -9,9 +9,7 @@ source .anax/scaffold/functions.bash
 # Install using composer
 composer install --no-dev
 
-# Get scaffolding scripts from Anax Lite, Anax Flat, Anax oophp me
-rsync -a vendor/anax/anax-lite/.anax/scaffold/postprocess.d .anax/scaffold/
-rsync -a vendor/anax/anax-flat/.anax/scaffold/postprocess.d .anax/scaffold/
+# Get scaffolding scripts from Anax oophp me
 rsync -a vendor/anax/anax-oophp-me/.anax/scaffold/postprocess.d .anax/scaffold/
 
 # Run scaffolding scripts

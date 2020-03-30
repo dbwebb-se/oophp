@@ -16,8 +16,8 @@ if (isset($class)) {
 }
 
 // Prepare titles
-$nextTitle = $next["title"];
-$prevTitle = $previous["title"];
+$nextTitle = $next["title"] ?? null;
+$prevTitle = $previous["title"] ?? null;
 
 if (isset($nextPreviousTitle) && $nextPreviousTitle === false) {
     $nextTitle = t("Next");

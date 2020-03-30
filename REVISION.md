@@ -3,13 +3,15 @@ Revision history
 
 
 
-v1.4.x (2020-03-10)
+v1.4.0 (2020-03-31)
 --------------------
 
 * Upgrade dbwebb-cli revision to v2.6.2 (2020-03-09).
 * Upgrade to use latest version of gui bash for inspect.
 * Update docker-compose file for new structure.
 * Add database files to setup database.
+* Enable to use docker to run course repo environment (for PHP 7.3).
+* Updated example/redovisa.
 
 
 

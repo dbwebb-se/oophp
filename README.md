@@ -15,6 +15,31 @@ The course repo is managed by a [dbwebb command line utility](https://dbwebb.se/
 
 
 
+<!--
+Docker environment
+-------------------
+
+BETA.
+
+You might be able to run this course repo within docker as the available `docker-compose.yaml`.
+
+Start a apache webserver on port 18080.
+
+```
+docker-compose up -d apache
+```
+
+Run the environment as a cli. Use `composer` within.
+
+```
+docker-compose run php bash
+```
+
+Missed anax command.
+
+-->
+
+
 
 Acknowledgement
 -------------------

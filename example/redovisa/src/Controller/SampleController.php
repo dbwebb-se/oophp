@@ -198,7 +198,7 @@ class SampleController implements ContainerInjectableInterface
 
     /**
      * Adding an optional catchAll() method will catch all actions sent to the
-     * router. YOu can then reply with an actual response or return void to
+     * router. You can then reply with an actual response or return void to
      * allow for the router to move on to next handler.
      * A catchAll() handles the following, if a specific action method is not
      * created:

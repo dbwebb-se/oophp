@@ -13,7 +13,7 @@ rsync -a vendor/anax/anax-oophp-me/config ./
 rsync -a vendor/anax/anax-oophp-me/content ./
 
 # Remove items from content/.
-rm -f content/about.md
+#rm -f content/{about,test}.md
 
 # Get items from htdocs/.
 rsync -a vendor/anax/anax-oophp-me/htdocs ./
@@ -33,6 +33,9 @@ rsync -a vendor/anax/page/src/Page/Page.php ./src/Page/
 
 # Get items from router/.
 rsync -a vendor/anax/anax-oophp-me/router ./
+
+# Remove unused routes
+rm -f config/router/000_application.php
 
 # Get own copy of view files.
 rsync -a vendor/anax/view/view/anax/v2 ./view/anax/

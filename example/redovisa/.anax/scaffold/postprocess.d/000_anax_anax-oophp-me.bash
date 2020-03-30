@@ -2,3 +2,6 @@
 #
 # anax/anax-oophp-me
 #
+
+# Create dirs needed
+install -d src view
