@@ -22,7 +22,7 @@ services:
     server:
         <<: *oophp
         ports:
-            - "1337:1337"
+            - "18080:80"
 
 
 
@@ -54,23 +54,16 @@ services:
             - ./example/sql.d/mysql:/docker-entrypoint-initdb.d
             - ./example/sql/inspect/mysql_my.cnf:/root/.my.cnf
 
-
-
     # Anax images to test various PHP versions
-    php73:
-        image: anax/dev:php73
-        volumes: [ ".:/home/anax/repo" ]
+    php:
+        image: anax/dev:php73-cli
+        volumes:
+            - .:/home/anax/repo
 
-    php73-apache:
+    apache:
         image: anax/dev:php73-apache
-        ports: [ "10073:80" ]
-        volumes: [ ".:/home/anax/repo" ]
-
-    php72:
-        image: anax/dev:php72
-        volumes: [ ".:/home/anax/repo" ]
-
-    php72-apache:
-        image: anax/dev:php72-apache
-        ports: [ "10072:80" ]
-        volumes: [ ".:/home/anax/repo" ]
+        ports:
+            - "18080:80"
+        volumes:
+            - .:/app
+            - ./example/docker/site_default.conf:/etc/apache2/sites-enabled/000-default.conf
