@@ -1,0 +1,14 @@
+   Labbmiljö
+   ------------------------
+   
+   * PHP 7.4, 7.3, (7.2)
+   * composer, make
+   * git, github
+   * Ramverk Anax
+   
+   * Databas MySQL/SQLite (kmom05 och framåt)
+   * MySQL körs lokalt och på studentservern
+   
+   * Ej fokus
+       * Style (CSS/LESS/...) valfritt
+       * JS (ajax/fetch) valfritt

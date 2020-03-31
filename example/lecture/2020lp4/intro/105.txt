@@ -1,0 +1,8 @@
+   Examination
+   ------------------------
+   
+   * Projekt
+       * "Ett bloggverktyg med admin gränssnitt"
+   
+   * Redovisning med video
+       * Spela in 5-7min lång redovisningsvideo

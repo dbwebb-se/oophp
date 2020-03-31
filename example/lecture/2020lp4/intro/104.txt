@@ -1,0 +1,13 @@
+   Kursmoment
+   ------------------------
+   
+   01: Objektorientering i PHP
+   02: Arv och Komposition
+   
+   - 3-veckors upprop -
+   
+   03: Enhetstestning
+   04: Trait och Interface
+   05: PHP PDO och MySQL
+   06: Lagra innehåll i databasen
+   07/10: Projekt och examination

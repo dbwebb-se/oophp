@@ -1,0 +1,14 @@
+   Fokusområden
+   ------------------------
+   
+   * Klassiska objektorienterade konstruktioner
+   * Objektorienterad programmering i webbaserat ramverk
+   * Databaser
+   * Enhetstestning
+   
+   samt
+   
+   * Verktyg och tekniker och allmänt strul
+   
+   * Bygg vidare från htmlphp, design, databas, (oopython)
+   * Förbered m. koncept inför ramverk1 (jsramverk)
