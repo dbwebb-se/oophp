@@ -24,6 +24,16 @@ services:
         ports:
             - "18080:80"
 
+    courserepo:
+        image: dbwebb/courserepo:cli
+        volumes:
+            - ".:/home/dbwebb/repo"
+            #- "/home/dbwebb/repo/bin"
+            #- "/home/dbwebb/repo/build"
+            #- "/home/dbwebb/repo/node_modules"
+            #- "/home/dbwebb/repo/vendor"
+            - "./example/sql/inspect/my.cnf:/home/dbwebb/.my.cnf"
+
 
 
     # Add support for mysql and mariadb
