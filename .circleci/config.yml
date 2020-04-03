@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       #- image: circleci/node:latest
       #- image: circleci/node:latest
-      - image: dbwebb/courserepo:cli
+      - image: dbwebb/courserepo
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -34,7 +34,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
+
       # run tests!
       - run: make check test
 
