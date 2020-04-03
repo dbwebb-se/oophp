@@ -68,8 +68,9 @@ cd me/redovisa && composer install --no-dev
 cd me/redovisa && chmod 777 cache/*
 cd me/redovisa && git init
 cd me/redovisa && git add .
-cd me/redovisa && git commit -m "Initial commit"
-cd me/redovisa && git tag -a v1.0.0 -m "kmom01"
+# Fails on CircleCI
+#cd me/redovisa && git commit -m "Initial commit"
+#cd me/redovisa && git tag -a v1.0.0 -m "kmom01"
 dbwebb validate redovisa
 
 
@@ -108,7 +109,8 @@ dbwebb validate guide
 #
 install -d me/redovisa/doc/class
 touch me/redovisa/doc/class/dice100.pdf
-cd me/redovisa && git tag -a v2.0.0 -m "kmom02"
+# Fails on CircleCI
+#cd me/redovisa && git tag -a v2.0.0 -m "kmom02"
 dbwebb validate redovisa
 
 
@@ -129,7 +131,8 @@ dbwebb validate phpunit
 #
 # redovisa
 #
-cd me/redovisa && git tag -a v3.0.0 -m "kmom03"
+# Fails on CircleCI
+#cd me/redovisa && git tag -a v3.0.0 -m "kmom03"
 dbwebb validate redovisa
 
 
@@ -169,7 +172,8 @@ touch me/redovisa/doc/class/codecoverage2.png
 # redovisa
 #
 touch me/redovisa/doc/class/codecoverage.png
-cd me/redovisa && git tag -a v4.0.0 -m "kmom04"
+# Fails on CircleCI
+#cd me/redovisa && git tag -a v4.0.0 -m "kmom04"
 dbwebb validate redovisa
 
 
@@ -182,7 +186,8 @@ dbwebb validate redovisa
 #
 # redovisa
 #
-cd me/redovisa && git tag -a v5.0.0 -m "kmom05"
+# Fails on CircleCI
+#cd me/redovisa && git tag -a v5.0.0 -m "kmom05"
 dbwebb validate redovisa
 
 
@@ -205,7 +210,8 @@ dbwebb validate textfilter
 #
 # redovisa
 #
-cd me/redovisa && git tag -a v6.0.0 -m "kmom06"
+# Fails on CircleCI
+#cd me/redovisa && git tag -a v6.0.0 -m "kmom06"
 dbwebb validate redovisa
 
 
@@ -218,7 +224,8 @@ dbwebb validate redovisa
 #
 # redovisa
 #
-cd me/redovisa && git tag -a v10.0.0 -m "kmom10"
+# Fails on CircleCI
+#cd me/redovisa && git tag -a v10.0.0 -m "kmom10"
 dbwebb validate redovisa
 
 
