@@ -401,6 +401,18 @@ bats:
 
 # ------------------------------------------------------------------------
 #
+# Developer
+#
+# target: scaff-reinstall         - Reinstall using scaffolding processing scripts.
+.PHONY: scaff-reinstall
+scaff-reinstall:
+	@$(call HELPTEXT,$@)
+	#rm -rf -v !(composer.*|vendor|.anax); .anax/scaffold/postprocess.bash
+
+
+
+# ------------------------------------------------------------------------
+#
 # Theme
 #
 # target: theme                   - Do make build install in theme/ if available.
@@ -408,7 +420,7 @@ bats:
 theme:
 	@$(call HELPTEXT,$@)
 	[ ! -d theme ] || $(MAKE) --directory=theme build
-	rsync -a theme/build/css htdocs/
+	rsync -a theme/build/less/css htdocs/
 
 
 
