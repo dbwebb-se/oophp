@@ -10,6 +10,8 @@ FIX. Redovisningstexten för kmom01 ligger inte på din redovisa-sida på studen
 
 FIX. Du har inte uppdaterat sidorna på din me/redovisa sida.
 
+FIX. Hmm, jag får en vit sida av ditt spel kmom01/guess från studentservern. Slå på visande av felmeddelanden? Kanske ett fel rörande kompabilitet, du kanske har använt en PHP konstruktion som inte stöds av servern?
+
 --- PRE 2020
 
 FIX. Du har valideringsfel som gör att det inte går att rätta din inlämning. Kör "dbwebb update" följt av "dbwebb inspect" och laga felen.
