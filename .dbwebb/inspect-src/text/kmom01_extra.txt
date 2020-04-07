@@ -1,3 +1,17 @@
+PS. Du hade ett par valideringsfel från guiden, se om det är något som är viktigt eller ej, justera vid behov.
+
+PS. Snyggt GUI du gjort till spelet.
+
+PS. Snygg me-sida.
+
+FIX. Din fil `me/redovisa/github.txt` saknar en korrekt länk till ditt GitHub repo. Jag kunde inte kolla ditt GitHub repo.
+
+FIX. Redovisningstexten för kmom01 ligger inte på din redovisa-sida på studentservern.
+
+FIX. Du har inte uppdaterat sidorna på din me/redovisa sida.
+
+--- PRE 2020
+
 FIX. Du har valideringsfel som gör att det inte går att rätta din inlämning. Kör "dbwebb update" följt av "dbwebb inspect" och laga felen.
 
 FIX. Du har valideringsfel. Kör "dbwebb update" följt av "dbwebb inspect" och laga felen.
@@ -5,8 +19,6 @@ FIX. Du har valideringsfel. Kör "dbwebb update" följt av "dbwebb inspect" och 
 FIX. Du har en del valideringsfel, laga dem och glöm inte att göra dbwebb validate.
 
 FIX. Du har inte uppdaterat redovisa/htdocs/.htaccess så att bilderna och/eller navbaren fungerar på studentservern. Lös det till nästa kmom.
-
-FIX. Länken till ditt GitHub-repo funkade inte, uppdatera den i me/redovisa/github.txt
 
 FIX. "Skriv mer redovisningstext", se instruktionen i https://dbwebb.se/kurser/oophp-v5/redovisa#text
 

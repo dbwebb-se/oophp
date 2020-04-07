@@ -18,14 +18,22 @@ printf ">>> -------------- Pre (all kmoms) ----------------------\n"
 # eval "$BROWSER" "http://127.0.0.1:1337/eshop/index" &
 
 # Open me/redovisa
-url="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REDOVISA_HTTP_POSTFIX"
+url="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REDOVISA_HTTP_POSTFIX/htdocs"
 printf "$url\n" 2>&1
 eval "$BROWSER" "$url" &
 
 # Open github
 url=$( cat me/redovisa/github.txt )
 printf "$url/commits/master\n" 2>&1
-
 eval "$BROWSER" "$url/commits/master" &
+
+# Do different things depending on kmom
+case $KMOM in
+    kmom01)
+        url="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/me/kmom01/guess"
+        printf "$url\n" 2>&1
+        eval "$BROWSER" "$url" &
+    ;;
+esac
 
 echo
