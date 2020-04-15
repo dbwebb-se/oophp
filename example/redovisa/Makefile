@@ -249,7 +249,7 @@ check-docker:
 install-tools-php:
 	@$(call HELPTEXT,$@)
 	#curl -Lso $(PHPDOC) https://www.phpdoc.org/phpDocumentor.phar && chmod 755 $(PHPDOC)
-	curl -Lso $(PHPDOC) https://github.com/phpDocumentor/phpDocumentor2/releases/download/v2.9.0/phpDocumentor.phar && chmod 755 $(PHPDOC)
+	curl -Lso $(PHPDOC) https://github.com/phpDocumentor/phpDocumentor2/releases/download/v3.0.0-rc/phpDocumentor.phar && chmod 755 $(PHPDOC)
 
 	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
 
@@ -428,7 +428,7 @@ theme:
 # #
 # # Cimage
 # #
-# 
+#
 # define CIMAGE_CONFIG
 # <?php
 # return [
@@ -439,7 +439,7 @@ theme:
 # ];
 # endef
 # export CIMAGE_CONFIG
-# 
+#
 # define GIT_IGNORE_FILES
 # # Ignore everything in this directory
 # *
@@ -447,7 +447,7 @@ theme:
 # !.gitignore
 # endef
 # export GIT_IGNORE_FILES
-# 
+#
 # # target: cimage-install          - Install Cimage in htdocs
 # .PHONY: cimage-install
 # cimage-install:
@@ -458,7 +458,7 @@ theme:
 # 	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
 # 	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
 # 	touch htdocs/cimage/img_config.php
-# 
+#
 # # target: cimage-update           - Update Cimage to latest version.
 # .PHONY: cimage-update
 # cimage-update:
@@ -470,7 +470,7 @@ theme:
 # 	cp vendor/mos/cimage/webroot/img.php htdocs/cimage
 # 	cp vendor/mos/cimage/webroot/img/car.png htdocs/img/
 # 	touch htdocs/cimage/img_config.php
-# 
+#
 # # target: cimage-config-create    - Create configfile for Cimage.
 # .PHONY: cimage-config-create
 # cimage-config-create:
