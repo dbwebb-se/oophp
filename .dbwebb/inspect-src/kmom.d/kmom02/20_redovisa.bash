@@ -2,6 +2,8 @@
 
 # Move to directory
 cd me/redovisa || exit
-ls -l
+e() { exit; }; export -f e
 
-echo
+echo "[$ACRONYM] Do manual stuff, if needed (e/exit to exit)?"
+ls -F
+bash

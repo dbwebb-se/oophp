@@ -1,5 +1,7 @@
 PS. Glöm inte stänga av felutskrifter när du lämnar in, det ser mycket snyggare ut utan dem.
 
+PS. När du kastar exception så bör du låta sidan fånga det på ett snyggt sätt, så att det blir en del av upplevelsen.
+
 KOMMENTAR. Jag fick inte din "cheat" att fungera, inget syntes när jag klickade på den, men vi låter det vara så.
 
 KOMMENTAR. Glöm inte att göra flera och små commits med tydliga meddelanden, det ser bra ut i historiken när man gör det, det blir enklare att följa de ändringar som gjorts.
