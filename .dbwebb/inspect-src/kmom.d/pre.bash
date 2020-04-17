@@ -34,6 +34,11 @@ case $KMOM in
         printf "$url\n" 2>&1
         eval "$BROWSER" "$url" &
     ;;
+    kmom03)
+        url="$DIR/me/redovisa/build/coverage/index.html"
+        printf "$url\n" 2>&1
+        eval "$BROWSER" "$url" &
+    ;;
 esac
 
 echo
