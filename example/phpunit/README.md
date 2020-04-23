@@ -21,6 +21,8 @@ Prerequisite
 
 You have PHP 7.0 or above.
 
+<!-- Update example to work with composer install av phpunit -->
+
 You have installed phpunit 6.0 (or above) and you have it in your PATH.
 
 You have installed and enabled the PHP Xdebug extension for PHP CLI.
@@ -47,7 +49,7 @@ This is the directory structure for the example program.
 | `.phpunit.xml`  | Configuration read by phpunit on startup. |
 
 Check out the directory structure and the content of the files to get acquainted with them.
- 
+
 
 
 Setup autoloader
