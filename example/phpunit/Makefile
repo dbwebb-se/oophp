@@ -2,10 +2,11 @@
 # A makefile
 #
 
-# ---------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
-# Generic setup for compatible makefile with help enabled
+# General stuff, reusable for all Makefiles.
 #
+
 # Detect OS
 OS = $(shell uname -s)
 
@@ -13,9 +14,13 @@ OS = $(shell uname -s)
 ECHO = echo
 
 # Make adjustments based on OS
-# http://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux/27776822#27776822
 ifneq (, $(findstring CYGWIN, $(OS)))
+	OS_CYGWIN = "true"
 	ECHO = /bin/echo -e
+else ifneq (, $(findstring Linux, $(OS)))
+	OS_LINUX = "true"
+else ifneq (, $(findstring Darwin, $(OS)))
+	OS_MAC = "true"
 endif
 
 # Colors and helptext
@@ -25,30 +30,27 @@ OK_COLOR	= \033[32;01m
 ERROR_COLOR	= \033[31;01m
 WARN_COLOR	= \033[33;01m
 
+# Print out colored action message
+ACTION_MESSAGE = $(ECHO) "$(ACTION)---> $(1)$(NO_COLOR)"
+
 # Which makefile am I in?
-WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+WHERE-AM-I = "$(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))"
 THIS_MAKEFILE := $(call WHERE-AM-I)
 
 # Echo some nice helptext based on the target comment
-HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
+HELPTEXT = $(call ACTION_MESSAGE, $(shell egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"))
 
-# Add local bin path for test tools
-#PATH := "./.bin:./vendor/bin:./node_modules/.bin:$(PATH)"
-#SHELL := env PATH=$(PATH) $(SHELL)
-PHPUNIT := .bin/phpunit
-PHPLOC 	:= .bin/phploc
-PHPCS   := .bin/phpcs
-PHPCBF  := .bin/phpcbf
-PHPMD   := .bin/phpmd
-PHPDOC  := .bin/phpdoc
-BEHAT   := .bin/behat
+# Check version  and path to command and display on one line
+CHECK_VERSION = printf "%-10s %-20s %s\n" "`basename $(1)`" "`which $(1)`" "`$(1) --version $(2)`"
 
+# Get current working directory, it may not exist as environment variable.
+PWD = $(shell pwd)
 
-
-# target: help               - Displays help.
+# target: help                    - Displays help.
 .PHONY:  help
 help:
 	@$(call HELPTEXT,$@)
+	@sed '/^$$/q' $(THIS_MAKEFILE) | tail +3 | sed 's/#\s*//g'
 	@$(ECHO) "Usage:"
 	@$(ECHO) " make [target] ..."
 	@$(ECHO) "target:"
@@ -83,6 +85,7 @@ check:
 	@$(call HELPTEXT,$@)
 	php --version && $(ECHO)
 	phpunit --version
+	composer show
 
 
 # target: test               - Run all tests.
@@ -97,7 +100,7 @@ test: phpunit
 .PHONY:  install
 install:
 	@$(call HELPTEXT,$@)
-	composer dump-autoload
+	composer install
 
 
 
@@ -105,4 +108,5 @@ install:
 .PHONY: phpunit
 phpunit:
 	@$(call HELPTEXT,$@)
+	#[ ! -d "test" ] || vendor/bin/phpunit --configuration .phpunit.xml
 	[ ! -d "test" ] || phpunit --configuration .phpunit.xml
