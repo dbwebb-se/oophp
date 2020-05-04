@@ -24,4 +24,4 @@ $sql = "SHOW DATABASES";
 $stm = $db->prepare($sql);
 $stm->execute();
 $res = $stm->fetchAll();
-var_dump($res);
+print_r($res);
