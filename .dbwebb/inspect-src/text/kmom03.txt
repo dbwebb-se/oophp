@@ -6,9 +6,9 @@ Jag läser igenom redovisningstexten för att få en uppfattning om hur du upple
 
 Jag tittar på dina committs och taggar på GitHub.
 
-Jag spelade en runda på ditt 100-spel i me/redovisa.
+Jag körde igenom dina enhetstester med "make phpunit" och tittar på din kodtäckning.
 
-Avslutningsvis så kör jag igenom dina enhetstester med "make phpunit" och tittar på din kodtäckning.
+Avslutningsvis så spelar jag en runda på ditt 100-spel i me/redovisa.
 
 Kämpa på.
 
