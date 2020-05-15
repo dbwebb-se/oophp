@@ -33,7 +33,7 @@ if ($server === "www.student.bth.se") {
         "verbose"         => false,
 
         // True to be verbose on connection failed
-        "debug_connect"   => true,
+        "debug_connect"   => false,
     ];
 }
 
