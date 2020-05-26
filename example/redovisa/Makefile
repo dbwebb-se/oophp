@@ -364,7 +364,7 @@ phploc: prepare
 .PHONY: phpdoc
 phpdoc:
 	@$(call HELPTEXT,$@)
-	[ ! -d doc ] || [ ! -f .phpdox.xml ] || $(PHPDOC) --config=.phpdoc.xml
+	[ ! -d doc ] || [ ! -f .phpdoc.xml ] || $(PHPDOC) --config=.phpdoc.xml
 
 
 
