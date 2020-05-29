@@ -40,6 +40,15 @@ case $KMOM in
         printf "$url\n" 2>&1
         eval "$BROWSER" "$url" &
     ;;
+    kmom10)
+        url="$DIR/me/kmom10/proj/build/coverage/index.html"
+        printf "$url\n" 2>&1
+        eval "$BROWSER" "$url" &
+
+        url="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/me/kmom10/proj/htdocs"
+        printf "$url\n" 2>&1
+        eval "$BROWSER" "$url" &
+    ;;
 esac
 
 echo

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd me/redovisa || exit
+cd me/kmom10/proj || exit
 e() { exit; }
 export -f e
 
